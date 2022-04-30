@@ -1,5 +1,5 @@
 # Supermercado-SQ
-Repositório criado para armazenar os códigos do projeto Supermercado SQ, proposto no Atlântico Academy Bootcamp Fullstack oferecido pelo [Instituto Atlântico]1(https://www.linkedin.com/company/instituto-atlantico/)
+Repositório criado para armazenar os códigos do projeto Supermercado SQ, proposto no Atlântico Academy Bootcamp Fullstack oferecido pelo [Instituto Atlântico](https://www.linkedin.com/company/instituto-atlantico/)
 
 ## :open_book: Índice
 * [Sobre o Projeto](#speech_balloon-sobre-o-projeto)
