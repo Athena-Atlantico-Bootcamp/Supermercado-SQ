@@ -17,47 +17,47 @@ Repositório criado para armazenar os códigos do projeto Supermercado SQ, propo
 ## :speech_balloon: Sobre o Projeto
 
 
-⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ/edit/main/README.md#open_book-%C3%ADndice)
+⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
 ## :memo: Elicitação de Requisitos
 
 
-⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ/edit/main/README.md#open_book-%C3%ADndice)
+⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
 ## :busts_in_silhouette: Atores do Sistema
 
 
-⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ/edit/main/README.md#open_book-%C3%ADndice)
+⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
 ## :gear: Requisitos Funcionais
 
 
-⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ/edit/main/README.md#open_book-%C3%ADndice)
+⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
 ## :briefcase: Regras de Négocio
 
 
-⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ/edit/main/README.md#open_book-%C3%ADndice)
+⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
 ## :world_map: Modelagem da Visão Geral
 
 
-⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ/edit/main/README.md#open_book-%C3%ADndice)
+⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
 ## :detective: Telas identificadas para o sistema
 
 
-⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ/edit/main/README.md#open_book-%C3%ADndice)
+⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
 ## :bulb: Modelo de Dados - Conceitual 
 
 
-⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ/edit/main/README.md#open_book-%C3%ADndice)
+⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
 ## :bulb: Modelo de Dados - Lógico 
 
 
-⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ/edit/main/README.md#open_book-%C3%ADndice)
+⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
 ## :man_technologist: Equipe
 Equipe de desenvolvimento: Squad 3 - **Athena**
