@@ -10,6 +10,7 @@ Repositório criado para armazenar os códigos do projeto Supermercado SQ, propo
 * [Modelagem da Visão Gerão](#world_map-modelagem-da-visão-geral)
 * [Telas identificadas para o sistema](#detective-telas-identificadas-para-o-sistema)
 * [Modelo de Dados - Conceitual](#bulb-modelo-de-dados---conceitual)
+* [Modelo de Dados - Lógico](#bulb-modelo-de-dados---lógico)
 * [Equipe](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ/edit/main/README.md#man_technologist-equipe)
 
 
@@ -49,6 +50,11 @@ Repositório criado para armazenar os códigos do projeto Supermercado SQ, propo
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ/edit/main/README.md#open_book-%C3%ADndice)
 
 ## :bulb: Modelo de Dados - Conceitual 
+
+
+⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ/edit/main/README.md#open_book-%C3%ADndice)
+
+## :bulb: Modelo de Dados - Lógico 
 
 
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ/edit/main/README.md#open_book-%C3%ADndice)
