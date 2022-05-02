@@ -79,9 +79,9 @@ Equipe de desenvolvimento: Squad 3 - **Athena**
       <p>:nerd_face:</p>
     </td>
     <td>
-      <a href="#">
-        <img src="#" width=100 />
-        <p>Caio<br/>Colaço</p>
+      <a href="https://github.com/CaioLuColaco">
+        <img src="https://avatars.githubusercontent.com/u/92800332?v=4" width=100 />
+        <p>Caio Lucena<br/>Colaço</p>
       </a>
       <p>:octocat:</p>
     </td>
