@@ -90,17 +90,10 @@ Equipe de desenvolvimento: Squad 3 - **Athena**
         <img src="https://avatars.githubusercontent.com/u/61315569?v=4" width=100 />
         <p>João Victor<br/>Almeida</p>
       </a>
-      <p>👨‍💻</p>
+      <p>🌌</p>
     </td>
   </tr>
   <tr align="center">
-       <td>
-      <a href="#">
-        <img src="#" width=100 />
-        <p>Kevyn<br/>#</p>
-      </a>
-      <p>🧠</p>
-    </td>
       <td>
         <a href="https://github.com/leonardo-felipe">
           <img src="https://avatars.githubusercontent.com/u/60754433?v=4" width=100 />
@@ -122,6 +115,12 @@ Equipe de desenvolvimento: Squad 3 - **Athena**
         </a>
         <p>🌌</p>
       </td>
-    
+    <td>
+      <a href="https://github.com/PauloAndersonN">
+        <img src="https://avatars.githubusercontent.com/u/6969530?v=4" width=100 />
+        <p>Anderson<br/>#</p>
+      </a>
+      <p>🌌</p>
+    </td>
   </tr> 
 </table>
