@@ -50,11 +50,13 @@ Repositório criado para armazenar os códigos do projeto Supermercado SQ, propo
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
 ## :bulb: Modelo de Dados - Conceitual 
+![dados-conceitual](https://user-images.githubusercontent.com/86008015/168423498-c58933ef-5e40-4580-9517-3138c87ef27e.png)
 
 
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
 ## :bulb: Modelo de Dados - Lógico 
+![dados-logico](https://user-images.githubusercontent.com/86008015/168423496-ed3e675d-c029-4f78-b695-89c15a53b26e.png)
 
 
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
