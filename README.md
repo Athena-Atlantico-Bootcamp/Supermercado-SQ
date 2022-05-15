@@ -115,7 +115,7 @@ Equipe de desenvolvimento: Squad 3 - **Athena**
           <img src="https://avatars.githubusercontent.com/u/89354119?v=4" width=100 />
           <p>Luiza<br/>GA</p>
         </a>
-        <p>🌌</p>
+        <p>:star2:</p>
       </td>
     <td>
       <a href="https://github.com/PauloAndersonN">
