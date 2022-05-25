@@ -50,13 +50,13 @@ Repositório criado para armazenar os códigos do projeto Supermercado SQ, propo
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
 ## :bulb: Modelo de Dados - Conceitual 
-![dados-conceitual](https://user-images.githubusercontent.com/86008015/168423498-c58933ef-5e40-4580-9517-3138c87ef27e.png)
+![dados-conceitual](https://user-images.githubusercontent.com/86008015/170283033-5c24adec-9ad4-40ba-bff1-d9e15731d3c8.png)
 
 
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
 ## :bulb: Modelo de Dados - Lógico 
-![dados-logico](https://user-images.githubusercontent.com/86008015/168423496-ed3e675d-c029-4f78-b695-89c15a53b26e.png)
+![dados-logico](https://user-images.githubusercontent.com/86008015/170283075-644fadff-7c1f-4eb9-af03-2d7e292521db.png)
 
 
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
@@ -79,13 +79,6 @@ Equipe de desenvolvimento: Squad 3 - **Athena**
         <p>Beatriz<br/>Makowski</p>
       </a>
       <p>:nerd_face:</p>
-    </td>
-    <td>
-      <a href="https://github.com/CaioLuColaco">
-        <img src="https://avatars.githubusercontent.com/u/92800332?v=4" width=100 />
-        <p>Caio Lucena<br/>Colaço</p>
-      </a>
-      <p>:octocat:</p>
     </td>
     <td>
       <a href="https://github.com/joaovictorgit">
