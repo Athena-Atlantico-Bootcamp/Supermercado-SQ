@@ -61,6 +61,26 @@ Repositório criado para armazenar os códigos do projeto Supermercado SQ, propo
 
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
+## :man_technologist: Planejamento 1ª Entrega
+
+| Feature  |  Stories  | Tasks | Responsáveis | Prazo
+| ------------------- | ------------------- |------------------- |------------------- |------------------- |
+|  Organizar o Squad | Divisão de tarefas dentro do time| Falar sobre seus interesses | Todos | 04/22
+|    |   | Listar suas skilss | Todos | 04/22
+|    |  Planejamento preliminar | Fazer um brainstorming de ideias sobre o projeto | Todos | 04/22
+|    |   | Listar e dividir as tarefas e responsabilidades | Todos | 04/22
+|    |   | Decidir dia e horário da reunião semanal | Todos | 04/22
+|  Camada de Dados | Modelagem de dados | Realizar a modelagem conceitual | Ada* | 19/05/22
+|    |   | Realizar a modelagem lógica | Ada* | 19/05/22
+|    |  Modelagem de Caso de Uso | Realizar a modelagem de caso de uso | Luiza* | 19/05/22
+|    |  Revisão | Realizar a modelagem de caso de uso | Todos | 18/05/22
+|    |  Banco de Dados | Decidir qual BD vamos utilizar | Todos | 30/04/22
+|    |   | Criar o banco de dados | Anderson* | 19/05/22
+|  Entrega 01 | Realizar entrega 01 - Módulo Inicial | Entregar Camada de Dados | Luiza | 21/05/22
+|    |   | Entregar o projeto de implementação / divisão das atividades | Luiza e Beatriz| 21/05/22
+
+⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
+
 ## :man_technologist: Equipe
 Equipe de desenvolvimento: Squad 3 - **Athena**
 
