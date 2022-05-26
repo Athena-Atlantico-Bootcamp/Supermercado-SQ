@@ -62,7 +62,7 @@ Repositório criado para armazenar os códigos do projeto Supermercado SQ, propo
 
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
-## :man_technologist: Planejamento 1 Entrega
+## :bulb: Planejamento 1 Entrega
 
 | Feature  |  Stories  | Tasks | Responsáveis | Prazo
 | ------------------- | ------------------- |------------------- |------------------- |------------------- |
