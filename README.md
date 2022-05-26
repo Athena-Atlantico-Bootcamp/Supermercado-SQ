@@ -80,7 +80,7 @@ Repositório criado para armazenar os códigos do projeto Supermercado SQ, propo
 |  Entrega 01 | Realizar entrega 01 - Módulo Inicial | Entregar Camada de Dados | Luiza | 21/05/22
 |    |   | Entregar o projeto de implementação / divisão das atividades | Luiza e Beatriz| 21/05/22
 
-* : essas atividades foram feitas em grupo, colocamos a pessoa responsável quem estava com a tela compartilhada na atividade
+obs* : essas atividades foram feitas em grupo, colocamos a pessoa responsável quem estava com a tela compartilhada na atividade
 
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
