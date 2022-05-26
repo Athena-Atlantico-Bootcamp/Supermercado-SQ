@@ -11,6 +11,7 @@ Repositório criado para armazenar os códigos do projeto Supermercado SQ, propo
 * [Telas identificadas para o sistema](#detective-telas-identificadas-para-o-sistema)
 * [Modelo de Dados - Conceitual](#bulb-modelo-de-dados---conceitual)
 * [Modelo de Dados - Lógico](#bulb-modelo-de-dados---lógico)
+* [Planejamento 1 Entrega](#bulb-planejamento-1-entrega)
 * [Equipe](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ/edit/main/README.md#man_technologist-equipe)
 
 
@@ -61,7 +62,7 @@ Repositório criado para armazenar os códigos do projeto Supermercado SQ, propo
 
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
-## :man_technologist: Planejamento 1ª Entrega
+## :man_technologist: Planejamento 1 Entrega
 
 | Feature  |  Stories  | Tasks | Responsáveis | Prazo
 | ------------------- | ------------------- |------------------- |------------------- |------------------- |
