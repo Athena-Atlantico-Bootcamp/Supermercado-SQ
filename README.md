@@ -117,7 +117,7 @@ Equipe de desenvolvimento: Squad 3 - **Athena**
           <img src="https://avatars.githubusercontent.com/u/60754433?v=4" width=100 />
           <p>Leonardo<br/>Felipe</p>
         </a>
-        <p>🌌</p>
+        <p>😃</p>
       </td>
           <td>
         <a href="https://github.com/lucasoliv21">
