@@ -1,0 +1,26 @@
+{
+  "name": "supermercado-sq",
+  "description": "Repositório criado para armazenar os códigos do projeto Supermercado SQ, proposto no Atlântico Academy Bootcamp Fullstack oferecido pelo [Instituto Atlântico](https://www.linkedin.com/company/instituto-atlantico/)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16",
+    "pg": "^8.7.3",
+    "prisma": "^3.14.0"
+  },
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ/issues"
+  },
+  "homepage": "https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#readme"
+}
