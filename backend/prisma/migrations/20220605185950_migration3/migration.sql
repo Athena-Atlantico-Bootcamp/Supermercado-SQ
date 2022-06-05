@@ -14,8 +14,8 @@ CREATE TABLE "usuarios" (
 CREATE TABLE "produtos" (
     "id_produto" SERIAL NOT NULL,
     "nome" TEXT NOT NULL,
-    "descricao" TEXT NOT NULL,
-    "imagem" TEXT NOT NULL,
+    "descricao" TEXT,
+    "imagem" TEXT,
     "ingredientes" TEXT NOT NULL,
     "usuarioId" INTEGER NOT NULL,
 
