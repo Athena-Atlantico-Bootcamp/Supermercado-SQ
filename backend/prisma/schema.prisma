@@ -17,27 +17,26 @@ model usuarios {
   telefone      Int
   restricoes     String
   tipo_usuario String
-  produtosCriados produtos[]? 
+  produtos_criados produtos[]
+  comentarios_feitos comentarios[]
 }
 
 model produtos {
   id_produto        Int      @id @default(autoincrement())
-  nome String,
+  nome String
   descricao String
-  imagem String,
+  imagem String
   ingredientes String
-  usuario    User    @relation(fields: [usuarioId], references: [id_usuario])
+  usuario    usuarios    @relation(fields: [usuarioId], references: [id_usuario])
   usuarioId      Int
+  comentarios_feitos comentarios[]
 }
 
 model comentarios {
   id_comentario        Int      @id @default(autoincrement())
-  nome String,
-  descricao String
-  imagem String,
-  ingredientes String
-  usuario    User    @relation(fields: [usuarioId], references: [id_usuario])
+  texto_comentario String
+  usuario    usuarios    @relation(fields: [usuarioId], references: [id_usuario])
   usuarioId      Int
-  produto    User    @relation(fields: [produtoId], references: [id_produto])
+  produto    produtos    @relation(fields: [produtoId], references: [id_produto])
   produtoId      Int
 }
