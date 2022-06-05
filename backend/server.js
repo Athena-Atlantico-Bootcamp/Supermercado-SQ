@@ -8,7 +8,7 @@ const app = express()
 
 const swaggerOptions = {
     swaggerDefinition: {
-        swagger: '2.0',
+        openapi: '3.0.0',
         info: {
             title: 'Supermercado SQ',
             version: '1.0.0',
@@ -30,7 +30,8 @@ const swaggerOptions = {
                 description: 'Tudo sobre os comentários realizados no site'
             },
         ],
-        schemes: 'http'
+        schemes: 
+        - 'http'
     },
     apis: ['./src/**/*-routes.js']
 }
