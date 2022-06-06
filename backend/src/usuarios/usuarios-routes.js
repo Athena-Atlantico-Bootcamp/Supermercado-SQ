@@ -95,23 +95,104 @@ router.post('/', (req, res, next) => {
     return usuarioController.cadastrarUsuario(req, res)
 })
 
-// Retorna todos os usuários cadastrados
+/**
+ * @swagger
+ * /usuarios:
+ *   get:
+ *     tags:
+ *     - usuarios
+ *     summary: Mostra todos os usuários cadastrados
+ *     description: ""
+ *     parameters: ""
+ *     responses:
+ *       200:
+ *         description: OK
+ *       500:
+ *         description: Internal Server Error
+ */
+// Mostra todos os usuários cadastrados
 router.get('/', (req, res, next) => {
     return usuarioController.mostrarUsuarios(req, res)
 })
 
-// Retorna um usuário especificado pelo seu id
+/**
+ * @swagger
+ * /usuarios/{id}:
+ *   get:
+ *     tags:
+ *     - usuarios
+ *     summary: Mostra um usuário especificado pelo seu id
+ *     description: ""
+ *     parameters:
+ *     - name: id_usuario
+ *       in: path
+ *       required: true
+ *       description: O id do usuário a ser pesquisado
+ *       type: integer
+ *     responses:
+ *       200:
+ *         description: OK
+ *       404:
+ *         description: Usuário não encontrado
+ *       500:
+ *         description: Internal Server Error
+ */
+// Mostra um usuário especificado pelo seu id
 router.get('/:id', (req, res, next) => {
     const id_usuario = parseInt(req.params.id)
     return usuarioController.mostrarUsuarioPorId(id_usuario, res)
 })
 
+/**
+ * @swagger
+ * /usuarios/{id}:
+ *   patch:
+ *     tags:
+ *     - usuarios
+ *     summary: Altera um usuário especificado pelo seu id
+ *     description: ""
+ *     parameters:
+ *     - name: id_usuario
+ *       in: path
+ *       required: true
+ *       description: O id do usuário a ser atualizado
+ *       type: integer
+ *     responses:
+ *       200:
+ *         description: OK
+ *       404:
+ *         description: Usuário não encontrado
+ *       500:
+ *         description: Internal Server Error
+ */
 // Altera o registro de um usuário especificado pelo seu id
 router.patch('/:id', (req, res, next) => {
     const id_usuario = parseInt(req.params.id)
     return usuarioController.atualizarUsuario(id_usuario, req, res)
 })
 
+/**
+ * @swagger
+ * /usuarios/{id}:
+ *   delete:
+ *     tags:
+ *     - usuarios
+ *     summary: Deleta um usuário especificado pelo seu id
+ *     description: ""
+ *     parameters:
+ *     - name: id_usuario
+ *       in: path
+ *       required: true
+ *       description: O id do usuário a ser deletado
+ *       type: integer
+ *     responses:
+ *       200:
+ *         description: OK
+ *       404:
+ *         description: Usuário não encontrado
+ *       500:
+ *         description: Internal Server Error
+ */
 // Deleta um usuário especificado pelo seu id
 router.delete('/:id', (req, res, next) => {
     const id_usuario = parseInt(req.params.id)

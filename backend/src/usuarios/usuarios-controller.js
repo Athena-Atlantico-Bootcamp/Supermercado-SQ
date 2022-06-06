@@ -1,7 +1,6 @@
 'use strict'
 
 import { PrismaClient } from '@prisma/client'
-
 const prisma = new PrismaClient()
 
 class UsuarioController {
@@ -34,7 +33,7 @@ class UsuarioController {
         if (!flagUsuario) {
             return res.status(404).json('Usuário não encontrado.')
         }
-        // Caso exista, retorna o usuário
+        // Caso exista, retorna status 200 + o usuário
         const usuario = await prisma.usuarios.findUnique({
             where: {
                 id_usuario: id_usuario
@@ -58,7 +57,7 @@ class UsuarioController {
         //         id_usuario: id_usuario
         //     },
         //     data: {
-
+            
         //     }
         // })
         return res.status(500).json('Rota em construção')
@@ -72,7 +71,7 @@ class UsuarioController {
         if (!flagUsuario) {
             return res.status(404).json('Usuário não encontrado.')
         }
-        // Caso exista, deleta o usuário
+        // Caso exista, deleta o usuário e retorna status 200
         const deleteUser = await prisma.usuarios.delete({
             where: {
               id_usuario: id_usuario
