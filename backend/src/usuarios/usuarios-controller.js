@@ -51,16 +51,13 @@ class UsuarioController {
             return res.status(404).json('Usuário não encontrado.')
         }
         // Caso exista, atualiza o usuário
-
-        // const usuarioAtualizado = await prisma.usuarios.update({
-        //     where: {
-        //         id_usuario: id_usuario
-        //     },
-        //     data: {
-            
-        //     }
-        // })
-        return res.status(500).json('Rota em construção')
+        const usuarioAtualizado = await prisma.usuarios.update({
+            where: {
+                id_usuario: id_usuario
+            },
+            data: req.body
+        })
+        return res.status(200).json(usuarioAtualizado)
     }
 
     async deletarUsuario(id_usuario, res) {

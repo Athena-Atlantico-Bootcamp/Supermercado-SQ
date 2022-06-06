@@ -157,6 +157,10 @@ router.get('/:id', (req, res, next) => {
  *       required: true
  *       description: O id do usuário a ser atualizado
  *       type: integer
+ *     - body: body
+ *       in: body
+ *       required: true
+ *       description: O json contendo os campos e valores a serem atualizados
  *     responses:
  *       200:
  *         description: OK
