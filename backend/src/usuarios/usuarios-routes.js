@@ -92,7 +92,7 @@ const usuarioController = new UsuarioController()
 // Adiciona um novo usuário ao banco de dados
 router.post('/', (req, res, next) => {
     // Falta validação de dados de entrada - fazer no front??
-    return usuarioController.cadastrarUsuario(req, res)
+    return usuarioController.createUser(req, res)
 })
 
 /**
@@ -112,7 +112,7 @@ router.post('/', (req, res, next) => {
  */
 // Mostra todos os usuários cadastrados
 router.get('/', (req, res, next) => {
-    return usuarioController.mostrarUsuarios(req, res)
+    return usuarioController.showAllUsers(req, res)
 })
 
 /**
@@ -140,7 +140,7 @@ router.get('/', (req, res, next) => {
 // Mostra um usuário especificado pelo seu id
 router.get('/:id', (req, res, next) => {
     const id_usuario = parseInt(req.params.id)
-    return usuarioController.mostrarUsuarioPorId(id_usuario, res)
+    return usuarioController.showUserById(id_usuario, res)
 })
 
 /**
@@ -172,7 +172,7 @@ router.get('/:id', (req, res, next) => {
 // Altera o registro de um usuário especificado pelo seu id
 router.patch('/:id', (req, res, next) => {
     const id_usuario = parseInt(req.params.id)
-    return usuarioController.atualizarUsuario(id_usuario, req, res)
+    return usuarioController.updateUser(id_usuario, req, res)
 })
 
 /**
@@ -200,7 +200,7 @@ router.patch('/:id', (req, res, next) => {
 // Deleta um usuário especificado pelo seu id
 router.delete('/:id', (req, res, next) => {
     const id_usuario = parseInt(req.params.id)
-    return usuarioController.deletarUsuario(id_usuario, res)
+    return usuarioController.deleteUser(id_usuario, res)
 })
 
 export default router
