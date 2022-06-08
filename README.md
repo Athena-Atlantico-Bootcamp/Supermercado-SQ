@@ -1,4 +1,8 @@
 # Supermercado-SQ
+![status](https://img.shields.io/badge/status-under%20development-yellow) ![contributors](https://img.shields.io/github/contributors/Athena-Atlantico-Bootcamp/Supermercado-SQ)
+![size](https://img.shields.io/github/repo-size/Athena-Atlantico-Bootcamp/Supermercado-SQ) 
+![lines](https://img.shields.io/tokei/lines/github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ)
+
 Repositório criado para armazenar os códigos do projeto Supermercado SQ, proposto no Atlântico Academy Bootcamp Fullstack oferecido pelo [Instituto Atlântico](https://www.linkedin.com/company/instituto-atlantico/)
 
 ## :open_book: Índice
