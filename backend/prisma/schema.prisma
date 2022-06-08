@@ -35,6 +35,7 @@ model produtos {
 model comentarios {
   id_comentario        Int      @id @default(autoincrement())
   texto_comentario String
+  createdAt  DateTime  @default(now())
   usuario    usuarios    @relation(fields: [usuarioId], references: [id_usuario])
   usuarioId      Int
   produto    produtos    @relation(fields: [produtoId], references: [id_produto])
