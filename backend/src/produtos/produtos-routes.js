@@ -7,32 +7,31 @@ import ProdutoController from './produtos-controller'
 const produtoController = new ProdutoController()
 
 router.post('/', (req, res, next) => {
-  return produtoController.cadastrarProduto(req, res)
+  return produtoController.createProduct(req, res)
 })
 
 router.get('/', (req, res, next) => {
-  return produtoController.mostrarProdutos(req, res)
+  return produtoController.showAllProducts(req, res)
 })
 
 router.get('/:id', (req, res, next) => {
   const id_produto = parseInt(req.params.id)
-  return produtoController.mostrarProdutoPorId(id_produto, res)
+  return produtoController.showAllProductById(id_produto, res)
 })
 
 router.get('/usuario/:id', (req, res, next) => {
   const id_usuario = parseInt(req.params.id)
-  console.log(req.params)
-  return produtoController.mostrarProdutoPorIdUsuario(id_usuario, res)
+  return produtoController.showAllProductByUserId(id_usuario, res)
 })
 
 router.patch('/:id', (req, res, next) => {
   const id_produto = parseInt(req.params.id)
-  return produtoController.atualizarProduto(id_produto, req, res)
+  return produtoController.updateProduct(id_produto, req, res)
 })
 
 router.delete('/:id', (req, res, next) => {
   const id_produto = parseInt(req.params.id)
-  return produtoController.deletarProduto(id_produto, res)
+  return produtoController.deleteProduct(id_produto, res)
 })
 
 export default router

@@ -4,9 +4,9 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 class ProdutoController {
-  async cadastrarProduto(req, res) {
+  async createProduct(req, res) {
     const { nome, descricao, imagem, ingredientes, usuarioId } = req.body
-    const produto = await prisma.produtos.create({
+    const product = await prisma.produtos.create({
       data: {
         nome,
         descricao,
@@ -15,81 +15,81 @@ class ProdutoController {
         usuario: { connect: { id_usuario: usuarioId } }
       }
     })
-    return res.status(200).json(produto)
+    return res.status(200).json(product)
   }
 
-  async mostrarProdutos(req, res) {
-    const produtos = await prisma.produtos.findMany()
-    return res.status(200).json(produtos)
+  async showAllProducts(req, res) {
+    const products = await prisma.produtos.findMany()
+    return res.status(200).json(products)
   }
 
-  async verificarSeProdutoExiste(id_produto) {
-    const produto = await prisma.produtos.findUnique({
+  async checkIfProductExists(id_produto) {
+    const product = await prisma.produtos.findUnique({
       where: {
         id_produto: id_produto
       }
     })
 
-    if (!produto) {
+    if (!product) {
       return false
     } else {
       return true
     }
   }
 
-  async mostrarProdutoPorId(id_produto, res) {
-    let flagProduto = await this.verificarSeProdutoExiste(id_produto)
+  async showAllProductById(id_produto, res) {
+    let flagProduct = await this.checkIfProductExists(id_produto)
 
-    if (!flagProduto) {
+    if (!flagProduct) {
       return res.status(404).json('Produto não encontrado.')
     }
 
-    const produto = await prisma.produtos.findUnique({
+    const product = await prisma.produtos.findUnique({
       where: {
         id_produto: id_produto
       }
     })
-    return res.status(200).json(produto)
+    return res.status(200).json(product)
   }
 
-  async mostrarProdutoPorIdUsuario(id_usuario, res) {
-    const produto = await prisma.produtos.findMany({
+  async showAllProductByUserId(id_usuario, res) {
+    const product = await prisma.produtos.findMany({
       where: {
         usuarioId: id_usuario
       }
     })
-    return res.status(200).json(produto)
+    return res.status(200).json(product)
   }
 
-  async atualizarProduto(id_produto, req, res) {
-    let flagProduto = await this.verificarSeProdutoExiste(id_produto)
+  async updateProduct(id_produto, req, res) {
+    let flagProduct = await this.checkIfProductExists(id_produto)
 
-    if (!flagProduto) {
+    if (!flagProduct) {
       return res.status(404).json('Produto não encontrado.')
     }
 
-    const produtoAtualizado = await prisma.produtos.update({
+    const newProduct = await prisma.produtos.update({
       where: {
         id_produto: id_produto
       },
       data: req.body
     })
-    return res.status(200).json(produtoAtualizado)
+    return res.status(200).json(newProduct)
   }
 
-  async deletarProduto(id_produto, res) {
-    let flagProduto = await this.verificarSeProdutoExiste(id_produto)
+  async deleteProduct(id_produto, res) {
+    let flagProduct = await this.checkIfProductExists(id_produto)
 
-    if (!flagProduto) {
+    if (!flagProduct) {
       return res.status(404).json('Produto não encontrado.')
     }
 
-    const produtoDeletado = await prisma.produtos.delete({
+    const deleteProduct = await prisma.produtos.delete({
       where: {
         id_produto: id_produto
       }
     })
-    return res.status(200).json('Usuário deletado com sucesso.')
+    return res.status(200).json('Produto deletado com sucesso.')
   }
 }
 

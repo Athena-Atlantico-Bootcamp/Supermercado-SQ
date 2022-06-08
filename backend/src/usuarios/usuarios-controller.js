@@ -5,7 +5,7 @@ const prisma = new PrismaClient()
 
 class UsuarioController {
 
-    async cadastrarUsuario(req, res) {
+    async createUser(req, res) {
         
         const {nome, email, telefone, restricoes, tipo_usuario} = req.body
         const usuario = await prisma.usuarios.create({
@@ -20,17 +20,17 @@ class UsuarioController {
         return res.status(200).json(usuario)
     }
 
-    async mostrarUsuarios(req, res) {
+    async showAllUsers(req, res) {
         const usuarios = await prisma.usuarios.findMany()
         return res.status(200).json(usuarios)
     }
 
-    async mostrarUsuarioPorId(id_usuario, res) {
+    async showUserById(id_usuario, res) {
 
         // Verifica se o usuário com o id especificado existe.
-        let flagUsuario = await this.verificarSeUsuarioExiste(id_usuario)
+        let userFlag = await this.checkIfUserExists(id_usuario)
         // Caso não exista, retorna status 404
-        if (!flagUsuario) {
+        if (!userFlag) {
             return res.status(404).json('Usuário não encontrado.')
         }
         // Caso exista, retorna status 200 + o usuário
@@ -42,12 +42,12 @@ class UsuarioController {
         return res.status(200).json(usuario)
     }
 
-    async atualizarUsuario(id_usuario, req, res) {
+    async updateUser(id_usuario, req, res) {
         
         // Verifica se o usuário com o id especificado existe.
-        let flagUsuario = await this.verificarSeUsuarioExiste(id_usuario)
+        let userFlag = await this.checkIfUserExists(id_usuario)
         // Caso não exista, retorna status 404
-        if (!flagUsuario) {
+        if (!userFlag) {
             return res.status(404).json('Usuário não encontrado.')
         }
         // Caso exista, atualiza o usuário
@@ -60,12 +60,12 @@ class UsuarioController {
         return res.status(200).json(usuarioAtualizado)
     }
 
-    async deletarUsuario(id_usuario, res) {
+    async deleteUser(id_usuario, res) {
 
         // Verifica se o usuário com o id especificado existe.
-        let flagUsuario = await this.verificarSeUsuarioExiste(id_usuario)
+        let userFlag = await this.checkIfUserExists(id_usuario)
         // Caso não exista, retorna status 404
-        if (!flagUsuario) {
+        if (!userFlag) {
             return res.status(404).json('Usuário não encontrado.')
         }
         // Caso exista, deleta o usuário e retorna status 200
@@ -83,14 +83,14 @@ class UsuarioController {
      * @param {Number} id_usuario
      * @return {Boolean} Boolean
      */
-    async verificarSeUsuarioExiste(id_usuario) {
-        const usuario = await prisma.usuarios.findUnique({
+    async checkIfUserExists(id_usuario) {
+        const user = await prisma.usuarios.findUnique({
             where: {
                 id_usuario: id_usuario
             }
         })
         
-        if (!usuario) {
+        if (!user) {
             return false
         } else {
             return true
