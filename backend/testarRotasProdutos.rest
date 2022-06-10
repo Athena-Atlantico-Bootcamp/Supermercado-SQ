@@ -1,0 +1,43 @@
+POST http://localhost:3000/produtos
+content-type: application/json
+ 
+{
+ "nome":"nomeProdutos",
+ "descricao":"descricaoProduto",
+ "imagem":"caminhoProduto",
+ "ingredientes":"trigo, farinha",
+ "usuarioId": 1
+}
+ 
+###
+ 
+GET http://localhost:3000/produtos
+ 
+###
+ 
+GET http://localhost:3000/produtos/1
+ 
+###
+ 
+GET http://localhost:3000/produtos/usuario/1
+ 
+###
+ 
+GET http://localhost:3000/produtos/ingrediente/trigo
+ 
+###
+ 
+PATCH http://localhost:3000/produtos/1
+content-type: application/json
+ 
+{
+ "nome":"nomeProdutosquatro",
+ "descricao":"descricaoProdutofff",
+ "imagem":"caminhoProdutoaaaa",
+ "ingredientes":"blablafsf",
+ "usuarioId": 3
+}
+ 
+###
+ 
+DELETE http://localhost:3000/produtos/1
