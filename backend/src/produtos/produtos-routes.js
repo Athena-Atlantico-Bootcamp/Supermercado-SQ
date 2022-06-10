@@ -24,6 +24,11 @@ router.get('/usuario/:id', (req, res, next) => {
   return produtoController.showAllProductByUserId(id_usuario, res)
 })
 
+router.get('/ingrediente/:ingrediente', (req, res, next) => {
+  const ingrediente = req.params.ingrediente
+  return produtoController.showAllProductsByIngredient(ingrediente, res)
+})
+
 router.patch('/:id', (req, res, next) => {
   const id_produto = parseInt(req.params.id)
   return produtoController.updateProduct(id_produto, req, res)

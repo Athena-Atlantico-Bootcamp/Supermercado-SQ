@@ -23,6 +23,17 @@ class ProdutoController {
     return res.status(200).json(products)
   }
 
+  async showAllProductsByIngredient(ingrediente, res) {
+    const allProducts = await prisma.produtos.findMany()
+    let products = []
+    for (let i = 0; i < allProducts.length; i++) {
+      if (allProducts[i].ingredientes.includes(`${ingrediente}`)) {
+        products.push(allProducts[i])
+      }
+    }
+    return res.status(200).json(products)
+  }
+
   async checkIfProductExists(id_produto) {
     const product = await prisma.produtos.findUnique({
       where: {
