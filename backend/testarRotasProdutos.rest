@@ -27,6 +27,10 @@ GET http://localhost:3000/produtos/ingrediente/trigo
  
 ###
  
+GET http://localhost:3000/produtos/semingrediente/trigo
+
+###
+ 
 PATCH http://localhost:3000/produtos/1
 content-type: application/json
  

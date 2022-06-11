@@ -29,6 +29,11 @@ router.get('/ingrediente/:ingrediente', (req, res, next) => {
   return produtoController.showAllProductsByIngredient(ingrediente, res)
 })
 
+router.get('/semingrediente/:ingrediente', (req, res, next) => {
+  const ingrediente = req.params.ingrediente
+  return produtoController.showAllProductsWithoutIngredient(ingrediente, res)
+})
+
 router.patch('/:id', (req, res, next) => {
   const id_produto = parseInt(req.params.id)
   return produtoController.updateProduct(id_produto, req, res)
