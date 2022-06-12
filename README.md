@@ -95,54 +95,53 @@ Equipe de desenvolvimento: Squad 3 - **Athena**
   <tr align="center">
     <td>
       <a href="https://github.com/adaDiniz">
-        <img src="https://avatars.githubusercontent.com/u/100374064?v=4" width=100 />
+        <img src="https://avatars.githubusercontent.com/u/100374064?v=4" width=80 />
         <p>Ada<br/d>Diniz</p>
       </a>
       <p>:purple_heart:</p>
     </td>
     <td>
       <a href="https://github.com/beatrizmakowski">
-        <img src="https://avatars.githubusercontent.com/u/86008015?v=4" width=100 />
+        <img src="https://avatars.githubusercontent.com/u/86008015?v=4" width=80 />
         <p>Beatriz<br/>Makowski</p>
       </a>
       <p>:nerd_face:</p>
     </td>
     <td>
       <a href="https://github.com/joaovictorgit">
-        <img src="https://avatars.githubusercontent.com/u/61315569?v=4" width=100 />
+        <img src="https://avatars.githubusercontent.com/u/61315569?v=4" width=80 />
         <p>João Victor<br/>Almeida</p>
       </a>
       <p>🌌</p>
     </td>
-  </tr>
-  <tr align="center">
-      <td>
+    <td>
         <a href="https://github.com/leonardo-felipe">
-          <img src="https://avatars.githubusercontent.com/u/60754433?v=4" width=100 />
+          <img src="https://avatars.githubusercontent.com/u/60754433?v=4" width=80 />
           <p>Leonardo<br/>Felipe</p>
         </a>
         <p>😃</p>
-      </td>
-          <td>
+     </td>
+     <td>
         <a href="https://github.com/lucasoliv21">
-          <img src="https://avatars.githubusercontent.com/u/73923109?v=4" width=100 />
+          <img src="https://avatars.githubusercontent.com/u/73923109?v=4" width=80 />
           <p>Lucas<br/>Cesar</p>
         </a>
         <p>🌌</p>
       </td>
-          <td>
+       <td>
         <a href="https://github.com/LuizaGA">
-          <img src="https://avatars.githubusercontent.com/u/89354119?v=4" width=100 />
+          <img src="https://avatars.githubusercontent.com/u/89354119?v=4" width=80 />
           <p>Luiza<br/>GA</p>
         </a>
         <p>:star2:</p>
       </td>
-    <td>
+     <td>
       <a href="https://github.com/PauloAndersonN">
-        <img src="https://avatars.githubusercontent.com/u/6969530?v=4" width=100 />
+        <img src="https://avatars.githubusercontent.com/u/6969530?v=4" width=80 />
         <p>Anderson<br/>#</p>
       </a>
       <p>🌌</p>
     </td>
   </tr> 
+   
 </table>
