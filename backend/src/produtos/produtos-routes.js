@@ -16,7 +16,7 @@ router.get('/', (req, res, next) => {
 
 router.get('/:id', (req, res, next) => {
   const id_produto = parseInt(req.params.id)
-  return produtoController.showAllProductById(id_produto, res)
+  return produtoController.showProductById(id_produto, res)
 })
 
 router.get('/usuario/:id', (req, res, next) => {
