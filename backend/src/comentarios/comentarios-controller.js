@@ -7,14 +7,19 @@ class CommentController {
 
   async createComment(req, res) {
     const {texto_comentario, usuarioId, produtoId} = req.body
-    const comment = await prisma.comentarios.create({
-      data: {
-        texto_comentario,
-        usuario: { connect: { id_usuario: usuarioId } },
-        produto: { connect: {id_produto: produtoId} }
-      }
-    })
-    return res.status(200).json(comment)
+    try{
+      const comment = await prisma.comentarios.create({
+        data: {
+          texto_comentario,
+          usuario: { connect: {id_usuario: usuarioId} },
+          produto: { connect: {id_produto: produtoId} }
+        }
+      })
+       return res.status(200).json(comment)
+    }
+    catch (e){
+       return res.status(400).json("Informação inválida")
+    }
   }
 
   async showAllComments (req, res) {
@@ -47,30 +52,33 @@ class CommentController {
       }   
     })
 
-
     if(!comment) {
       return false;
     } else {
       return true;
     }
-
   }
 
   async updateComment(id_comment, req, res) {
-    let flagComment = await this.checkIfCommentsExists(id_comment)
-    
-    if(!flagComment) {
-      return res.status(404).json('Comentário não encontrado.')
+    try{
+      let flagComment = await this.checkIfCommentsExists(id_comment)
+      
+      if(!flagComment) {
+        return res.status(404).json('Comentário não encontrado.')
+      }
+
+      const newComment = await prisma.comentarios.update({
+        where: {
+          id_comentario: id_comment  
+        },
+        data: req.body
+      })
+
+      return res.status(200).json(newComment)
     }
-
-    const newComment = await prisma.comentarios.update({
-      where: {
-        id_comentario: id_comment  
-      },
-      data: req.body
-    })
-
-    return res.status(200).json(newComment)
+    catch (e) {
+      return res.status(400).json("Informação inválida")
+    }
   }
 
   async deleteCommentByUserId(id_comment, res) {
@@ -87,9 +95,7 @@ class CommentController {
     })
 
     return res.status(200).json('Comentário deletado!')
-
   }
-  
 }
 
 export default CommentController
