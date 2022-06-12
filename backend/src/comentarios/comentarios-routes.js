@@ -26,7 +26,7 @@ router.patch('/:id', (req, res, next) => {
 
 router.delete('/:id', (req, res, next) => {
     const id_comment = parseInt(req.params.id)
-    return commentController.deleteCommentByUserId(id_comment, res)
+    return commentController.deleteCommentById(id_comment, res)
 })
 
 export default router;

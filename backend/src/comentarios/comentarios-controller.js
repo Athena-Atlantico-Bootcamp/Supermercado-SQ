@@ -91,7 +91,7 @@ class CommentController {
     }
   }
 
-  async deleteCommentByUserId(id_comment, res) {
+  async deleteCommentById(id_comment, res) {
     let flagComment = await this.checkIfCommentsExists(id_comment)
 
     if(!flagComment) {
@@ -103,7 +103,7 @@ class CommentController {
         id_comentario: id_comment
       }
     })
-
+    
     return res.status(200).json('Comentário deletado!')
   }
 }
