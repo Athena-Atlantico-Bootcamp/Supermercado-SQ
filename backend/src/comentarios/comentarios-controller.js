@@ -15,10 +15,10 @@ class CommentController {
           produto: { connect: {id_produto: produtoId} }
         }
       })
-       return res.status(200).json(comment)
+       return res.status(201).json(comment)
     }
     catch (e){
-       return res.status(400).json("Informação inválida")
+       return res.status(400).json('Informação inválida')
     }
   }
 
@@ -28,21 +28,31 @@ class CommentController {
   }
 
   async showCommentByProductId(id_produto, res) {
-    const product = await prisma.comentarios.findMany({
-      where: {
-        produtoId: id_produto
-      }
-    })
-    return res.status(200).json(product)
-  }
+    try{
+      const product = await prisma.comentarios.findMany({
+        where: {
+          produtoId: id_produto
+        }
+      })
+      return res.status(200).json(product)
+    }
+    catch (e) {
+      return res.status(400).json('Informação inválida')
+    }  
+ }
 
   async showCommentByUserId(id_usuario, res) {
-    const user = await prisma.comentarios.findMany({
-      where: {
-        usuarioId: id_usuario       
-      }
-    })
-    return res.status(200).json(user)
+    try{
+      const user = await prisma.comentarios.findMany({
+        where: {
+          usuarioId: id_usuario       
+        }
+      })
+      return res.status(200).json(user)
+    }
+    catch (e) {
+      return res.status(400).json('Informação inválida')
+    }
   }
 
   async checkIfCommentsExists(id_comment) {
@@ -77,7 +87,7 @@ class CommentController {
       return res.status(200).json(newComment)
     }
     catch (e) {
-      return res.status(400).json("Informação inválida")
+      return res.status(400).json('Informação inválida')
     }
   }
 
