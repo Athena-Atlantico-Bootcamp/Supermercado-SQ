@@ -1,12 +1,13 @@
 'use strict'
 
 import express from 'express'
+import autentificacao from '../middleware/autentificacao'
 const router = express.Router()
 
 import CommentController from './comentarios-controller'
 const commentController = new CommentController();
 
-router.post('/', (req, res, next) => {
+router.post('/', autentificacao, (req, res, next) => {
     return commentController.createComment(req,res)
 })
 

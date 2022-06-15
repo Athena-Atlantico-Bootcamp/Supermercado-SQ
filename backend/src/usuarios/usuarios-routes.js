@@ -95,6 +95,11 @@ router.post('/', (req, res, next) => {
     return usuarioController.createUser(req, res)
 })
 
+router.post('/login', (req, res, next) => {
+    // Falta validação de dados de entrada - fazer no front??
+    return usuarioController.login(req, res)
+})
+
 /**
  * @swagger
  * /usuarios:

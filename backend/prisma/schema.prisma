@@ -13,6 +13,7 @@ datasource db {
 model usuarios {
   id_usuario       Int      @id @default(autoincrement())
   email     String   @unique
+  senha     String
   nome      String
   telefone      Int
   restricoes     String
