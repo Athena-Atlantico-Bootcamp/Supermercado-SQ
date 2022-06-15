@@ -33,6 +33,7 @@ class ProdutoController {
   }
 
   async showAllProductsByIngredient(ingrediente, res) {
+    try{
     const allProducts = await prisma.produtos.findMany()
     let products = []
     for (let i = 0; i < allProducts.length; i++) {
@@ -41,9 +42,13 @@ class ProdutoController {
       }
     }
     return res.status(200).json(products)
+  }catch(e){
+    return res.status(400).json('informação invalída')
+   }
   }
 
   async showAllProductsWithoutIngredient(ingrediente, res) {
+    try{
     const allProducts = await prisma.produtos.findMany()
     let products = []
     for (let i = 0; i < allProducts.length; i++) {
@@ -52,9 +57,13 @@ class ProdutoController {
       }
     }
     return res.status(200).json(products)
+  }catch(e){
+    return res.status(400).json('informação inválida')
+  }
   }
 
   async showProductById(id_produto, res) {
+    try{
     const productExist = await prisma.produtos.findUnique({ where: { id_produto } });
     if (!productExist) {
       return res.status(400).json("Produto não encontrado");
@@ -65,9 +74,13 @@ class ProdutoController {
       }
     })
     return res.status(200).json(product)
+  }catch(e){
+    return res.status(400).json('Informação invalída')
+  }
   }
 
   async showAllProductByUserId(id_usuario, res) {
+    try{
     const userExist = await prisma.usuarios.findUnique({ where: { id_usuario } });
     if (!userExist) {
       return res.status(400).json("Usuário não encontrado");
@@ -78,6 +91,9 @@ class ProdutoController {
       }
     })
     return res.status(200).json(product)
+  }catch(e){
+    return res.status(400).json('informação inválida')
+  }
   }
 
   async updateProduct(id_produto, req, res) {
