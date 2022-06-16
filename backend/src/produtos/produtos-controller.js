@@ -10,7 +10,7 @@ class ProdutoController {
       //verificar se o usuário existe
       const userExist = await prisma.usuarios.findUnique({ where: { id_usuario: usuarioId} });
       if (!userExist) {
-        return res.status(400).json("Usuário não encontrado");
+        return res.status(404).json("Usuário não encontrado");
       }
       const product = await prisma.produtos.create({
         data: {
@@ -115,16 +115,20 @@ class ProdutoController {
   }
 
   async deleteProduct(id_produto, res) {
-    const productExist = await prisma.produtos.findUnique({ where: { id_produto } });
-    if (!productExist) {
-      return res.status(400).json("Produto não encontrado");
-    }  
-    const deleteProduct = await prisma.produtos.delete({
-      where: {
-        id_produto
-      }
-    })
-    return res.status(200).json('Produto deletado com sucesso.')
+    try{
+      const productExist = await prisma.produtos.findUnique({ where: { id_produto } });
+      if (!productExist) {
+        return res.status(400).json("Produto não encontrado");
+      }  
+      const deleteProduct = await prisma.produtos.delete({
+        where: {
+          id_produto
+        }
+      })
+      return res.status(200).json('Produto deletado com sucesso.')
+    }catch(e){
+      return res.status(400).json("Erro");
+    }
   }
 }
 
