@@ -20,12 +20,12 @@ router.get('/:id', (req, res, next) => {
     return commentController.showCommentByProductId(id_product, res)
 })
 
-router.patch('/:id', (req, res, next) => {
+router.patch('/:id',autentificacao, (req, res, next) => {
     const id_comment = parseInt(req.params.id)
     return commentController.updateComment(id_comment, req, res)
 })
 
-router.delete('/:id', (req, res, next) => {
+router.delete('/:id',autentificacao, (req, res, next) => {
     const id_comment = parseInt(req.params.id)
     return commentController.deleteCommentById(id_comment, res)
 })
