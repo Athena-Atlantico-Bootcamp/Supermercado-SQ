@@ -1,12 +1,13 @@
 'use strict'
 
 import express from 'express'
+import autentificacao from '../middleware/autentificacao'
 const router = express.Router()
 
 import CommentController from './comentarios-controller'
 const commentController = new CommentController();
 
-router.post('/', (req, res, next) => {
+router.post('/', autentificacao, (req, res, next) => {
     return commentController.createComment(req,res)
 })
 
@@ -19,12 +20,12 @@ router.get('/:id', (req, res, next) => {
     return commentController.showCommentByProductId(id_product, res)
 })
 
-router.patch('/:id', (req, res, next) => {
+router.patch('/:id',autentificacao, (req, res, next) => {
     const id_comment = parseInt(req.params.id)
     return commentController.updateComment(id_comment, req, res)
 })
 
-router.delete('/:id', (req, res, next) => {
+router.delete('/:id',autentificacao, (req, res, next) => {
     const id_comment = parseInt(req.params.id)
     return commentController.deleteCommentById(id_comment, res)
 })

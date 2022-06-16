@@ -2,22 +2,48 @@
 
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 
 class UsuarioController {
 
-    async createUser(req, res) {
-        
-        const {nome, email, telefone, restricoes, tipo_usuario} = req.body
+    async createUser(req, res) { 
+        const {nome, email, senha, telefone, restricoes, tipo_usuario} = req.body
+        const senhaHash = await bcrypt.hash(senha, 8)
         const usuario = await prisma.usuarios.create({
             data: {
                 nome: nome,
                 email: email,
+                senha: senhaHash,
                 telefone: telefone,
                 restricoes: restricoes,
                 tipo_usuario: tipo_usuario
             }
         })
         return res.status(200).json(usuario)
+    }
+
+    async login(req,res){
+        try{
+            const {email, senha} = req.body
+        const userEmail = await prisma.usuarios.findUnique({ where: { email }})
+        if (!userEmail) {
+            return res.status(400).json('Email não cadastrado')
+        } 
+        const compararSenha = await bcrypt.compare(senha, userEmail.senha)
+        if(!compararSenha){
+            return res.status(400).json('Email e/ou senha invalido')
+        }
+        return res.status(200).json({
+            userEmail,
+            token:jwt.sign({
+                id: userEmail.id
+            },  process.env.SECRET, { expiresIn: '1h'})
+        })
+        }catch(e){
+            console.log(e)
+            return res.status(400).json('Erro')
+        }
     }
 
     async showAllUsers(req, res) {

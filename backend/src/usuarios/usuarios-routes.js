@@ -4,6 +4,7 @@ import express from 'express'
 const router = express.Router()
 
 import UsuarioController from './usuarios-controller'
+import autentificacao from '../middleware/autentificacao'
 const usuarioController = new UsuarioController()
 
 /**
@@ -95,6 +96,11 @@ router.post('/', (req, res, next) => {
     return usuarioController.createUser(req, res)
 })
 
+router.post('/login', (req, res, next) => {
+    // Falta validação de dados de entrada - fazer no front??
+    return usuarioController.login(req, res)
+})
+
 /**
  * @swagger
  * /usuarios:
@@ -111,7 +117,7 @@ router.post('/', (req, res, next) => {
  *         description: Internal Server Error
  */
 // Mostra todos os usuários cadastrados
-router.get('/', (req, res, next) => {
+router.get('/',autentificacao, (req, res, next) => {
     return usuarioController.showAllUsers(req, res)
 })
 
@@ -138,7 +144,7 @@ router.get('/', (req, res, next) => {
  *         description: Internal Server Error
  */
 // Mostra um usuário especificado pelo seu id
-router.get('/:id', (req, res, next) => {
+router.get('/:id', autentificacao, (req, res, next) => {
     const id_usuario = parseInt(req.params.id)
     return usuarioController.showUserById(id_usuario, res)
 })
@@ -170,7 +176,7 @@ router.get('/:id', (req, res, next) => {
  *         description: Internal Server Error
  */
 // Altera o registro de um usuário especificado pelo seu id
-router.patch('/:id', (req, res, next) => {
+router.patch('/:id', autentificacao,(req, res, next) => {
     const id_usuario = parseInt(req.params.id)
     return usuarioController.updateUser(id_usuario, req, res)
 })
@@ -198,7 +204,7 @@ router.patch('/:id', (req, res, next) => {
  *         description: Internal Server Error
  */
 // Deleta um usuário especificado pelo seu id
-router.delete('/:id', (req, res, next) => {
+router.delete('/:id',autentificacao, (req, res, next) => {
     const id_usuario = parseInt(req.params.id)
     return usuarioController.deleteUser(id_usuario, res)
 })
