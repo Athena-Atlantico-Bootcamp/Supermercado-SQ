@@ -10,7 +10,7 @@ class ProdutoController {
       //verificar se o usuário existe
       const userExist = await prisma.usuarios.findUnique({ where: { id_usuario: usuarioId} });
       if (!userExist) {
-        return res.status(400).json("Usuário não encontrado");
+        return res.status(404).json("Usuário não encontrado");
       }
       const product = await prisma.produtos.create({
         data: {

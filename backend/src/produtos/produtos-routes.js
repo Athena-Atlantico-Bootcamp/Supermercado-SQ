@@ -7,6 +7,52 @@ const router = express.Router()
 import ProdutoController from './produtos-controller'
 const produtoController = new ProdutoController()
 
+/**
+ * @swagger
+ * /produtos:
+ *   post:
+ *     tags:
+ *     - produtos
+ *     summary: Cadastra um novo produto
+ *     description: ""
+ *     parameters:
+ *     - in: body
+ *       name: body
+ *       description: O "objeto produto" a ser adicionado ao banco de dados
+ *       required: true
+ *       schema:
+ *         type: object
+ *         required:
+ *         - nome
+ *         - ingredientes
+ *         - usuarioId
+ *         properties:
+ *           id_produto:
+ *             type: serial
+ *             description: ID serial gerado automaticamente pelo banco de dados
+ *           nome:
+ *             type: string
+ *             description: Nome do produto
+ *           descricao: 
+ *             type: string
+ *             description: Descrição do produto
+ *           imagem:
+ *             type: string
+ *             description: Caminho do arquivo de imagem do produto
+ *           ingredientes:
+ *             type: string
+ *             description: Ingredientes do produto
+ *           usuarioId:
+ *             type: int
+ *             description: ID do usuário que criou o produto
+ *         responses:
+ *           201:
+ *             description: Produto cadastrado com sucesso
+ *           400:
+ *             description: Informação inválida (bad request)
+ *           404:
+ *             description: Usuário não encontrado
+ */
 router.post('/',autentificacao, (req, res, next) => {
   return produtoController.createProduct(req, res)
 })
