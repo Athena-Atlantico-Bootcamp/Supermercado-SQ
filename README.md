@@ -1,5 +1,6 @@
 # Supermercado-SQ
-![status](https://img.shields.io/badge/status-under%20development-yellow) ![contributors](https://img.shields.io/github/contributors/Athena-Atlantico-Bootcamp/Supermercado-SQ)
+![status](https://img.shields.io/badge/status-under%20development-yellow)
+![contributors](https://img.shields.io/github/contributors/Athena-Atlantico-Bootcamp/Supermercado-SQ)
 ![size](https://img.shields.io/github/repo-size/Athena-Atlantico-Bootcamp/Supermercado-SQ) 
 ![lines](https://img.shields.io/tokei/lines/github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ)
 
