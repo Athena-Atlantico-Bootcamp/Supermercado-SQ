@@ -15,7 +15,7 @@ Repositório criado para armazenar os códigos do projeto Supermercado SQ, propo
 * [Telas identificadas para o sistema](#detective-telas-identificadas-para-o-sistema)
 * [Modelo de Dados - Conceitual](#bulb-modelo-de-dados---conceitual)
 * [Modelo de Dados - Lógico](#bulb-modelo-de-dados---lógico)
-* [Planejamento 1 Entrega](#memo-planejamento-1-entrega)
+* [Planejamento](#memo-planejamento)
 * [Equipe](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ/edit/main/README.md#man_technologist-equipe)
 
 
@@ -66,25 +66,105 @@ Repositório criado para armazenar os códigos do projeto Supermercado SQ, propo
 
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
-## :memo: Planejamento 1 Entrega
+## :memo: Planejamento
 
-| Feature  |  Stories  | Tasks | Responsáveis | Prazo
-| ------------------- | ------------------- |------------------- |------------------- |------------------- |
-|  Organizar o Squad | Divisão de tarefas dentro do time| Falar sobre seus interesses | Todos | 04/22
-|    |   | Listar suas skilss | Todos | 04/22
-|    |  Planejamento preliminar | Fazer um brainstorming de ideias sobre o projeto | Todos | 04/22
-|    |   | Listar e dividir as tarefas e responsabilidades | Todos | 04/22
-|    |   | Decidir dia e horário da reunião semanal | Todos | 04/22
-|  Camada de Dados | Modelagem de dados | Realizar a modelagem conceitual | Ada* | 19/05/22
-|    |   | Realizar a modelagem lógica | Ada* | 19/05/22
-|    |  Modelagem de Caso de Uso | Realizar a modelagem de caso de uso | Luiza* | 19/05/22
-|    |  Revisão | Realizar a modelagem de caso de uso | Todos | 18/05/22
-|    |  Banco de Dados | Decidir qual BD vamos utilizar | Todos | 30/04/22
-|    |   | Criar o banco de dados | Anderson* | 19/05/22
-|  Entrega 01 | Realizar entrega 01 - Módulo Inicial | Entregar Camada de Dados | Luiza | 21/05/22
-|    |   | Entregar o projeto de implementação / divisão das atividades | Luiza e Beatriz| 21/05/22
+<details>
+  <summary><b>Entrega 1 - Camada de dados</b></summary>
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>Stories</th>
+      <th>Tasks</th>
+      <th>Responsáveis</th>
+      <th>Prazo</th>
+    </tr>
+    <tr>
+      <td rowspan="5" align="center"><b>Organizar o Squad</b></td>
+      <td rowspan="2">Divisão de tarefas dentro do time</td>
+      <td>Falar sobre seus interesses</td>
+      <td align="center">Todos</td>
+      <td align="center">04/22</td>
+    </tr>
+    <tr>
+      <td>Listar suas skills</td>
+      <td align="center">Todos</td>
+      <td align="center">04/22</td>
+    </tr>
+    <tr>
+      <td rowspan="3">Planejamento preliminar</td>
+      <td>Fazer um brainstorming de ideias sobre o projeto</td>
+      <td align="center">Todos</td>
+      <td align="center">04/22</td>
+    </tr>
+    <tr>
+      <td>Listar e dividir as tarefas e responsabilidades</td>
+      <td align="center">Todos</td>
+      <td align="center">04/22</td>
+    </tr>
+    <tr>
+      <td>Decidir dia e horário da reunião semanal</td>
+      <td align="center">Todos</td>
+      <td align="center">04/22</td>
+    </tr>
+    <tr>
+      <td rowspan="6" align="center"><b>Camada de Dados</b></td>
+      <td rowspan="2">Modelagem de dados</td>
+      <td>Realizar a modelagem conceitual</td>
+      <td align="center">Ada<b>*</b></td>
+      <td align="center">19/05/2022</td>
+    </tr>
+    <tr>
+      <td>Realizar a modelagem lógica</td>
+      <td align="center">Ada<b>*</b></td>
+      <td align="center">19/05/2022</td>
+    </tr>
+    <tr>
+      <td>Modelagem de Caso de Uso</td>
+      <td>Realizar a modelagem de caso de uso</td>
+      <td align="center">Luiza<b>*</b></td>
+      <td align="center">19/05/2022</td>
+    </tr>
+    <tr>
+      <td>Revisão</td>
+      <td>Revisar as modelagens com a professora / monitores</td>
+      <td align="center">Todos</td>
+      <td align="center">18/05/2022</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Banco de dados</td>
+      <td>Decidir qual BD vamos utilizar</td>
+      <td align="center">Todos</td>
+      <td align="center">30/04/2022</td>
+    </tr>
+    <tr>
+      <td>Criar o banco de dados</td>
+      <td align="center">Anderson<b>*</b></td>
+      <td align="center">19/05/2022</td>
+    </tr>
+    <tr>
+      <td rowspan="2" align="center"><b>Entrega 01</b></td>
+      <td rowspan="2">Realizar entrega 01 - Módulo Inicial</td>
+      <td>Entregar Camada de dados</td>
+      <td align="center">Luiza</td>
+      <td align="center">21/05/2022</td>
+    </tr>
+    <tr>
+      <td>Entregar o projeto de implementação / divisão das atividades</td>
+      <td align="center">Luiza / Beatriz</td>
+      <td align="center">21/05/2022</td>
+    </tr>
+  </table>
+</details>
 
-obs* : essas atividades foram feitas em grupo, colocamos a pessoa responsável quem estava com a tela compartilhada na atividade
+<details>
+  <summary><b>Entrega 2 - Backend</b></summary>
+</details>
+
+<details>
+  <summary><b>Entrega 3 - Frontend</b></summary>
+</details>
+
+Obs.: Nomes marcados com * indicam que a atividade foi realizada em grupo e a pessoa estava compartilhando a tela.
 
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
