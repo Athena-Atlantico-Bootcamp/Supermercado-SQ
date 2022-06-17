@@ -73,7 +73,19 @@ O usuário poderá cadastrar produtos industrializados fornecendo quais ingredie
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
 ## :detective: Telas identificadas para o sistema
-
+<details>
+  <summary><b>Telas de Baixa</b></summary>
+  
+  * Preview:
+  ![Capturar3](https://user-images.githubusercontent.com/86008015/174412651-8aa52813-944c-4fc8-ac03-a20f9550f987.PNG)
+  
+  * Projeto Figma disponível [[neste link.]](https://www.figma.com/proto/ZuS1mbadHOKmXhdriiilsB/Athena?node-id=46%3A10526&scaling=scale-down-width&page-id=41%3A10471&starting-point-node-id=41%3A10472)
+  
+</details>
+<details>
+  <summary><b>Telas Finais</b></summary>
+  [Em desenvolvimento]
+</details>
 
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
