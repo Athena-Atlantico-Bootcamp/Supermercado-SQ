@@ -21,11 +21,21 @@ Repositório criado para armazenar os códigos do projeto Supermercado SQ, propo
 
 ## :speech_balloon: Sobre o Projeto
 
+O supermercado SQ necessita de um sistema de gerenciamento de alimentos e composições alimentares.
+
+Esse sistema poderá ser acessado pelos administradores do SQ, pelos fornecedores e pelos clientes.
+
+O usuário poderá cadastrar produtos industrializados fornecendo quais ingredientes tem em sua composição. Dessa forma, em outros momentos será fácil pesquisar e confirmar se um produto contém ou não determinado ingrediente utilizando essa aplicação. Podendo até ser escalado o seu uso para usuários globais, como uma espécie de comunidade.
 
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
 ## :memo: Elicitação de Requisitos
-
+* Possibilidade de cadastrar, visualizar, editar e deletar produtos (utilizando banco de dados)
+* O produto deve ter nome e conter seus ingredientes, imagem (opcional)
+* Possibilidade de pesquisar por alimentos e visualizar os ingredientes
+* Na página de visualização do alimento, ter a possibilidade de buscar por um determinado ingrediente (para confirmar se este ingrediente está presente ou não)
+* Possibilidade de filtrar alimentos que não tenham determinados ingredientes
+* Possibilidade de filtrar alimentos que tenham determinados ingredientes
 
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
