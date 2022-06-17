@@ -158,6 +158,88 @@ Repositório criado para armazenar os códigos do projeto Supermercado SQ, propo
 
 <details>
   <summary><b>Entrega 2 - Backend</b></summary>
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>Stories</th>
+      <th>Tasks</th>
+      <th>Responsáveis</th>
+      <th>Prazo</th>
+    </tr>
+    <tr>
+      <td rowspan="11" align="center"><b>Backend</b></td>
+      <td>Escolher a tecnologia backend</td>
+      <td>Discutir e decidir em grupo</td>
+      <td align="center">Todos</td>
+      <td align="center">22/05/2022</td>
+    </tr>
+    <tr>
+      <td>Models component</td>
+      <td>Implementar o models component</td>
+      <td align="center">Beatriz*</td>
+      <td align="center">05/06/2022</td>
+    </tr>
+    <tr>
+      <td>CRUD Usuários</td>
+      <td>Implementar o CRUD de usuários (rotas e controllers)</td>
+      <td align="center">Beatriz / Anderson</td>
+      <td align="center">05/06/2022</td>
+    </tr>
+    <tr>
+      <td>CRUD Produtos</td>
+      <td>Implementar o CRUD de produtos (rotas e controllers)</td>
+      <td align="center">Luiza</td>
+      <td align="center">07/06/2022</td>
+    </tr>
+    <tr>
+      <td>CRUD Comentários</td>
+      <td>Implementar o CRUD de comentários (rotas e controllers)</td>
+      <td align="center">Ada / Leonardo / Lucas / João</td>
+      <td align="center">12/06/2022</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Conectar backend com o banco de dados e testar conexão</td>
+      <td>Implementar a conexão string para base de dados</td>
+      <td align="center">Todos</td>
+      <td align="center">18/06/2022</td>
+    </tr>
+    <tr>
+      <td>Testar a conexão usando o Insomnia</td>
+      <td align="center">Todos</td>
+      <td align="center">18/06/2022</td>
+    </tr>
+    <tr>
+      <td>Login e autenticação</td>
+      <td>Implementar autenticação com JWT e Bcrypt</td>
+      <td align="center">Luiza*</td>
+      <td align="center">14/06/2022</td>
+    </tr>
+    <tr>
+      <td>Documentação da API</td>
+      <td>Documentação das rotas e schemas através do Swagger</td>
+      <td align="center">Beatriz</td>
+      <td align="center">18/06/2022</td>
+    </tr>
+    <tr>
+      <td>Deploy do Banco de Dados</td>
+      <td>Deploy através do Heroku</td>
+      <td align="center">Lucas*</td>
+      <td align="center">16/06/2022</td>
+    </tr>
+    <tr>
+      <td>Deploy da API</td>
+      <td>Deploy através do Heroku</td>
+      <td align="center">João*</td>
+      <td align="center">18/06/2022</td>
+    </tr>
+    <tr>
+      <td align="center"><b>Entrega 02</b></td>
+      <td>Realizar entrega 02 - Módulo Intermediário</td>
+      <td>Entregar API testada e funcional (requisições) através de um repositório no GitHub</td>
+      <td align="center"></td>
+      <td align="center">18/06/2022</td>
+    </tr>
+  </table>
 </details>
 
 <details>
