@@ -52,6 +52,8 @@ npm run dev
 
 O projeto ficará disponível na porta ``http://localhost:3000/``
 
+⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
+
 ## :speech_balloon: Sobre o Projeto
 
 O supermercado SQ necessita de um sistema de gerenciamento de alimentos e composições alimentares.
@@ -103,7 +105,7 @@ O usuário poderá cadastrar produtos industrializados fornecendo quais ingredie
 
 
 ## :world_map: Modelagem da Visão Geral
-
+![IMAGE](https://user-images.githubusercontent.com/86008015/174413523-2165e80c-f7a4-4d7b-a4ec-bdbf00caf54e.png)
 
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
