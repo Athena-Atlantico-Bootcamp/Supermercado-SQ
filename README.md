@@ -9,7 +9,6 @@ Repositório criado para armazenar os códigos do projeto Supermercado SQ, propo
 * [Sobre o Projeto](#speech_balloon-sobre-o-projeto)
 * [Elicitação dos Requisitos](#memo-elicitação-de-requisitos)
 * [Atores do Sistema](#busts_in_silhouette-atores-do-sistema)
-* [Regras de Negócio](#briefcase-regras-de-négocio)
 * [Modelagem da Visão Gerão](#world_map-modelagem-da-visão-geral)
 * [Telas identificadas para o sistema](#detective-telas-identificadas-para-o-sistema)
 * [Modelo de Dados - Conceitual](#bulb-modelo-de-dados---conceitual)
@@ -39,15 +38,34 @@ O usuário poderá cadastrar produtos industrializados fornecendo quais ingredie
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
 ## :busts_in_silhouette: Atores do Sistema
-
+<table>
+  <tr>
+    <th>Tipo de usuário</th>
+    <th>Permissões</th>
+  </tr>
+  <tr>
+    <td>Administradores</td>
+    <td>Visualizar, criar, editar e deletar produtos, comentários e usuários</td>
+  </tr>
+    <tr>
+    <td>Fornecedores</td>
+    <td>
+      Visualizar produtos e comentários; Criar produtos e comentários; Editar e deletar produtos e comentários inseridos por eles mesmos. 
+      Produtos criados por fornecedores recebem uma indicação de "Produto verificado"  
+    </td>
+  </tr>
+  <tr>
+    <td>Clientes cadastrados</td>
+    <td>Visualizar e criar produtos e comentários; Editar e deletar produtos e comentários inseridos por eles mesmos</td>
+  </tr>
+  <tr>
+    <td>Visitantes</td>
+    <td>Visualizar produtos e comentários</td>
+  </tr>
+</table>
 
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
-
-## :briefcase: Regras de Négocio
-
-
-⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
 ## :world_map: Modelagem da Visão Geral
 
