@@ -9,7 +9,6 @@ Repositório criado para armazenar os códigos do projeto Supermercado SQ, propo
 * [Sobre o Projeto](#speech_balloon-sobre-o-projeto)
 * [Elicitação dos Requisitos](#memo-elicitação-de-requisitos)
 * [Atores do Sistema](#busts_in_silhouette-atores-do-sistema)
-* [Requisitos Funcionais](#gear-requisitos-funcionais)
 * [Regras de Negócio](#briefcase-regras-de-négocio)
 * [Modelagem da Visão Gerão](#world_map-modelagem-da-visão-geral)
 * [Telas identificadas para o sistema](#detective-telas-identificadas-para-o-sistema)
@@ -44,10 +43,6 @@ O usuário poderá cadastrar produtos industrializados fornecendo quais ingredie
 
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
-## :gear: Requisitos Funcionais
-
-
-⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
 ## :briefcase: Regras de Négocio
 
