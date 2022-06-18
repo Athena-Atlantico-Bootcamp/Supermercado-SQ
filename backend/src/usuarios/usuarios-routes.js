@@ -92,12 +92,45 @@ const usuarioController = new UsuarioController()
  */
 // Adiciona um novo usuário ao banco de dados
 router.post('/', (req, res, next) => {
-    // Falta validação de dados de entrada - fazer no front??
+    // Falta validação de dados de entrada - fazer no front
     return usuarioController.createUser(req, res)
 })
 
+/**
+ * @swagger
+ * /usuarios/login:
+ *   post:
+ *     tags:
+ *     - usuarios
+ *     summary: Faz o login do usuário
+ *     description: ""
+ *     parameters:
+ *     - in: body
+ *       name: body
+ *       description: Faz o login do usuário e gera um token
+ *       required: true
+ *       schema:
+ *         type: object
+ *         required:
+ *         - email
+ *         - senha
+ *         properties:
+ *           email:
+ *             type: string
+ *             description: Email do usuário cadastrado no banco de dados
+ *           senha: 
+ *             type: string
+ *             description: Senha do usuário cadastrado no banco de dados
+ *         responses:
+ *           200:
+ *             description: OK
+ *           400:
+ *             description: Informações Inválidas
+ *           500:
+ *             description: Internal Server Error
+ */
+
 router.post('/login', (req, res, next) => {
-    // Falta validação de dados de entrada - fazer no front??
     return usuarioController.login(req, res)
 })
 
