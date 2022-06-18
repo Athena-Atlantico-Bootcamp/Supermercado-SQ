@@ -346,7 +346,7 @@ Equipe de desenvolvimento: Squad 3 - **Athena**
         <img src="https://avatars.githubusercontent.com/u/61315569?v=4" width=80 />
         <p>João Victor<br/>Almeida</p>
       </a>
-      <p>🌌</p>
+      <p>😎</p>
     </td>
     <td>
         <a href="https://github.com/leonardo-felipe">
@@ -360,7 +360,7 @@ Equipe de desenvolvimento: Squad 3 - **Athena**
           <img src="https://avatars.githubusercontent.com/u/73923109?v=4" width=80 />
           <p>Lucas<br/>Cesar</p>
         </a>
-        <p>🌌</p>
+        <p>😸</p>
       </td>
        <td>
         <a href="https://github.com/LuizaGA">
