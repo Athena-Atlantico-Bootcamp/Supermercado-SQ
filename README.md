@@ -1,12 +1,18 @@
 # Supermercado-SQ
-![status](https://img.shields.io/badge/status-under%20development-yellow) ![contributors](https://img.shields.io/github/contributors/Athena-Atlantico-Bootcamp/Supermercado-SQ)
+![status](https://img.shields.io/badge/status-under%20development-yellow)
+![contributors](https://img.shields.io/github/contributors/Athena-Atlantico-Bootcamp/Supermercado-SQ)
 ![size](https://img.shields.io/github/repo-size/Athena-Atlantico-Bootcamp/Supermercado-SQ) 
 ![lines](https://img.shields.io/tokei/lines/github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ)
 
-Repositório criado para armazenar os códigos do projeto Supermercado SQ, proposto no Atlântico Academy Bootcamp Fullstack oferecido pelo [Instituto Atlântico](https://www.linkedin.com/company/instituto-atlantico/)
+Repositório criado para armazenar os códigos do projeto Supermercado SQ, proposto no Atlântico Academy Bootcamp Fullstack oferecido pelo [Instituto Atlântico](https://www.linkedin.com/company/instituto-atlantico/).
+
+O projeto do backend está disponível no link: https://supermercado-athena.herokuapp.com/
+
+Para consultar as rotas disponíveis, consulte a documentação: https://supermercado-athena.herokuapp.com/docs/
 
 ## :open_book: Índice
 * [Sobre o Projeto](#speech_balloon-sobre-o-projeto)
+* [Instalação do backend](#hammer_and_wrench-instalação-do-backend)
 * [Elicitação dos Requisitos](#memo-elicitação-de-requisitos)
 * [Atores do Sistema](#busts_in_silhouette-atores-do-sistema)
 * [Modelagem da Visão Gerão](#world_map-modelagem-da-visão-geral)
@@ -16,6 +22,37 @@ Repositório criado para armazenar os códigos do projeto Supermercado SQ, propo
 * [Planejamento](#memo-planejamento)
 * [Equipe](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ/edit/main/README.md#man_technologist-equipe)
 
+## :hammer_and_wrench: Instalação do backend
+
+Clone este repositório usando o comando:
+
+```
+git clone https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ.git
+```
+
+Entrar na pasta backend utilizando o comando:
+
+```
+cd backend
+```
+
+Instale as dependências com o comando:
+
+```
+npm i
+```
+
+Crie um arquivo ``.env`` e preencha conforme o arquivo exemplo ``.env.exemplo``. Em DATABASE_URL, digite a string de conexão com o banco de dados. Em SECRET, escolha uma palavra para encriptar o JWT.
+
+Para rodar no seu localhost utilize no terminal:
+
+```
+npm run dev
+```
+
+O projeto ficará disponível na porta ``http://localhost:3000/``
+
+⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
 ## :speech_balloon: Sobre o Projeto
 
@@ -68,12 +105,24 @@ O usuário poderá cadastrar produtos industrializados fornecendo quais ingredie
 
 
 ## :world_map: Modelagem da Visão Geral
-
+![IMAGE](https://user-images.githubusercontent.com/86008015/174413523-2165e80c-f7a4-4d7b-a4ec-bdbf00caf54e.png)
 
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
 ## :detective: Telas identificadas para o sistema
-
+<details>
+  <summary><b>Telas de Baixa</b></summary>
+  
+  * Preview:
+  ![Capturar3](https://user-images.githubusercontent.com/86008015/174412651-8aa52813-944c-4fc8-ac03-a20f9550f987.PNG)
+  
+  * Projeto Figma disponível [[neste link.]](https://www.figma.com/proto/ZuS1mbadHOKmXhdriiilsB/Athena?node-id=46%3A10526&scaling=scale-down-width&page-id=41%3A10471&starting-point-node-id=41%3A10472)
+  
+</details>
+<details>
+  <summary><b>Telas Finais</b></summary>
+  [Em desenvolvimento]
+</details>
 
 ⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
 
@@ -240,7 +289,7 @@ O usuário poderá cadastrar produtos industrializados fornecendo quais ingredie
     <tr>
       <td>Documentação da API</td>
       <td>Documentação das rotas e schemas através do Swagger</td>
-      <td align="center">Beatriz</td>
+      <td align="center">Beatriz / Luiza</td>
       <td align="center">18/06/2022</td>
     </tr>
     <tr>
@@ -297,7 +346,7 @@ Equipe de desenvolvimento: Squad 3 - **Athena**
         <img src="https://avatars.githubusercontent.com/u/61315569?v=4" width=80 />
         <p>João Victor<br/>Almeida</p>
       </a>
-      <p>🌌</p>
+      <p>😎</p>
     </td>
     <td>
         <a href="https://github.com/leonardo-felipe">
@@ -311,7 +360,7 @@ Equipe de desenvolvimento: Squad 3 - **Athena**
           <img src="https://avatars.githubusercontent.com/u/73923109?v=4" width=80 />
           <p>Lucas<br/>Cesar</p>
         </a>
-        <p>🌌</p>
+        <p>😸</p>
       </td>
        <td>
         <a href="https://github.com/LuizaGA">
