@@ -273,12 +273,12 @@ O usuário poderá cadastrar produtos industrializados fornecendo quais ingredie
       <td rowspan="2">Conectar backend com o banco de dados e testar conexão</td>
       <td>Implementar a conexão string para base de dados</td>
       <td align="center">Todos</td>
-      <td align="center">18/06/2022</td>
+      <td align="center">17/06/2022</td>
     </tr>
     <tr>
       <td>Testar a conexão usando o Insomnia</td>
       <td align="center">Todos</td>
-      <td align="center">18/06/2022</td>
+      <td align="center">17/06/2022</td>
     </tr>
     <tr>
       <td>Login e autenticação</td>
@@ -290,7 +290,7 @@ O usuário poderá cadastrar produtos industrializados fornecendo quais ingredie
       <td>Documentação da API</td>
       <td>Documentação das rotas e schemas através do Swagger</td>
       <td align="center">Beatriz / Luiza</td>
-      <td align="center">18/06/2022</td>
+      <td align="center">17/06/2022</td>
     </tr>
     <tr>
       <td>Deploy do Banco de Dados</td>
@@ -302,14 +302,14 @@ O usuário poderá cadastrar produtos industrializados fornecendo quais ingredie
       <td>Deploy da API</td>
       <td>Deploy através do Heroku</td>
       <td align="center">João*</td>
-      <td align="center">18/06/2022</td>
+      <td align="center">17/06/2022</td>
     </tr>
     <tr>
       <td align="center"><b>Entrega 02</b></td>
       <td>Realizar entrega 02 - Módulo Intermediário</td>
       <td>Entregar API testada e funcional (requisições) através de um repositório no GitHub</td>
-      <td align="center"></td>
-      <td align="center">18/06/2022</td>
+      <td align="center">Luiza</td>
+      <td align="center">17/06/2022</td>
     </tr>
   </table>
 </details>
