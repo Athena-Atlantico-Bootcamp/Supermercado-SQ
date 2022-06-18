@@ -289,7 +289,7 @@ O usuário poderá cadastrar produtos industrializados fornecendo quais ingredie
     <tr>
       <td>Documentação da API</td>
       <td>Documentação das rotas e schemas através do Swagger</td>
-      <td align="center">Beatriz</td>
+      <td align="center">Beatriz / Luiza</td>
       <td align="center">18/06/2022</td>
     </tr>
     <tr>
