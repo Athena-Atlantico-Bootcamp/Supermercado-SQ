@@ -3,7 +3,7 @@
 import express from 'express'
 const router = express.Router()
 
-import UsuarioController from './usuarios-controller'
+import UsuarioController from '../controllers/usuarios-controller'
 import autentificacao from '../middleware/autentificacao'
 const usuarioController = new UsuarioController()
 
