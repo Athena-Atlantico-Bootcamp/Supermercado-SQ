@@ -4,7 +4,7 @@ import express from 'express'
 import autentificacao from '../middleware/autentificacao'
 const router = express.Router()
 
-import CommentController from './comentarios-controller'
+import CommentController from '../controllers/comentarios-controller'
 const commentController = new CommentController();
 
 /**
@@ -109,19 +109,19 @@ router.get('/', (req, res, next) => {
  *   get:
  *     tags:
  *     - comentarios
- *     summary: Mostra um comentario especificado pelo seu id
+ *     summary: Mostra um comentario especificado pelo id do produto
  *     description: ""
  *     parameters:
- *     - name: id_comentario
+ *     - name: id_produto
  *       in: path
  *       required: true
- *       description: O id do comentario a ser pesquisado
+ *       description: O id do produto a ser pesquisado
  *       type: integer
  *     responses:
  *       200:
  *         description: OK
  *       400:
- *         description: Informação invalída
+ *         description: Informação inválida
  *       500:
  *         description: Internal Server Error
  */
@@ -130,6 +130,35 @@ router.get('/:id', (req, res, next) => {
     const id_product = parseInt(req.params.id)
     return commentController.showCommentByProductId(id_product, res)
 })
+
+/**
+ * @swagger
+ * /comentarios/usuario/{id}:
+ *   get:
+ *     tags:
+ *     - comentarios
+ *     summary: Mostra um comentario especificado pelo id do usuário
+ *     description: ""
+ *     parameters:
+ *     - name: id_usuario
+ *       in: path
+ *       required: true
+ *       description: O id do usuário a ser pesquisado
+ *       type: integer
+ *     responses:
+ *       200:
+ *         description: OK
+ *       400:
+ *         description: Informação inválida
+ *       500:
+ *         description: Internal Server Error
+ */
+
+
+router.get('/usuario/:id', (req, res, next) => {
+    const id_usuario = parseInt(req.params.id)
+    return commentController.showCommentByUserId(id_usuario, res)
+})   
 
 /**
  * @swagger
@@ -153,7 +182,7 @@ router.get('/:id', (req, res, next) => {
  *       200:
  *         description: OK
  *       400:
- *         description: Informação invalída
+ *         description: Informação inválida
  *       404:
  *         description: Comentário não encontrado
  *       500:
