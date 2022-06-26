@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-
-
 export const NomeSupermercado = styled.p`
     font-family: 'Alex Brush', cursive;
     font-size: 2.5rem;
@@ -11,8 +9,6 @@ export const NomeSupermercado = styled.p`
         font-size: 2rem;
     }
 `
-
-
 
 export const Container = styled.nav` 
     width: 100vw;
@@ -32,13 +28,4 @@ export const Container = styled.nav`
         flex-direction: column;
     }
 `
-
-export const Navegation = styled.nav`
-    display: flex;
-   
-   
-
-    
-`;
-
 
