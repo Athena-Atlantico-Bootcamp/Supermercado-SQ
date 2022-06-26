@@ -1,5 +1,6 @@
 import api from '../service/api'
 import { useState, useEffect } from 'react'
+import Header from '../components/Header/Header'
 
 function SearchScreen() {
 
@@ -21,6 +22,7 @@ function SearchScreen() {
 
   return (
     <div>
+      <Header/>
       <p>Tela de Busca</p>
       { products ? products.map((p) => {
         return <div>{ p.nome }</div>

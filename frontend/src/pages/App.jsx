@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import Header from '../components/Header'
+import Header from '../components/Header/Header'
 import {GlobalStyle} from '../components/GlobalStyle'
 
 
@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div>
-      <GlobalStyle/>
+     {/*  <GlobalStyle/> */}
       <Header/>
       <p>Tela Inicial</p>
       <button onClick={paginaBuscar}>Ir para página buscar</button>
