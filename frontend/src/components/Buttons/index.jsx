@@ -1,16 +1,56 @@
 import React, {useState} from "react";
-import './ButtonsType.css'
-import {PencilSimpleLine, TrashSimple} from 'phosphor-react';
-
-
-
+import {
+Button, 
+Container, 
+GreenButton,
+YellowButton,
+RedButton,
+EditIcon,
+DeleteIcon
+} from './styles.js'
 
 
 function ButtonsType({tipo}) {
 
-    const [title, setTitle] = useState('')
-
     function type_icons(tipo){
+        if (tipo == 'Editar'){
+            return <EditIcon size={20}/>
+        }
+        if (tipo == 'Deletar') {
+            return <DeleteIcon size={20} />
+        } 
+        else {
+            return;
+        }
+    }
+
+    function type_button(tipo) {
+        let res = tipo.split(' ')
+        if (tipo == 'Editar' || tipo == 'Cadastrar' || tipo == 'Login') {
+            return <GreenButton>{type_icons(res[0])} {res[0]}</GreenButton>
+        }
+        if (tipo == 'Deletar') {
+            return <RedButton>{type_icons(res[0])} {res[0]}</RedButton>
+        }
+        if(tipo == 'Voltar' || tipo == 'Logout' || tipo == 'Comentar Produto' ) {
+            return <YellowButton>{type_icons(tipo)} {res[0]}</YellowButton>
+        }
+        
+        if (tipo == 'Editar Modal' || tipo == 'Comentar Produto Modal') {
+            return <GreenButton>{type_icons(tipo)} {res[0]}</GreenButton>
+        }
+    }
+
+    return(
+        <Container>
+            <Button>{type_button(tipo)}</Button>
+        </Container>
+    );
+}
+
+export default ButtonsType;
+
+/*function type_icons(tipo){
         if (tipo == 'Editar'){
             return <PencilSimpleLine className="edit-icon" size={20} />
         }
@@ -22,7 +62,7 @@ function ButtonsType({tipo}) {
         }
     }
     
-    function type_buttons(tipo) {
+    /*function type_buttons(tipo) {
         let name = ''
         
         if (tipo == 'Editar') {
@@ -53,8 +93,9 @@ function ButtonsType({tipo}) {
             name = 'comment-product-modal-button'
         }
         let res = tipo.split(' ') 
+        //className={name} onClick={() => actionButton(tipo)}
         return (
-            <button className={name} onClick={() => actionButton(tipo)}>{type_icons(tipo)} {res[0]}</button>
+            <Button>{type_icons(tipo)} {res[0]}</Button>
         );
     }
     
@@ -70,13 +111,4 @@ function ButtonsType({tipo}) {
         if(tipo == 'Voltar') {
             console.log(tipo)
         }
-    }
-
-    return(
-        <div className="buttons-type">
-            {type_buttons(tipo)}
-        </div>
-    );
-}
-
-export default ButtonsType;
+    }*/

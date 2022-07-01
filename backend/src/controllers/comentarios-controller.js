@@ -69,9 +69,24 @@ class CommentController {
     }
   }
 
-  async updateComment(id_comment, req, res) {
+  async checkIfUserExists(id_user) {
+    const user = await prisma.comentarios.findUnique({
+      where: {
+        usuarioId: id_user
+      }
+    })
+
+    if(!user) {
+      return false
+    } else {
+      return true;
+    }
+  }
+  
+  async updateComment(id_comment, id_user, req, res) {
     try{
       let flagComment = await this.checkIfCommentsExists(id_comment)
+      let flagUser = await this.checkIfUserExists(id_user)
       
       if(!flagComment) {
         return res.status(404).json('Comentário não encontrado.')

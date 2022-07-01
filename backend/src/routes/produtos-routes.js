@@ -1,10 +1,10 @@
 'use strict'
 
 import express from 'express'
-import autentificacao from '../middleware/autentificacao'
+import autentificacao from '../middleware/autentificacao.js'
 const router = express.Router()
 
-import ProdutoController from './produtos-controller'
+import ProdutoController from '../controllers/produtos-controller.js'
 const produtoController = new ProdutoController()
 
 /**
@@ -127,7 +127,7 @@ router.get('/', (req, res, next) => {
  *       200:
  *         description: OK
  *       400:
- *         description: Informação invalída
+ *         description: Informação inválida
  *       500:
  *         description: Internal Server Error
  */
@@ -155,7 +155,7 @@ router.get('/:id', (req, res, next) => {
  *       200:
  *         description: OK
  *       400:
- *         description: Informação invalída
+ *         description: Informação inválida
  *       500:
  *         description: Internal Server Error
  */
@@ -183,7 +183,7 @@ router.get('/usuario/:id', autentificacao, (req, res, next) => {
  *       200:
  *         description: OK
  *       400:
- *         description: Informação invalída
+ *         description: Informação inválida
  *       500:
  *         description: Internal Server Error
  */
@@ -211,7 +211,7 @@ router.get('/ingrediente/:ingrediente', (req, res, next) => {
  *       200:
  *         description: OK
  *       400:
- *         description: Informação invalída
+ *         description: Informação inválida
  *       500:
  *         description: Internal Server Error
  */
@@ -243,7 +243,7 @@ router.get('/semingrediente/:ingrediente', (req, res, next) => {
  *       200:
  *         description: OK
  *       400:
- *         description: Informação invalída
+ *         description: Informação inválida
  *       500:
  *         description: Internal Server Error
  */

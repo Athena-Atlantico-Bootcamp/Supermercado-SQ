@@ -18,6 +18,14 @@ class UsuarioController {
                     telefone: telefone,
                     restricoes: restricoes,
                     tipo_usuario: tipo_usuario
+                }, 
+                select: {
+                    nome: true,
+                    email: true,
+                    senha: false,
+                    telefone: true,
+                    restricoes: true,
+                    tipo_usuario: true
                 }
             })
             return res.status(200).json(usuario)
@@ -38,10 +46,11 @@ class UsuarioController {
                 return res.status(400).json('Email e/ou senha invalido')
             }
             return res.status(200).json({
-                userEmail,
                 token:jwt.sign({
-                    id: userEmail.id
-                },  process.env.SECRET, { expiresIn: '1h'})
+                    id: userEmail.id,
+                    
+                }, process.env.SECRET, { expiresIn: '1h'})
+                
             })
         }catch(e){
             return res.status(400).json('Erro')

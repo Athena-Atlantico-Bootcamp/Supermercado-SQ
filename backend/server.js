@@ -4,6 +4,7 @@ import routes from '../backend/src/routes'
 import swaggerJSDoc from 'swagger-jsdoc'
 import swaggerUi from 'swagger-ui-express'
 import dotenv from 'dotenv'
+import cors from 'cors'
 
 dotenv.config({ path: '.env' })
 
@@ -43,9 +44,9 @@ app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 
 
 app.use(express.json())
-
+app.use(cors())
 app.use('/', routes)
 
-app.listen(3000, () => {
-    console.log('Server running on port 3000')
+app.listen(3001, () => {
+    console.log('Server running on port 3001')
 })

@@ -3,8 +3,8 @@
 import express from 'express'
 const router = express.Router()
 
-import UsuarioController from './usuarios-controller'
-import autentificacao from '../middleware/autentificacao'
+import UsuarioController from '../controllers/usuarios-controller.js'
+import autentificacao from '../middleware/autentificacao.js'
 const usuarioController = new UsuarioController()
 
 /**
