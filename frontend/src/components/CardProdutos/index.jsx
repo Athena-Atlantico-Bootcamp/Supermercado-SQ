@@ -1,14 +1,17 @@
-import { Card, LinkProduct, CardElements, Image, Text } from './styles';
+import { Card, LinkProduct, CardElements, ImageDiv, Image, Text } from './styles';
 
 function CardProdutos(props) {
     console.log(props.data.imagem)
   return (
         <Card>
-            <LinkProduct to='/produto'></LinkProduct>
+            <LinkProduct to='/produto'>
             <CardElements>
-                <Image src={props.data.imagem} />
+                <ImageDiv>  
+                    <Image src={props.data.imagem} />
+                </ImageDiv>  
                 <Text>{props.data.nome}</Text>
             </CardElements>
+            </LinkProduct>
         </Card>
   )
 }
