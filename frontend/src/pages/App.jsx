@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import Login from './Login'
 
 function App() {
 
@@ -12,7 +13,7 @@ function App() {
       <p>Tela Inicial</p>
 
       <button onClick={paginaBuscar}>Ir para página buscar</button><br/><br/>
-      
+      <Login></Login>
     </div>
   )
 }
