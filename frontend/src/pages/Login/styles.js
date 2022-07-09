@@ -13,13 +13,13 @@ export const Container = styled.div`
     justify-content: center;
 
     @media only screen and (max-width: 1700px) {
-        width: 60%;
+        max-width: 100%;
     }
     @media only screen and (max-width: 1450px) {
-        font-size: 1.75rem;
+        max-width: 100%;
     }
     @media only screen and (max-width: 1150px) {
-        width: 100vw;
+        max-width: 100%;
     }
     @media only screen and (max-width: 800px) {
         flex-direction: column;
