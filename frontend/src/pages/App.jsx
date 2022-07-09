@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import Login from './Login'
+import Header from '../components/Header/Header'
 
 function App() {
 
@@ -10,9 +11,7 @@ function App() {
 
   return (
     <div>
-      <p>Tela Inicial</p>
-
-      <button onClick={paginaBuscar}>Ir para página buscar</button><br/><br/>
+      <Header></Header>
       <Login></Login>
     </div>
   )

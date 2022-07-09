@@ -11,6 +11,20 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media only screen and (max-width: 1700px) {
+        width: 60%;
+    }
+    @media only screen and (max-width: 1450px) {
+        font-size: 1.75rem;
+    }
+    @media only screen and (max-width: 1150px) {
+        width: 100vw;
+    }
+    @media only screen and (max-width: 800px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `
 
 export const Title = styled.label`
@@ -29,6 +43,10 @@ export const ContainerLogin = styled.div`
     height: 500px;
     padding: 50px;
     min-width: 300px;
+
+    @media only screen and (max-width: 800px){
+        height: 100px;
+    }
 `
 export const ContainerSignUp = styled.div`
     padding: 50px;
@@ -70,5 +88,11 @@ export const Input = styled.input`
 export const Line = styled.div`
     border-left: 3px solid #FBA94C;
     height: 400px;
+
+    @media only screen and (max-width: 800px) {
+        flex-direction: column;
+        align-items: center;
+        transform: rotate(90deg);
+    }
 `   
 
