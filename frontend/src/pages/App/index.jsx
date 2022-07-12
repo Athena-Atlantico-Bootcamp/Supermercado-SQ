@@ -3,7 +3,7 @@ import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer'
 import CardProdutos from '../../components/CardProdutos'
 import api from '../../service/api'
-import { Container, ContainerTitulo, Titulo } from './styles'
+import { Container, ContainerTitulo, Titulo, ContainerProdutos } from './styles'
 
 function App() {
   const [products, setProducts] = useState([])
@@ -27,13 +27,13 @@ function App() {
         <ContainerTitulo>
           <Titulo> Adicionados Recentemente</Titulo>
         </ContainerTitulo>
-        <div>
+        <ContainerProdutos>
           { products ? products.map((p) => {
             return (
               <CardProdutos data={p} key={p.id_produto}/>
               )
           }) : null}
-        </div>
+        </ContainerProdutos>
       </Container>
       <Footer />
     </div>

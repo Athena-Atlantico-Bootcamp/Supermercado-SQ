@@ -9,6 +9,10 @@ export const Container = styled.div`
         padding: 4rem;
     }
 
+    @media only screen and (max-width: 950px) {
+        padding: 2rem;
+    }
+
     @media only screen and (max-width: 768px) {
         padding: 1rem;
     }
@@ -26,5 +30,30 @@ export const Titulo = styled.p`
 
     @media only screen and (max-width: 1024px) {
         font-size: 1.5rem;
+    }
+
+    @media only screen and (max-width: 570px) {
+        text-align: center;
+    }
+`
+
+export const ContainerProdutos = styled.div` 
+    box-sizing: border-box;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 0.5rem;
+
+    @media only screen and (max-width: 1300px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media only screen and (max-width: 950px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media only screen and (max-width: 570px) {
+        grid-template-columns: 1fr;
     }
 `

@@ -1,7 +1,6 @@
 import { Card, LinkProduct, CardElements, ImageDiv, Image, Text } from './styles';
 
 function CardProdutos(props) {
-    console.log(props.data.imagem)
   return (
         <Card>
             <LinkProduct to='/produto'>
