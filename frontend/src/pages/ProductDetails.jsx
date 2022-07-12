@@ -1,4 +1,5 @@
 import Header from "../components/Header/Header"
+import CardProductDetails from "../components/CardProductDetails"
 
 function ProductDetails() {
 
@@ -6,9 +7,11 @@ function ProductDetails() {
   return (
     <div>
       <Header/>
-      <p>Tela de Produtos</p>
+      <CardProductDetails/>
+      
     </div>
   )
 }
 
 export default ProductDetails
+
