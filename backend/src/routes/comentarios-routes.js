@@ -155,7 +155,7 @@ router.get('/:id', (req, res, next) => {
  */
 
 
-router.get('/usuario/:id', (req, res, next) => {
+router.get('/usuario/:id', autentificacao,(req, res, next) => {
     const id_usuario = parseInt(req.params.id)
     return commentController.showCommentByUserId(id_usuario, res)
 })   

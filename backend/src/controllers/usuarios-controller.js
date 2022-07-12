@@ -18,6 +18,14 @@ class UsuarioController {
                     telefone: telefone,
                     restricoes: restricoes,
                     tipo_usuario: tipo_usuario
+                }, 
+                select: {
+                    nome: true,
+                    email: true,
+                    senha: false,
+                    telefone: true,
+                    restricoes: true,
+                    tipo_usuario: true
                 }
             })
             return res.status(200).json(usuario)
@@ -37,13 +45,18 @@ class UsuarioController {
             if(!compararSenha){
                 return res.status(400).json('Email e/ou senha invalido')
             }
+
+            const {id_usuario, nome, telefone, restricoes, tipo_usuario} = userEmail
+
             return res.status(200).json({
-                userEmail,
+                id_usuario, email, nome, telefone, restricoes, tipo_usuario,
                 token:jwt.sign({
                     id: userEmail.id
                 },  process.env.SECRET, { expiresIn: '1h'})
+                
             })
         }catch(e){
+            console.error(e)
             return res.status(400).json('Erro')
         }
     }
