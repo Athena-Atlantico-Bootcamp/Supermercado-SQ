@@ -20,6 +20,11 @@ export const Container = styled.div`
         padding: 1.5rem ;
         flex-direction: column;
     }
+
+    @media only screen and (max-width: 450px) {
+        padding: 1rem ;
+        flex-direction: column;
+    }
 `
 
 export const ContainerTexto = styled.div`
