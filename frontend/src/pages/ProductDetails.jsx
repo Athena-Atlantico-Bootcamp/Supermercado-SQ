@@ -1,11 +1,17 @@
+import Header from "../components/Header/Header"
+import CardProductDetails from "../components/CardProductDetails"
+
 function ProductDetails() {
 
 
   return (
     <div>
-      <p>Tela de Produtos</p>
+      <Header/>
+      <CardProductDetails/>
+      
     </div>
   )
 }
 
 export default ProductDetails
+
