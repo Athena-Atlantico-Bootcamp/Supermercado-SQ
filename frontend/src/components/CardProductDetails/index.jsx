@@ -1,28 +1,60 @@
 import styled from "styled-components";
-
-
-
+import { useState, useEffect } from 'react'
+import api from '../../service/api'
 
 
 
 function CardProductDetails(props) {
+
+
+const [product, setProduct] = useState([])
+
+function getProduct() {
+  try {
+    api.get("/produtos/1")
+    .then( (res) => {
+      console.log(res.data)
+      setProduct(res.data)
+    })
+  } catch (err) {
+    console.log(err.message)
+  }
+}
+
+useEffect(() => {getProduct()}, [])
+
+
+function getUsers() {
+    try {
+      api.get("/produtos/1")
+      .then( (res) => {
+        console.log(res.data)
+        setProduct(res.data)
+      })
+    } catch (err) {
+      console.log(err.message)
+    }
+  }
+  
+  useEffect(() => {getProduct()}, [])
+
+
+
     return(
       <section>
             <Container>
                 <ContainerCard>
                       <Text>Voltar</Text> 
-                      <Text>Produto: Flocão de milho</Text>
+                      <Text>Produto: {product.nome}</Text>
                     <ContainerColumn>
                         <ContainerImg>
                             <Img src="https://supernossoio.vtexassets.com/arquivos/ids/204625-1600-auto?v=637808076712200000&width=1600&height=auto&aspect=true"/>
                         </ContainerImg>
                         <ContainerDescription>
                             <ContainerTitulo>
-                                <Titulo>Flocão de Milho</Titulo>
+                                <Titulo>{product.nome}</Titulo>
                                 <TextDescription>
-                                O primeiro registro escrito sobre cuscuz foi feito no século XIII, no livro de cozinha magrebina-andaluza Kitab al-tabikh fi al-Maghrib wa’l-Andalus (Livro de Culinária do Magrebe e Andaluzia), de autor desconhecido.
-Por ser de fácil preparo e render bem, o cuscuz era uma comida destinada aos pobres, escravos e também aos bandeirantes, que consumiam junto com carne seca batida no pilão.
-Em berbere, a palavra “k’seksu”, vem do som do vapor na cuscuzeira durante o cozimento. A palavra couscous é a versão francesa de “k’seksu”, criada pelos colonizadores na Argélia.
+                                    {product.description}
                                 </TextDescription>
                             </ContainerTitulo>
                         </ContainerDescription>
