@@ -8,13 +8,11 @@ RedButton,
 EditIcon,
 DeleteIcon
 } from './styles.js'
-import api from "../../service/api.js";
-import { useNavigate } from "react-router-dom";
 
-function ButtonsType({tipo, data}) {
 
-    const navigate = useNavigate()
+function ButtonsType({tipo}) {
 
+    
     function type_icons(tipo){
         if (tipo == 'Editar'){
             return <EditIcon size={20}/>
@@ -44,42 +42,8 @@ function ButtonsType({tipo, data}) {
         }
     }
 
-    async function actionButton(tipo, data) {
-        
-        if (tipo == 'Login') {
-            await api.post('/usuarios/login/', {
-                email: data[0],
-                senha: data[1]
-            }).then(function (res){
-                alert(res)
-                navigate('/')
-            }).catch(function (error) {
-                navigate('/login')
-                alert(error);
-            });
-        }
-
-        if (tipo == 'Cadastrar') {
-            alert(data)
-            api.post('/usuarios/', {
-                email: data[0],
-                nome: data[1],
-                senha: data[2],
-                telefone: data[3],
-                restricoes: data[4],
-                tipo_usuario: 'usuarios'
-            }).then(function (res){
-                console.log(res)
-                navigate('/login')
-            }).catch(function (error) {
-                console.error(error);
-            });
-        }
-    }
-
     return(
-        
-        <Button>{type_button(tipo)}</Button>        
+        <Button type='submit'>{type_button(tipo)}</Button>        
         
     );
 }
