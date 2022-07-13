@@ -42,9 +42,6 @@ export const RedButton = styled(Button)`
     display: flex;
     justify-content: center;
     align-items: center;
-<<<<<<< HEAD
-`
-=======
 `
 /*export const EditButton = styled(Button)`
     background-color: #015F43;    
@@ -101,7 +98,4 @@ export const LogoutButton = styled(Button)`
     align-items: center;
 `;
 
-
-
 */
->>>>>>> 676cc1f0bea7434bb5b3b312e1f17745b67bef6c
