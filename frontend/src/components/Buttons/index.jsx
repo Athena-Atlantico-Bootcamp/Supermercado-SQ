@@ -43,7 +43,9 @@ function ButtonsType({tipo}) {
     }
 
     return(
-        <Button type='submit'>{type_button(tipo)}</Button>        
+        <Container>
+            <Button type='submit'>{type_button(tipo)}</Button>        
+        </Container>
         
     );
 }
