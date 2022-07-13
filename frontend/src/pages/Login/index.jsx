@@ -61,6 +61,9 @@ function Login() {
                 email: emailLogin,
                 senha: passwordLogin
             }).then(function (res){
+                localStorage.setItem('@usuario', JSON.stringify(res.data.userEmail.id_usuario))
+                localStorage.setItem('@tipo_usuario', JSON.stringify(res.data.userEmail.tipo_usuario))
+                localStorage.setItem('@token', JSON.stringify(res.data.token))
                 if (res.data.tipo_usuario == 'usuario') {
                     navigate('/perfil')
                 }else {
