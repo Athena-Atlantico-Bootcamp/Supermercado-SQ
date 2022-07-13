@@ -57,7 +57,6 @@ export const ContainerProdutos = styled.div`
         grid-template-columns: 1fr;
     }
 `
-
 /*export const EditButton = styled(Button)`
     background-color: #015F43;    
     display: flex;

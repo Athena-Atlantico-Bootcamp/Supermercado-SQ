@@ -11,8 +11,6 @@ DeleteIcon
 
 
 function ButtonsType({tipo}) {
-
-    
     function type_icons(tipo){
         if (tipo == 'Editar'){
             return <EditIcon size={20}/>
@@ -44,10 +42,10 @@ function ButtonsType({tipo}) {
 
     return(
         <Container>
+
             <Button type='submit'>{type_button(tipo)}</Button>        
         </Container>
-        
-    );
+            );
 }
 
 export default ButtonsType;
