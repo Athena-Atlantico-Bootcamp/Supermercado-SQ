@@ -22,6 +22,10 @@ export const Container = styled.div`
         max-width: 100%;
     }
     @media only screen and (max-width: 800px) {
+<<<<<<< HEAD
+        max-width: 100%;
+=======
+>>>>>>> 676cc1f0bea7434bb5b3b312e1f17745b67bef6c
         flex-direction: column;
         align-items: center;
     }
@@ -44,7 +48,11 @@ export const ContainerLogin = styled.div`
     padding: 50px;
     min-width: 300px;
 
+<<<<<<< HEAD
+    @media only screen and (max-width: 800px) {
+=======
     @media only screen and (max-width: 800px){
+>>>>>>> 676cc1f0bea7434bb5b3b312e1f17745b67bef6c
         height: 100px;
     }
 `
@@ -63,8 +71,12 @@ export const AlignArea = styled.div`
 
 export const Label = styled.label`
     font-size: 15px;
+<<<<<<< HEAD
+    color: #000000;
+=======
     color: #000
     000;
+>>>>>>> 676cc1f0bea7434bb5b3b312e1f17745b67bef6c
 `
 export const PasswordArea = styled.div`
     background-color: #fff;
@@ -74,7 +86,10 @@ export const PasswordArea = styled.div`
     flex-direction: row;
     border-radius: 5px;
     margin-bottom: 20px;
+<<<<<<< HEAD
+=======
 
+>>>>>>> 676cc1f0bea7434bb5b3b312e1f17745b67bef6c
 `
 
 export const Input = styled.input`
@@ -95,4 +110,7 @@ export const Line = styled.div`
         transform: rotate(90deg);
     }
 `   
+<<<<<<< HEAD
+=======
 
+>>>>>>> 676cc1f0bea7434bb5b3b312e1f17745b67bef6c
