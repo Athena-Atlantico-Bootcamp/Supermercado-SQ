@@ -58,5 +58,6 @@ export const List = styled.ul`
         font-size: 1.5rem;
         flex-direction: column;
         align-items: center;
+        padding: 0;
     }
 `
