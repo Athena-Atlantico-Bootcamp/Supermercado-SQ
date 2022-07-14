@@ -112,7 +112,7 @@ color: #015F43;
 
 export const TextDescription = styled.p` 
 font-size: 1.5rem;
-color: #black;
+color: black;
 
 @media only screen and (max-width: 1024px) {
     font-size: 1.5rem;
@@ -195,7 +195,7 @@ export const Data = styled.p`
 
 export const Comentario = styled.p`
 font-size: 1.5rem;
-color: #black;
+color: black;
 
 @media only screen and (max-width: 1024px) {
     font-size: 1.5rem;
