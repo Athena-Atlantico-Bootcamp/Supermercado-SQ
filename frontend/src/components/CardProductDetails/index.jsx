@@ -25,6 +25,37 @@ import {
 
 function CardProductDetails(props) {
 
+  const [coments, setComents] = useState([])
+  
+  function getProduct(id_produto) {
+    try {
+      api.get(`/produtos/${id_produto}`)
+      .then( (res) => {
+        console.log(res.data)
+        setProduct(res.data)
+      })
+    } catch (err) {
+      console.log(err.message)
+    }
+  }
+  
+  useEffect(() => {getProduct(id_produto)}, [])
+  
+  
+  function getComents(id_produto) {
+      try {
+        api.get(`/comentarios/${id_produto}`)
+        .then( (res) => {
+          console.log(res.data)
+          setComents(res.data)
+        })
+      } catch (err) {
+        console.log(err.message)
+      }
+    }
+    
+    useEffect(() => {getComents(id_produto)}, [])
+
 
 const [product, setProduct] = useState([])
 
