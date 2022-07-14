@@ -56,8 +56,6 @@ export const ContainerColumn = styled.div`
     @media only screen and (max-width: 1024px) {
     flex-direction: column;
     }
-
-    border: solid 1px blue;
 `
 
 
@@ -77,7 +75,6 @@ export const Img = styled.img`
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     object-fit: contain;
-    
 `;
 
 export const ContainerDescription = styled.div`
@@ -90,15 +87,11 @@ export const ContainerDescription = styled.div`
     @media only screen and (max-width: 1024px) {
         width: 100%;
     }
-
-
-    border: solid 1px red;
 `
 
 
 export const ContainerTitulo = styled.div`
     margin-left: 6%;
-    
 `
 
 
@@ -106,7 +99,6 @@ export const Titulo = styled.p`
     font-size: 2rem;
     font-weight: bold;
     color: black;
-
     @media only screen and (max-width: 1024px) {
         font-size: 1.5rem;
     }
@@ -122,14 +114,13 @@ export const ContainerComents = styled.div`
 `
 
 export const Usuario = styled.h2`
-font-size: 2rem;
-font-weight: bold;
-color: #015F43;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #015F43;
 
-@media only screen and (max-width: 1024px) {
-    font-size: 1.5rem;
-}
-
+    @media only screen and (max-width: 1024px) {
+        font-size: 1.5rem;
+    }
 `
 
 export const Data = styled.p`
@@ -143,12 +134,9 @@ color: black;
 @media only screen and (max-width: 1024px) {
     font-size: 1.5rem;
 }
-    
 `
 
 export const CardComents = styled.div`
 width: 100%;
 box-sizing: border-box;
-
-    
 `
