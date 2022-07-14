@@ -27,6 +27,12 @@ export const Container = styled.nav`
     @media only screen and (max-width: 1150px) {
         flex-direction: column;
     }
+    @media only screen and (max-width: 500px) {
+        padding-left: 1rem;
+    }
+    @media only screen and (max-width: 400px) {
+        padding-left: 0.5rem;
+    }
 `
 
 export const List = styled.ul`
@@ -46,8 +52,10 @@ export const List = styled.ul`
     }
     @media only screen and (max-width: 1150px) {
         width: 100vw;
+        margin-top: 0;
     }
     @media only screen and (max-width: 800px) {
+        font-size: 1.5rem;
         flex-direction: column;
         align-items: center;
     }
