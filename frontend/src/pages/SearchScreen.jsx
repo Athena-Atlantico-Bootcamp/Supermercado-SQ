@@ -4,7 +4,7 @@ import ButtonsType from '../components/Buttons'
 import Modal from 'react-modal'
 
 function SearchScreen() {
-  const [products, setProducts] = useState([])
+  /*const [products, setProducts] = useState([])
 
   function getProducts() {
     try {
@@ -19,7 +19,7 @@ function SearchScreen() {
   }
 
   useEffect(() => {getProducts()}, [])
-  /*
+  
     { products ? products.map((p) => {
         return <div>{ p.nome }</div>
       }) : <div>oi</div>}
@@ -27,7 +27,7 @@ function SearchScreen() {
   return (
     <div className='teste'>
       <p>Tela de Busca</p>
-      <ButtonsType tipo='Editar' tipoModal='fornecedor'/>
+      
       
     </div>
   )

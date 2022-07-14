@@ -81,6 +81,30 @@ export const AlignAreaModal = styled.div`
     justify-content: center;
 `
 
+export const TextAreaModal = styled.textarea`
+    background-color: #FFF;
+    width: 28rem;
+    height: 80px;
+    border: none;
+    border-radius: 5px;
+`
+
+export const InputImage = styled.input`
+    background-color: #FFF;
+    width: 28rem;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+`
+
+export const TextAreaModalComment = styled.textarea`
+    background-color: #FFF;
+    width: 28rem;
+    height: 150px;
+    border: none;
+    border-radius: 5px;
+`
+
 /*export const EditButton = styled(Button)`
     background-color: #015F43;    
     display: flex;
