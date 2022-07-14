@@ -18,8 +18,27 @@ InputImage,
 TextAreaModalComment
 } from './styles.js'
 import Modal from 'react-modal'
-import {useNavigate} from 'react-router-dom'
+
 Modal.setAppElement('#root')
+
+const styleModal = {
+    content: {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%,-50%)',
+        border: '1px solid #ccc',
+        background: '#f5f5f5',
+        overflow: 'auto',
+        WebkitOverflowScrolling: 'touch',
+        borderRadius: '16px',
+        outline: 'none',
+        padding: '20px'
+    }
+}
 
 
 function ButtonsType({tipo, isModal = false, tipoModal}) {
@@ -217,24 +236,7 @@ function ButtonsType({tipo, isModal = false, tipoModal}) {
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
-                style={{
-                    content: {
-                        position: 'absolute',
-                        top: '50%',
-                        left: '50%',
-                        right: 'auto',
-                        bottom: 'auto',
-                        marginRight: '-50%',
-                        transform: 'translate(-50%,-50%)',
-                        border: '1px solid #ccc',
-                        background: '#f5f5f5',
-                        overflow: 'auto',
-                        WebkitOverflowScrolling: 'touch',
-                        borderRadius: '16px',
-                        outline: 'none',
-                        padding: '20px'
-                    }
-                }}
+                style={styleModal}
             >
                 {modalForm()}
             </Modal>      

@@ -13,17 +13,11 @@ export const ContainerName = styled.div`
 
 export const Name = styled.p` 
     font-size: 1.5rem;
-    color: #015F43;
+    color: black;
 
     @media only screen and (max-width: 1024px) {
         font-size: 1rem;
     }
-`
-
-export const Icone = styled.img` 
-    height: 1.875rem;
-    width: 1.875rem;
-    margin-left: 1rem;
 `
 
 export const Text = styled.p` 
