@@ -1,5 +1,23 @@
 import { useState, useEffect } from 'react'
 import api from '../../service/api'
+import ButtonsType from '../Buttons'
+import {
+  Container,
+  Text,
+  TextDescription,
+  ContainerCard,
+  ContainerColumn,
+  ContainerImg,
+  Img,
+  ContainerDescription,
+  ContainerTitulo,
+  Titulo,
+  ContainerComents,
+  Usuario,
+  Data,
+  Comentario,
+  CardComents
+  } from './styles.js'
 
 
 
@@ -61,7 +79,7 @@ function getUsers() {
                 </ContainerCard>
                 <ContainerComents>
                     <Text>Comentários</Text>
-                    <Text>Comentar</Text>
+                    <ButtonsType tipo='Comentar Produto'/>
                 </ContainerComents>
                 <CardComents>
                     <Usuario>Fulaninho</Usuario>

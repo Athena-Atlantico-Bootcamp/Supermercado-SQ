@@ -54,7 +54,7 @@ background-color: grey;
 
 `
 
-const Img = styled.img`
+export const Img = styled.img`
     width: 100%;
     height: 100%;
     
