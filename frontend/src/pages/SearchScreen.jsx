@@ -1,8 +1,9 @@
 import api from '../service/api'
 import { useState, useEffect } from 'react'
+import ButtonsType from '../components/Buttons'
+import Modal from 'react-modal'
 
 function SearchScreen() {
-
   const [products, setProducts] = useState([])
 
   function getProducts() {
@@ -18,13 +19,16 @@ function SearchScreen() {
   }
 
   useEffect(() => {getProducts()}, [])
-
-  return (
-    <div>
-      <p>Tela de Busca</p>
-      { products ? products.map((p) => {
+  /*
+    { products ? products.map((p) => {
         return <div>{ p.nome }</div>
       }) : <div>oi</div>}
+  */
+  return (
+    <div className='teste'>
+      <p>Tela de Busca</p>
+      <ButtonsType tipo='Editar' tipoModal='fornecedor'/>
+      
     </div>
   )
 }
