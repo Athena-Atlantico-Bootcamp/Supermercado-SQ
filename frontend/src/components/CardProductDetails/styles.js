@@ -53,6 +53,9 @@ export const ContainerProdutoTitle = styled.div`
 export const ContainerColumn = styled.div` 
     display: flex;
     border-radius: 25px;
+    @media only screen and (max-width: 1024px) {
+    flex-direction: column;
+    }
 
     border: solid 1px blue;
 `
@@ -60,16 +63,17 @@ export const ContainerColumn = styled.div`
 
 export const ContainerImg = styled.div` 
     width: 400px;
-    height: 400px;
+    height: auto;
     background-color: transparent;
     border-top-right-radius: 25px;
-
-
+    display: block;
+    margin: auto;
+    width: 50%;
 `
 
 export const Img = styled.img`
-    width: 100%;
-    height: 100%;
+    max-width:100%;
+    max-height:100%;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     object-fit: contain;
@@ -83,6 +87,10 @@ export const ContainerDescription = styled.div`
     overflow-y: scroll;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+    @media only screen and (max-width: 1024px) {
+        width: 100%;
+    }
+
 
     border: solid 1px red;
 `
