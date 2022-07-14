@@ -6,6 +6,8 @@ import {
   Text,
   TextDescription,
   ContainerCard,
+  ContainerTitle,
+  ContainerProdutoTitle,
   ContainerColumn,
   ContainerImg,
   Img,
@@ -61,8 +63,12 @@ function getUsers() {
       <section>
             <Container>
                 <ContainerCard>
-                      <Text>Voltar</Text> 
+                    <ContainerTitle>
+                      <ContainerProdutoTitle>
+                        <Text>Voltar</Text>
+                      </ContainerProdutoTitle>
                       <Text>Produto: {product.nome}</Text>
+                    </ContainerTitle>
                     <ContainerColumn>
                         <ContainerImg>
                             <Img src="https://supernossoio.vtexassets.com/arquivos/ids/204625-1600-auto?v=637808076712200000&width=1600&height=auto&aspect=true"/>
