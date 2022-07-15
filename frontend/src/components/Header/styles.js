@@ -18,7 +18,7 @@ export const NomeSupermercado = styled.p`
 export const Container = styled.nav` 
     width: 100vw;
     box-sizing: border-box;
-    padding-left: 3rem;
+    //padding-left: 3rem;
     background-color: #015F43;
     display: flex;
     flex-direction: row;
@@ -28,15 +28,15 @@ export const Container = styled.nav`
         flex-direction: column;
     }
     @media only screen and (max-width: 500px) {
-        padding-left: 1rem;
+        //padding-left: 1rem;
     }
     @media only screen and (max-width: 400px) {
-        padding-left: 0.5rem;
+        //padding-left: 0.5rem;
     }
 `
 
 export const List = styled.ul`
-    padding-right: 5rem;
+    //padding-right: 5rem;
     list-style-type: none;
     font-size: 2rem;
     height: 100%;

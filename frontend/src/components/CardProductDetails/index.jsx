@@ -23,13 +23,13 @@ import {
 
 
 
-function CardProductDetails(props) {
+function CardProductDetails({idProduto}) {
 
   const [coments, setComents] = useState([])
   
-  function getProduct(id_produto) {
+  function getProduct() {
     try {
-      api.get(`/produtos/${id_produto}`)
+      api.get(`/produtos/${idProduto}`)
       .then( (res) => {
         console.log(res.data)
         setProduct(res.data)
@@ -39,12 +39,12 @@ function CardProductDetails(props) {
     }
   }
   
-  useEffect(() => {getProduct(id_produto)}, [])
+  useEffect(() => {getProduct(); getComents()}, []);
   
   
-  function getComents(id_produto) {
+  function getComents() {
       try {
-        api.get(`/comentarios/${id_produto}`)
+        api.get(`/comentarios/${idProduto}`)
         .then( (res) => {
           console.log(res.data)
           setComents(res.data)
@@ -53,42 +53,10 @@ function CardProductDetails(props) {
         console.log(err.message)
       }
     }
-    
-    useEffect(() => {getComents(id_produto)}, [])
 
 
 const [product, setProduct] = useState([])
-
-function getProduct() {
-  try {
-    api.get("/produtos/1")
-    .then( (res) => {
-      console.log(res.data)
-      setProduct(res.data)
-    })
-  } catch (err) {
-    console.log(err.message)
-  }
-}
-
-useEffect(() => {getProduct()}, [])
-
-
-function getUsers() {
-    try {
-      api.get("/produtos/1")
-      .then( (res) => {
-        console.log(res.data)
-        setProduct(res.data)
-      })
-    } catch (err) {
-      console.log(err.message)
-    }
-  }
   
-  useEffect(() => {getProduct()}, [])
-
-
 
     return(
       <section>
@@ -108,7 +76,7 @@ function getUsers() {
                             <ContainerTitulo>
                                 <Titulo>{product.nome}</Titulo>
                                 <TextDescription>
-                                    {product.description}
+                                    {product.descricao}
                                 </TextDescription>
                             </ContainerTitulo>
                         </ContainerDescription>
