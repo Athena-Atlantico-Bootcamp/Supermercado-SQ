@@ -17,7 +17,7 @@ function Path(){
             <Route path="/login" element={<Login />}/>
             <Route path="/perfil-adm" element={<LoginAdm />}/>
             <Route path="/perfil" element={<LoginUser />}/>
-            <Route path="/produto" element={<ProductDetails />}/>
+            <Route path="/produto/:id" element={<ProductDetails />}/>
             <Route path="/buscar" element={<SearchScreen />}/>
         </Routes>
     )
