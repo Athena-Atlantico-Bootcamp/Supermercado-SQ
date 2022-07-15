@@ -3,9 +3,28 @@ import Footer from "../../components/Footer";
 import ButtonsType from "../../components/Buttons";
 
 import { ButtonCadastrar, ButtonDiv, Container, ContainerProduto, ContainerUser, Title, Line, Info, PlusCircleIcon } from "./styles";
+import { useState, useEffect } from "react";
+import api from '../../service/api';
 
 
 function LoginUser() {
+
+  const axios = require('axios');
+  
+  const [products, setProducts] = useState([]);
+
+  function getProductsByUserId() {
+    try {
+      api.get(`/produtos/usuario/${idProduto}`)
+      .then( (res) => {
+        setProducts(res.data)
+      })
+    } catch (err) {
+      console.log(err.message)
+    }
+  }
+
+  useEffect(() => {getProductsByUserId()}, [])
 
   return (
     <div>
@@ -33,6 +52,7 @@ function LoginUser() {
               <ButtonCadastrar><PlusCircleIcon /> Cadastrar novo produto</ButtonCadastrar>
 
               <div>
+                <Info>Nome: {product.nome}</Info>
                 <Info>Nome: </Info>
                 <Info>Descrição: </Info>
                 <Info>Ingredientes: </Info>
