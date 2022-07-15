@@ -134,7 +134,6 @@ function ButtonsType({tipo, isModal = false, tipoModal}) {
                             <LabelModal>Senha: </LabelModal><br/>
                             <InputModal type='password' onChange={(e) => setPassword(e.target.value)} value={password}/><br/><br/>
                             <AlignAreaModal>
-                                <Button type='submit' onClick={closeModal}> {type_button('Voltar')} </Button>
                                 <Button type='submit' onClick={()=>setTypeAction('Editar Modal')}> {type_button('Editar Modal')} </Button>
                                 <Button type='submit' onClick={()=>setTypeAction('Deletar')}> {type_button('Deletar')} </Button>
                             </AlignAreaModal>
@@ -162,9 +161,7 @@ function ButtonsType({tipo, isModal = false, tipoModal}) {
                             <LabelModal>Senha: </LabelModal><br/>
                             <InputModal type='password' onChange={(e) => setPassword(e.target.value)} value={password}/><br/><br/>
                             <AlignAreaModal>
-                                <Button type='submit' onClick={closeModal}> {type_button('Voltar')} </Button>
                                 <Button type='submit' onClick={()=>setTypeAction('Cadastrar')}> {type_button('Cadastrar')} </Button>
-                                
                             </AlignAreaModal>
                         </FormModal>
                         
@@ -188,7 +185,6 @@ function ButtonsType({tipo, isModal = false, tipoModal}) {
                             <LabelModal>Imagem: </LabelModal><br/>
                             <InputImage onChange={(e) => setImage(e.target.value)} value={image}/> <br/><br/>
                             <AlignAreaModal>
-                                <Button type='submit' onClick={closeModal}> {type_button('Voltar')} </Button>
                                 <Button type='submit' onClick={()=>setTypeAction('Cadastrar')}> {type_button('Editar Modal')} </Button>
                                 {tipoModal != 'Cadastrar Produtos Modal' ?
                                     <Button type='submit' onClick={()=>setTypeAction('Deletar')}> {type_button('Deletar')} </Button> : null}
@@ -209,9 +205,7 @@ function ButtonsType({tipo, isModal = false, tipoModal}) {
                             <LabelModal>Comentário: </LabelModal><br/>
                             <TextAreaModalComment onChange={(e) => setComment(e.target.value)} value={comment}/> <br/><br/>
                             <AlignAreaModal>
-                                <Button type='submit' onClick={closeModal}> {type_button('Voltar')} </Button>
                                 <Button type='submit' onClick={()=>setTypeAction('Cadastrar')}> {type_button('Comentar Produto Modal')} </Button>
-                            
                             </AlignAreaModal>
                         </FormModal>
                         

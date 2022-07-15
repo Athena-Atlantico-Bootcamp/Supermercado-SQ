@@ -27,8 +27,7 @@ function SearchScreen() {
   return (
     <div className='teste'>
       <p>Tela de Busca</p>
-      
-      
+
     </div>
   )
 }
