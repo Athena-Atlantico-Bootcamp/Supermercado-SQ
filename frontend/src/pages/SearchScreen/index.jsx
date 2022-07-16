@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useRef } from 'react'
 import api from '../../service/api'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer'
@@ -29,7 +29,7 @@ function SearchScreen() {
         setProcuraExiste(true);
       })
     } catch (err) {
-      console.log(err.message)
+      console.error(err)
     }
   }  
 

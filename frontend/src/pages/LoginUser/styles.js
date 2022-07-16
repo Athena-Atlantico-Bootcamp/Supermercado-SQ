@@ -75,3 +75,6 @@ export const ButtonDiv = styled.div `
   justify-content: space-around;
   padding-bottom: 10px;
 `
+export const InfoName = styled.span `
+  font-weight: bold;
+`

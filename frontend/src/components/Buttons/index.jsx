@@ -15,9 +15,13 @@ AlignAreaModal,
 ExitCircle,
 TextAreaModal,
 InputImage,
-TextAreaModalComment
+TextAreaModalComment,
+PlusCircleIcon,
+ButtonCadastrar
 } from './styles.js'
 import Modal from 'react-modal'
+import { useNavigate } from 'react-router-dom' 
+import api from "../../service/api.js";
 
 Modal.setAppElement('#root')
 
@@ -41,8 +45,7 @@ const styleModal = {
 }
 
 
-function ButtonsType({tipo, isModal = false, tipoModal}) {
-
+function ButtonsType({tipo, isModal = false, tipoModal, data}) {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const formRef = useRef(null)
     const [name, setName] = useState('')
@@ -56,15 +59,32 @@ function ButtonsType({tipo, isModal = false, tipoModal}) {
     const [image, setImage] = useState('')
     const [ingredient, setIngredient] = useState('')
     const [comment, setComment] = useState('')
-
+    const navigate = useNavigate()
+    const tokenUser = JSON.parse(localStorage.getItem('@token'));
     function openModal() {
         setIsOpen(true);
+        if (data) {
+            setName(data.nome)
+            setEmail(data.email)
+            setConstraint(data.restricoes)
+            setPhone(data.telefone)
+            setNameProd(data.nome)
+            setIngredient(data.ingredientes)
+            setDescription(data.descricao)
+            setImage(data.imagem)
+        }
     }
 
     function closeModal() {
         setIsOpen(false);
     }
 
+    function logout() {
+        localStorage.removeItem('@token');
+        localStorage.removeItem('@usuario');
+        localStorage.removeItem('@tipo_usuario');
+        navigate('/')
+    }
 
     function type_icons(tipo){
         if (tipo == 'Editar'){
@@ -95,18 +115,121 @@ function ButtonsType({tipo, isModal = false, tipoModal}) {
         }
     }
 
-    function Acao(e) {
-        e.preventDefault()
+    function editUser() {
         try {
+            api.patch(`/usuarios/${data.id_usuario}`, {
+                email: email,
+                nome: name,
+                telefone: parseInt(phone),
+                restricoes: constraint                
+            }, {headers: {
+                "Authorization": `Bearer ${tokenUser}`}}).then((res) => {
+                alert('Dados do usuário atualizados')
+                closeModal()
+                window.location.reload()
+            })
+            
+        } catch (error) {
+            console.error(error)
+        }
+    }
+    function deletar(){
+        console.log('teste ', data.id_usuario)
+        let rotaDeletar = '';
+        let mensagem = '';
+        let isUser=false;
+        if (window.confirm("Deseja realmente excluir?")) {
+            if(data.id_produto){
+                rotaDeletar = `/produtos/${data.id_produto}`;
+                mensagem = 'Produto deletado'
+            }else if (data.id_comentario){
+                rotaDeletar = `/comentarios/${data.id_comentario}`;
+                mensagem = 'Comentário deletado'
+            } else if (data.id_usuario){
+                rotaDeletar = `/usuarios/${data.id_usuario}`;
+                mensagem = 'Usuário deletado'
+                isUser = true
+            }
+            try{
+                console.log('eeeeeeentrou ', rotaDeletar)
+                api.delete(`${rotaDeletar}`, {
+                    headers: {
+                        "Authorization": `Bearer ${tokenUser}`}
+                }).then((res)=>{
+                    alert(mensagem)
+                    if (isUser){
+                        logout()
+                    } else {
+                        window.location.reload()
+                    }
+                })
+            } catch (err){
+                console.error(err)
+            }
+        }
+    }
+
+    function editProd() {
+        try {
+            api.patch(`/produtos/${data.id_produto}`, {
+                nome: nameProd,
+                descricao: description,
+                imagem: image,
+                ingredientes: ingredient
+            }, {headers: {
+                "Authorization": `Bearer ${tokenUser}`}}).then((res) => {
+                alert('Dados atualizados')
+                closeModal()
+                window.location.reload()
+            })
+            
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    function signUpProduct() {
+        try {
+            api.post('/produtos', {
+                nome: nameProd,
+                descricao: description,
+                imagem: image,
+                ingredientes: ingredient,
+                usuarioId: JSON.parse(localStorage.getItem('@usuario'))
+            }, {headers: {"Authorization": `Bearer ${tokenUser}`}})
+            .then((res) => {
+                closeModal()
+                window.location.reload()
+            })
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    function Acao(e) {
+        try {
+            e.preventDefault()
             if (tipoModal == 'Fornecedor') {
-                console.log(name, phone, email, constraint, password, typeAction)
+                if (typeAction == 'Editar Modal') {
+                    editUser()
+                } else if (typeAction == 'Deletar'){
+                    deletar()
+                }
             }
             if (tipoModal == 'Cadastrar Fornecedor') {
 
             } 
 
             if (tipoModal == 'Editar Produtos Modal') {
+                if (typeAction == 'Editar') {
+                    editProd()
+                }
+            }
 
+            if (tipoModal == 'Cadastrar Produtos Modal') {
+                if (typeAction == 'Cadastrar') {
+                    signUpProduct()
+                }
             }
 
         } catch (error) {
@@ -115,7 +238,7 @@ function ButtonsType({tipo, isModal = false, tipoModal}) {
     }
 
     function modalForm() {
-        //console.log(tipoModal)
+
 
         if (tipoModal == 'Fornecedor') {
             return (
@@ -124,23 +247,18 @@ function ButtonsType({tipo, isModal = false, tipoModal}) {
                     <ContainerModal>
                         <FormModal onSubmit={Acao} ref = {formRef}>
                             <LabelModal>Nome: </LabelModal><br/>
-                            <InputModal type='text' onChange={(e) => setName(e.target.value)} value={name}/><br/><br/>
+                            <InputModal type='text' onChange={(e) => setName(e.target.value)} value={name} /><br/><br/>
                             <LabelModal>Telefone: </LabelModal><br/>
                             <InputModal type='text' onChange={(e) => setPhone(e.target.value)} value={phone}/><br/><br/>
                             <LabelModal>Restrições: </LabelModal><br/>
                             <InputModal type='text' onChange={(e) => setConstraint(e.target.value)} value={constraint}/><br/><br/>
                             <LabelModal>Email: </LabelModal><br/>
                             <InputModal type='email' onChange={(e) => setEmail(e.target.value)} value={email}/><br/><br/>
-                            <LabelModal>Senha: </LabelModal><br/>
-                            <InputModal type='password' onChange={(e) => setPassword(e.target.value)} value={password}/><br/><br/>
                             <AlignAreaModal>
                                 <Button type='submit' onClick={()=>setTypeAction('Editar Modal')}> {type_button('Editar Modal')} </Button>
                                 <Button type='submit' onClick={()=>setTypeAction('Deletar')}> {type_button('Deletar')} </Button>
                             </AlignAreaModal>
                         </FormModal>
-                        {/*<ButtonsType tipo='Voltar' isModal={true} />
-                        <ButtonsType tipo='Deletar' isModal={true} />
-                        <ButtonsType tipo='Editar Modal' isModal={true} />*/}
                     </ContainerModal>
                 </>
             );
@@ -185,7 +303,11 @@ function ButtonsType({tipo, isModal = false, tipoModal}) {
                             <LabelModal>Imagem: </LabelModal><br/>
                             <InputImage onChange={(e) => setImage(e.target.value)} value={image}/> <br/><br/>
                             <AlignAreaModal>
-                                <Button type='submit' onClick={()=>setTypeAction('Cadastrar')}> {type_button('Editar Modal')} </Button>
+                                {tipoModal == 'Cadastrar Produtos Modal' ? 
+                                <Button type='submit' onClick={()=>setTypeAction('Cadastrar')}> {type_button('Cadastrar')} </Button> : 
+                                <Button type='submit' onClick={()=>setTypeAction('Editar')}> {type_button('Editar Modal')} </Button>
+                                }
+                                
                                 {tipoModal != 'Cadastrar Produtos Modal' ?
                                     <Button type='submit' onClick={()=>setTypeAction('Deletar')}> {type_button('Deletar')} </Button> : null}
                             </AlignAreaModal>
@@ -216,9 +338,20 @@ function ButtonsType({tipo, isModal = false, tipoModal}) {
     }
 
     function typeButtonModal(tipo) {
-        if (tipo == 'Deletar' || tipo == 'Cadastrar' || tipo == 'Login' || isModal == true) {
-            return <Button type='submit' > {type_button(tipo)} </Button>
+        if (tipo == 'Deletar' || tipo == 'Cadastrar' || tipo == 'Login' || tipo == 'Logout' || isModal == true) {
+            if (tipo == 'Deletar'){
+                return <Button type='submit' onClick={deletar}> {type_button(tipo)} </Button> 
+            }
+            else if (tipo == 'Logout') {
+             return <Button type='submit' onClick={logout}> {type_button(tipo)} </Button>    
+            } 
+            else {
+                return <Button type='submit' > {type_button(tipo)} </Button>
+            }
         } else {
+            if (tipo == 'Cadastrar Novo Produto') {
+                return <ButtonCadastrar type='submit' onClick={openModal}><PlusCircleIcon /> Cadastrar novo produto</ButtonCadastrar>
+            }
             return <Button type='submit' onClick={openModal} > {type_button(tipo)} </Button>
         }
     }
@@ -239,66 +372,3 @@ function ButtonsType({tipo, isModal = false, tipoModal}) {
 }
 
 export default ButtonsType;
-
-/*function type_icons(tipo){
-        if (tipo == 'Editar'){
-            return <PencilSimpleLine className="edit-icon" size={20} />
-        }
-        if (tipo == 'Deletar') {
-            return <TrashSimple className="delete-icon" size={20} />
-        } 
-        else {
-            return;
-        }
-    }
-    
-    /*function type_buttons(tipo) {
-        let name = ''
-        
-        if (tipo == 'Editar') {
-            name = 'edit-button'
-        }
-        if (tipo == 'Deletar') {
-            name = 'delete-button'
-        }
-        if(tipo == 'Voltar') {
-            name = 'back-button'
-        }
-        if (tipo == 'Cadastrar') {
-            name = 'register-button'
-        }
-        if (tipo == 'Comentar Produto'){
-            name = 'comment-product-button'
-        }
-        if (tipo == 'Logout'){
-            name = 'logout-button'
-        }
-        if (tipo == 'Login'){
-            name = 'login-button'
-        }
-        if (tipo == 'Editar Modal'){
-            name = 'edit-modal-button'
-        }
-        if (tipo == 'Comentar Produto Modal') {
-            name = 'comment-product-modal-button'
-        }
-        let res = tipo.split(' ') 
-        //className={name} onClick={() => actionButton(tipo)}
-        return (
-            <Button>{type_icons(tipo)} {res[0]}</Button>
-        );
-    }
-    
-    function actionButton(tipo){
-        
-        if(tipo == 'Editar') {
-            console.log(tipo)
-            
-        }
-        if(tipo == 'Deletar') {
-            console.log(tipo)
-        }
-        if(tipo == 'Voltar') {
-            console.log(tipo)
-        }
-    }*/

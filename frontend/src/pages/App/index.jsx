@@ -16,7 +16,7 @@ function App() {
         setProducts(res.data)
       })
     } catch (err) {
-      console.log(err.message)
+      console.error(err)
     }
   }
   useEffect(() => {getProducts()}, [])

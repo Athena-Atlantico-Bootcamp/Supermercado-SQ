@@ -4,6 +4,9 @@ import Header from "../../components/Header/Header";
 import { useState, useRef } from "react";
 import api from "../../service/api";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function Login() {
 
     const navigate = useNavigate()
@@ -16,10 +19,12 @@ function Login() {
 
     const [emailLogin, setEmailLogin] = useState('')
     const [passwordLogin, setPasswordLogin] = useState('')
+    const [showPasswordLogin, setShowPasswordLogin] = useState(false)
     
     const formRef = useRef(null)
 
     function Cadastrar(e){
+        CheckDadosCadastrar()
         e.preventDefault()
         let check_user = email.split('@')
         let type_user = ''
@@ -29,7 +34,6 @@ function Login() {
         }else {
             type_user = 'fornecedor'
         }
-        console.log(type_user)
         try{
             api.post('/usuarios/', {
                 email: email,
@@ -39,7 +43,6 @@ function Login() {
                 restricoes: constraint,
                 tipo_usuario: type_user,
             }).then(function (res){
-                //console.log(res.data)
                 setName('')
                 setEmail('')
                 setPassword('')
@@ -53,10 +56,9 @@ function Login() {
     }
 
     function Logar(e) {
+        CheckDadosLogin()
         e.preventDefault()
         try{
-            console.log(emailLogin)
-            console.log(passwordLogin)
             api.post('/usuarios/login/', {
                 email: emailLogin,
                 senha: passwordLogin
@@ -64,7 +66,7 @@ function Login() {
                 localStorage.setItem('@usuario', JSON.stringify(res.data.userEmail.id_usuario))
                 localStorage.setItem('@tipo_usuario', JSON.stringify(res.data.userEmail.tipo_usuario))
                 localStorage.setItem('@token', JSON.stringify(res.data.token))
-                if (res.data.tipo_usuario == 'usuario') {
+                if (JSON.parse(localStorage.getItem('@tipo_usuario')) == 'usuario') {
                     navigate('/perfil')
                 }else {
                     navigate('/perfil-adm')
@@ -74,6 +76,31 @@ function Login() {
             console.error(error)
         }
     }
+
+    const notify = () => {
+        toast.warn('Por favor preencher todos os campos obrigatórios', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
+    };
+
+    function CheckDadosCadastrar(){
+        if (name == '' || phone =='' || constraint =='' || email == '' || password == ''){
+            notify();
+        }
+    }
+
+    function CheckDadosLogin(){
+        if (emailLogin == '' || passwordLogin == ''){
+            notify();
+            return
+        }
+    }
    
     return (
         <>
@@ -81,17 +108,18 @@ function Login() {
             <Header/>
 
             <Container>
+                <ToastContainer />
                 <ContainerLogin>
                     <AlignArea>
                     <Title>Login</Title><br/><br/><br/>
                     </AlignArea>
                     <Form onSubmit={Logar} ref={formRef}>
                         <Label>Email: </Label><br/>
-                        <Input type='text' onChange={(e) => setEmailLogin(e.target.value)} value={emailLogin}/><br/><br/>
+                        <Input type='email' onChange={(e) => setEmailLogin(e.target.value)} value={emailLogin}/><br/><br/>
                         <Label>Senha: </Label><br/>
                         <PasswordArea>
-                        <Input type='password' onChange={(e) => setPasswordLogin(e.target.value)} value={passwordLogin}/><br/><br/>
-                        <IconEye size={20} />
+                        <Input type={showPasswordLogin ? 'text' : 'password'} onChange={(e) => setPasswordLogin(e.target.value)} value={passwordLogin}/><br/><br/>
+                        <IconEye size={20} onClick={() => setShowPasswordLogin(!showPasswordLogin)}/>
                         </PasswordArea>
                         <AlignArea>
                         <ButtonsType tipo='Login'/>
@@ -113,7 +141,7 @@ function Login() {
                         <Label>Restrições: </Label><br/>
                         <Input type='text' onChange={(e) => setConstraint(e.target.value)} value={constraint}/><br/><br/>
                         <Label>Email: </Label><br/>
-                        <Input type='text' onChange={(e) => setEmail(e.target.value)} value={email}/><br/><br/>
+                        <Input type='email' onChange={(e) => setEmail(e.target.value)} value={email}/><br/><br/>
                         <Label>Senha: </Label><br/>
                         <Input type='password' onChange={(e) => setPassword(e.target.value)} value={password}/><br/><br/>
                         <AlignArea>

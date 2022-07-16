@@ -1,6 +1,5 @@
 import styled, {css} from "styled-components";
-import {PencilSimpleLine, TrashSimple, XCircle} from 'phosphor-react';
-
+import {PencilSimpleLine, TrashSimple, XCircle, PlusCircle } from 'phosphor-react';
 export const Container = styled.div`
     
 `
@@ -103,6 +102,25 @@ export const TextAreaModalComment = styled.textarea`
     height: 150px;
     border: none;
     border-radius: 5px;
+`
+
+export const ButtonCadastrar = styled.button `
+  align-items: center;
+  background-color: #015F43;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  font-size: 18px;
+  padding: 10px;
+  margin: auto;
+`
+
+export const PlusCircleIcon = styled(PlusCircle) `
+    margin: 5px;
+    font-size: 25px;
+    color: #ffffff;
 `
 
 /*export const EditButton = styled(Button)`
