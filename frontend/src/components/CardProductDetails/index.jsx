@@ -146,11 +146,6 @@ import {
 
                 </ContainerComents>
                 <CardComents>
-                    <Usuario>Fulaninho</Usuario>
-                    <Data>22/22/2022</Data>
-                    <Comentario>Cuscuz com leite faz muito bem pra barriga "Confia"</Comentario>
-                </CardComents>
-                <CardComents>
                 {coments.map((coments)=>{
                         let dataFormatada = new Intl.DateTimeFormat('pt-BR').format(new Date(coments.createdAt));
                         return(
