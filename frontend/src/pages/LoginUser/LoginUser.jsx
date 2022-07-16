@@ -9,22 +9,20 @@ import api from '../../service/api';
 
 function LoginUser() {
 
-  const axios = require('axios');
-  
-  const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
 
-  function getProductsByUserId() {
-    try {
-      api.get(`/produtos/usuario/${idProduto}`)
-      .then( (res) => {
-        setProducts(res.data)
-      })
-    } catch (err) {
-      console.log(err.message)
-    }
-  }
+  // function getProductsByUserId(props) {
+  //   try {
+  //     api.get(`/produtos/usuario/${idProduto}`)
+  //     .then( (res) => {
+  //       setProducts(res.data)
+  //     })
+  //   } catch (err) {
+  //     console.log(err.message)
+  //   }
+  // }
 
-  useEffect(() => {getProductsByUserId()}, [])
+  // useEffect(() => {getProductsByUserId()}, [])
 
   return (
     <div>
@@ -52,7 +50,7 @@ function LoginUser() {
               <ButtonCadastrar><PlusCircleIcon /> Cadastrar novo produto</ButtonCadastrar>
 
               <div>
-                <Info>Nome: {product.nome}</Info>
+                <Info>Nome: </Info>
                 <Info>Nome: </Info>
                 <Info>Descrição: </Info>
                 <Info>Ingredientes: </Info>
