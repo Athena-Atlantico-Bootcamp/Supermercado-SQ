@@ -178,7 +178,7 @@ function ButtonsType({tipo, isModal = false, tipoModal, data}) {
                 ingredientes: ingredient
             }, {headers: {
                 "Authorization": `Bearer ${tokenUser}`}}).then((res) => {
-                alert('Dados do usuário atualizados')
+                alert('Dados atualizados')
                 closeModal()
                 window.location.reload()
             })
@@ -259,9 +259,6 @@ function ButtonsType({tipo, isModal = false, tipoModal, data}) {
                                 <Button type='submit' onClick={()=>setTypeAction('Deletar')}> {type_button('Deletar')} </Button>
                             </AlignAreaModal>
                         </FormModal>
-                        {/*<ButtonsType tipo='Voltar' isModal={true} />
-                        <ButtonsType tipo='Deletar' isModal={true} />
-                        <ButtonsType tipo='Editar Modal' isModal={true} />*/}
                     </ContainerModal>
                 </>
             );
