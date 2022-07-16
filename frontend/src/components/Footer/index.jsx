@@ -44,7 +44,6 @@ function Footer() {
           <Texto>Paulo Anderson</Texto>
         </Link>
       </div>
-      {/* <button onClick={paginaBuscar}>Ir para página buscar</button> */}
     </Container>
   )
 }

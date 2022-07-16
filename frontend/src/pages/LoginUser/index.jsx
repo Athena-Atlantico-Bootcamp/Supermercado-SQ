@@ -15,8 +15,6 @@ function LoginUser() {
   const [product, setProduct] = useState([]);
   const [user, setUser] = useState([]);
   
-  console.log(tokenUser);
-
   async function getProductByUserId() {
 
     try {
@@ -24,11 +22,10 @@ function LoginUser() {
         "Authorization": `Bearer ${tokenUser}`
       }})
         .then( (res) => {
-          console.log(res.data)
           setProduct(res.data)
         })
       } catch (err) {
-        console.log(err.message);
+        console.error(err);
       }
     }
 
@@ -38,17 +35,14 @@ function LoginUser() {
           "Authorization": `Bearer ${tokenUser}`
         }})
           .then( (res) => {
-            //console.log(res.data)
             setUser(res.data)
           })
         } catch (err) {
-          console.log(err.message);
+          console.error(err);
         }
       }
     
-    useEffect(() => {getProductByUserId(), getUserById()}, []);
-
-    
+    useEffect(() => {getProductByUserId(), getUserById()}, []);    
 
   return (
     <div>
@@ -83,7 +77,7 @@ function LoginUser() {
                 <Info><InfoName>Ingredientes:</InfoName> {p.ingredientes}</Info>
                 <ButtonDiv>
                   <ButtonsType tipo='Editar' tipoModal='Editar Produtos Modal' data={p}/>
-                  <ButtonsType tipo='Deletar'/>
+                  <ButtonsType tipo='Deletar' data={p}/>
                 </ButtonDiv>    
               </div>
               )

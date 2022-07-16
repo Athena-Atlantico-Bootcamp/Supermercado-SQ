@@ -34,7 +34,6 @@ function Login() {
         }else {
             type_user = 'fornecedor'
         }
-        console.log(type_user)
         try{
             api.post('/usuarios/', {
                 email: email,
@@ -44,7 +43,6 @@ function Login() {
                 restricoes: constraint,
                 tipo_usuario: type_user,
             }).then(function (res){
-                //console.log(res.data)
                 setName('')
                 setEmail('')
                 setPassword('')
@@ -92,7 +90,6 @@ function Login() {
     };
 
     function CheckDadosCadastrar(){
-        console.log(typeof(phone))
         if (name == '' || phone =='' || constraint =='' || email == '' || password == ''){
             notify();
         }
