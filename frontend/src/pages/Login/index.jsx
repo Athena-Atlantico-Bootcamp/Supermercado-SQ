@@ -4,6 +4,8 @@ import Header from "../../components/Header/Header";
 import { useState, useRef } from "react";
 import api from "../../service/api";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
 
@@ -21,6 +23,7 @@ function Login() {
     const formRef = useRef(null)
 
     function Cadastrar(e){
+        CheckDadosCadastrar()
         e.preventDefault()
         let check_user = email.split('@')
         let type_user = ''
@@ -54,6 +57,7 @@ function Login() {
     }
 
     function Logar(e) {
+        CheckDadosLogin()
         e.preventDefault()
         try{
             api.post('/usuarios/login/', {
@@ -73,6 +77,60 @@ function Login() {
             console.error(error)
         }
     }
+
+    const notify = () => {
+        toast.warn('Por favor preencher todos os campos obrigatórios', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
+    };
+
+    const notifyPhone = () => {
+        toast.warn('Por favor preencher o campo telefone somente com números', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
+    };
+
+    const notifyError = () => {
+        toast.warn('Por favor preencher todos os compos corretamente', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
+    };
+
+    function CheckDadosCadastrar(){
+        if (name == '' || phone =='' || constraint =='' || email == '' || password == ''){
+            notify();
+        } else if (typeof(phone)!='number'){
+            notifyPhone();
+        } else if (!email.includes('@')){
+            notifyError();
+        }
+    }
+
+    function CheckDadosLogin(){
+        if (emailLogin == '' || passwordLogin == ''){
+            notify();
+        } else if (!emailLogin.includes('@')){
+            notifyError();
+        }
+    }
    
     return (
         <>
@@ -80,6 +138,7 @@ function Login() {
             <Header/>
 
             <Container>
+                <ToastContainer />
                 <ContainerLogin>
                     <AlignArea>
                     <Title>Login</Title><br/><br/><br/>
