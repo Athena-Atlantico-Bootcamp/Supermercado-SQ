@@ -18,6 +18,7 @@ InputImage,
 TextAreaModalComment
 } from './styles.js'
 import Modal from 'react-modal'
+import { useNavigate } from 'react-router-dom' 
 
 Modal.setAppElement('#root')
 
@@ -56,6 +57,7 @@ function ButtonsType({tipo, isModal = false, tipoModal}) {
     const [image, setImage] = useState('')
     const [ingredient, setIngredient] = useState('')
     const [comment, setComment] = useState('')
+    const navigate = useNavigate()
 
     function openModal() {
         setIsOpen(true);
@@ -65,6 +67,12 @@ function ButtonsType({tipo, isModal = false, tipoModal}) {
         setIsOpen(false);
     }
 
+    function logout() {
+        localStorage.removeItem('@token');
+        localStorage.removeItem('@usuario');
+        localStorage.removeItem('@tipo_usuario');
+        navigate('/')
+    }
 
     function type_icons(tipo){
         if (tipo == 'Editar'){
@@ -216,8 +224,12 @@ function ButtonsType({tipo, isModal = false, tipoModal}) {
     }
 
     function typeButtonModal(tipo) {
-        if (tipo == 'Deletar' || tipo == 'Cadastrar' || tipo == 'Login' || isModal == true) {
-            return <Button type='submit' > {type_button(tipo)} </Button>
+        if (tipo == 'Deletar' || tipo == 'Cadastrar' || tipo == 'Login' || tipo == 'Logout' || isModal == true) {
+            if (tipo == 'Logout') {
+             return <Button type='submit' onClick={logout}> {type_button(tipo)} </Button>    
+            } else {
+                return <Button type='submit' > {type_button(tipo)} </Button>
+            }
         } else {
             return <Button type='submit' onClick={openModal} > {type_button(tipo)} </Button>
         }

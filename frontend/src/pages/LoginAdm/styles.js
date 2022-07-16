@@ -8,7 +8,7 @@ export const Container = styled.div `
   @media only screen and (max-width: 800px) {
     flex-direction: column;
     align-items: center;
-    height: 1200px;
+    height: 1400px;
 }
 `
 
@@ -29,6 +29,7 @@ export const ContainerProduto = styled.div `
   
   @media only screen and (max-width: 800px){
     width: 80%;
+    margin-bottom: 5rem;
 }
 `
 
@@ -45,7 +46,7 @@ export const Line = styled.div`
     @media only screen and (max-width: 800px) {
       align-items: center;
       transform: rotate(90deg);
-      margin: 0;
+      margin:
   }
 ` 
 
@@ -76,4 +77,8 @@ export const ButtonDiv = styled.div `
   display: flex;
   justify-content: space-around;
   padding-bottom: 10px;
+`
+
+export const InfoName = styled.span `
+  font-weight: bold;
 `

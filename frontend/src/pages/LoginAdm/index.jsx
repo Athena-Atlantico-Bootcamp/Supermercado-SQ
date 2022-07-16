@@ -2,71 +2,49 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer";
 import ButtonsType from "../../components/Buttons";
 
-import { ButtonCadastrar, ButtonDiv, Container, ContainerProduto, ContainerFornecedor, Title, Line, Info, PlusCircleIcon } from "./styles";
+import { ButtonCadastrar, ButtonDiv, Container, ContainerProduto, ContainerFornecedor, Title, Line, Info, PlusCircleIcon, InfoName } from "./styles";
 
 import api from "../../service/api";
-import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-
-
-// const [product, setProduct] = useState([])
-// const [fornecedor, setFornecedor] = useState([])
-
-// function getProduct() {
-//   try {
-//     api.get("/produtos/1")
-//     .then( (res) => {
-//       console.log(res.data)
-//       setProduct(res.data)
-//     })
-//   } catch (err) {
-//     console.log(err.message)
-//   }
-// }
-
-//  useEffect(() => {getProduct()}, [])
-
-
-// function getUsersFornecedor() {
-//     try {
-//       api.get("/usuarios/1")
-//       .then( (res) => {
-//         console.log(res.data)
-//         setProduct(res.data)
-//       })
-//     } catch (err) {
-//       console.log(err.message)
-//     }
-//   }
-
-//   useEffect(() => {getProduct()}, [])
-
 
 
 function LoginAdm() {
 
-    return (
+  const tokenUser = JSON.parse(localStorage.getItem('@token'));
+  const userId = JSON.parse(localStorage.getItem('@usuario'));
+  const [product, setProduct] = useState([]);
+
+  console.log(tokenUser);
+
+  async function getProductByUserId() {
+
+    try {
+      await api.get(`/produtos/usuario/${userId}`, {headers: {
+        "Authorization": `Bearer ${tokenUser}`
+      }})
+        .then( (res) => {
+          console.log(res.data)
+          setProduct(res.data)
+        })
+      } catch (err) {
+        console.log(err.message);
+      }
+    }
+
+    useEffect(() => {getProductByUserId()}, []);
+  
+  return (
       <div>
         <Header />
           <Container>
             <ContainerFornecedor>
               <Title>Fornecedores</Title>
               <ButtonCadastrar><PlusCircleIcon />Cadastrar novo fornecedor</ButtonCadastrar>
-        
-              <div>
-                <Info>Nome: </Info>
-                <Info>Telefone: </Info>
-                <Info>Email: </Info>
-                <ButtonDiv>
-                  <ButtonsType tipo='Editar'/>
-                  <ButtonsType tipo='Deletar'/>
-                </ButtonDiv>    
-              </div>
 
               <div>
-                <Info>Nome: </Info>
-                <Info>Telefone: </Info>
-                <Info>Email: </Info>
+                <Info><InfoName>Nome:</InfoName> </Info>
+                <Info><InfoName>Telefone:</InfoName> </Info>
+                <Info><InfoName>Email:</InfoName> </Info>
                 <ButtonDiv>
                   <ButtonsType tipo='Editar'/>
                   <ButtonsType tipo='Deletar'/>
@@ -79,26 +57,21 @@ function LoginAdm() {
             <ContainerProduto>
               <Title>Produtos Cadastrados</Title>
               <ButtonCadastrar><PlusCircleIcon /> Cadastrar novo produto</ButtonCadastrar>
-
-              <div>
-                <Info>Nome: </Info>
-                <Info>Descrição: </Info>
-                <Info>Ingredientes: </Info>
+            
+            {product ? product.map((p) => {
+              return(
+                <div key={p.id_produto}>
+                <Info><InfoName>Nome:</InfoName> {p.nome}</Info>
+                <Info><InfoName>Descrição:</InfoName> {p.descricao}</Info>
+                <Info><InfoName>Ingredientes:</InfoName> {p.ingredientes}</Info>
                 <ButtonDiv>
                   <ButtonsType tipo='Editar'/>
                   <ButtonsType tipo='Deletar'/>
                 </ButtonDiv>    
               </div>
+              )
+            }): null }
 
-              <div>
-                <Info>Nome: </Info>
-                <Info>Descrição: </Info>
-                <Info>Ingredientes: </Info>
-                <ButtonDiv>
-                  <ButtonsType tipo='Editar'/>
-                  <ButtonsType tipo='Deletar'/>
-                </ButtonDiv>     
-              </div>
             </ContainerProduto>
           </Container>
         <Footer />

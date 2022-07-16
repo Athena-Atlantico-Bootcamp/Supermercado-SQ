@@ -2,27 +2,50 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer";
 import ButtonsType from "../../components/Buttons";
 
-import { ButtonCadastrar, ButtonDiv, Container, ContainerProduto, ContainerUser, Title, Line, Info, PlusCircleIcon } from "./styles";
+import { ButtonCadastrar, ButtonDiv, Container, ContainerProduto, ContainerUser, Title, Line, Info, PlusCircleIcon, InfoName } from "./styles";
 import { useState, useEffect } from "react";
 import api from '../../service/api';
 
 
 function LoginUser() {
 
-  // const [products, setProducts] = useState([]);
+  const tokenUser = JSON.parse(localStorage.getItem('@token'));
+  const userId = JSON.parse(localStorage.getItem('@usuario'));
+  const [product, setProduct] = useState([]);
+  const [user, setUser] = useState([]);
 
-  // function getProductsByUserId(props) {
-  //   try {
-  //     api.get(`/produtos/usuario/${idProduto}`)
-  //     .then( (res) => {
-  //       setProducts(res.data)
-  //     })
-  //   } catch (err) {
-  //     console.log(err.message)
-  //   }
-  // }
+  console.log(tokenUser);
 
-  // useEffect(() => {getProductsByUserId()}, [])
+  async function getProductByUserId() {
+
+    try {
+      await api.get(`/produtos/usuario/${userId}`, {headers: {
+        "Authorization": `Bearer ${tokenUser}`
+      }})
+        .then( (res) => {
+          console.log(res.data)
+          setProduct(res.data)
+        })
+      } catch (err) {
+        console.log(err.message);
+      }
+    }
+
+    async function getUserById() {
+      try {
+        await api.get(`/usuarios/${userId}`, {headers: {
+          "Authorization": `Bearer ${tokenUser}`
+        }})
+          .then( (res) => {
+            console.log(res.data)
+            setUser(res.data)
+          })
+        } catch (err) {
+          console.log(err.message);
+        }
+      }
+    
+    useEffect(() => {getProductByUserId(), getUserById()}, []);
 
   return (
     <div>
@@ -32,13 +55,13 @@ function LoginUser() {
               <Title>Meus dados</Title>
               
               <div>
-                <Info>Nome: </Info>
-                <Info>Telefone: </Info>
-                <Info>Email: </Info>
-                <Info>Restrições: </Info>
+                <Info><InfoName>Nome:</InfoName> {user.nome}</Info>
+                <Info><InfoName>Telefone:</InfoName> {user.telefone}</Info>
+                <Info><InfoName>Email:</InfoName> {user.email}</Info>
+                <Info><InfoName>Restrições:</InfoName> {user.restincao}</Info>
                 <ButtonDiv>
                   <ButtonsType tipo='Editar'/>
-                  <ButtonsType tipo='Logout'/>
+                  <ButtonsType tipo='Logout' />
                 </ButtonDiv>    
               </div>
             </ContainerUser>
@@ -49,26 +72,20 @@ function LoginUser() {
               <Title>Produtos Cadastrados</Title>
               <ButtonCadastrar><PlusCircleIcon /> Cadastrar novo produto</ButtonCadastrar>
 
-              <div>
-                <Info>Nome: </Info>
-                <Info>Nome: </Info>
-                <Info>Descrição: </Info>
-                <Info>Ingredientes: </Info>
+              {product ? product.map((p) => {
+              return(
+                <div key={p.id_produto}>
+                <Info><InfoName>Nome:</InfoName> {p.nome}</Info>
+                <Info><InfoName>Descrição:</InfoName> {p.descricao}</Info>
+                <Info><InfoName>Ingredientes:</InfoName> {p.ingredientes}</Info>
                 <ButtonDiv>
                   <ButtonsType tipo='Editar'/>
                   <ButtonsType tipo='Deletar'/>
                 </ButtonDiv>    
               </div>
+              )
+              }): null }
 
-              <div>
-                <Info>Nome: </Info>
-                <Info>Descrição: </Info>
-                <Info>Ingredientes: </Info>
-                <ButtonDiv>
-                  <ButtonsType tipo='Editar'/>
-                  <ButtonsType tipo='Deletar'/>
-                </ButtonDiv>     
-              </div>
             </ContainerProduto>
           </Container>
         <Footer />

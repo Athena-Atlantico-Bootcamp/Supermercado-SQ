@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header";
 import { useState, useRef } from "react";
 import api from "../../service/api";
 import { useNavigate } from "react-router-dom";
+
 function Login() {
 
     const navigate = useNavigate()
@@ -55,8 +56,6 @@ function Login() {
     function Logar(e) {
         e.preventDefault()
         try{
-            console.log(emailLogin)
-            console.log(passwordLogin)
             api.post('/usuarios/login/', {
                 email: emailLogin,
                 senha: passwordLogin
@@ -64,7 +63,7 @@ function Login() {
                 localStorage.setItem('@usuario', JSON.stringify(res.data.userEmail.id_usuario))
                 localStorage.setItem('@tipo_usuario', JSON.stringify(res.data.userEmail.tipo_usuario))
                 localStorage.setItem('@token', JSON.stringify(res.data.token))
-                if (res.data.tipo_usuario == 'usuario') {
+                if (JSON.parse(localStorage.getItem('@tipo_usuario')) == 'usuario') {
                     navigate('/perfil')
                 }else {
                     navigate('/perfil-adm')
