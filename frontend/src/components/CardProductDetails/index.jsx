@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import api from '../../service/api'
+import { useNavigate } from 'react-router-dom'
+import Modal from "react-modal";
 import ButtonsType from '../Buttons'
 import {
   Container,
@@ -22,40 +24,81 @@ import {
   } from './styles.js'
 
 
+  function CardProductDetails({idProduto}) {
 
-function CardProductDetails({idProduto}) {
+    // const [isOpen, setIsOpen] = useState(false);
+    // function toggleModal() {
+    //   setIsOpen(!isOpen);
+    // }
 
-  const [coments, setComents] = useState([])
-  
-  function getProduct() {
-    try {
-      api.get(`/produtos/${idProduto}`)
-      .then( (res) => {
-        console.log(res.data)
-        setProduct(res.data)
-      })
-    } catch (err) {
-      console.log(err.message)
+    const customStyles = {
+      content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto'
+      }
     }
-  }
+
+    const [modalIsOpen] = useState(false);
+
+    function handleOpenModal(){
+      setIsOpen(true);
+    }
+
+    function handleCloseModal(){
+      setIsOpen(false);
+      }
+
+    const [coments, setComents] = useState([])
+    const [product, setProduct] = useState([])
+    const [user, setUser] = useState([])
   
-  useEffect(() => {getProduct(); getComents()}, []);
-  
-  
-  function getComents() {
+    const navigate = useNavigate()
+    function Redirecionar() {
+        console.log('teste');
+        navigate(`/`);
+      }
+    
+    function getProduct() {
       try {
-        api.get(`/comentarios/${idProduto}`)
+        api.get(`/produtos/${idProduto}`)
         .then( (res) => {
+          setProduct(res.data)
           console.log(res.data)
-          setComents(res.data)
         })
       } catch (err) {
         console.log(err.message)
       }
     }
-
-
-const [product, setProduct] = useState([])
+    
+    useEffect(() => {getUser(); getProduct(); getComents()}, []);
+    
+    
+    function getComents() {
+        try {
+          api.get(`/comentarios/${idProduto}`)
+          .then( (res) => {
+            setComents(res.data)
+            console.log(res.data)
+          })
+        } catch (err) {
+          console.log(err.message)
+        }
+      }
+  
+      function getUser() {
+        try {
+          api.get(`/usuarios/`)
+          .then( (res) => {
+            setUser(res.data)
+            console.log(res.data)
+          })
+        } catch (err) {
+          console.log(err.message)
+        }
+      }
+    
   
 
     return(
@@ -64,13 +107,13 @@ const [product, setProduct] = useState([])
                 <ContainerCard>
                     <ContainerTitle>
                       <ContainerProdutoTitle>
-                        <Text>Voltar</Text>
+                      <Text onClick={Redirecionar}>Voltar</Text>
                       </ContainerProdutoTitle>
                       <Text>Produto: {product.nome}</Text>
                     </ContainerTitle>
                     <ContainerColumn>
                         <ContainerImg>
-                            <Img src="https://supernossoio.vtexassets.com/arquivos/ids/204625-1600-auto?v=637808076712200000&width=1600&height=auto&aspect=true"/>
+                            <Img src={product.imagem}/>
                         </ContainerImg>
                         <ContainerDescription>
                             <ContainerTitulo>
@@ -78,13 +121,29 @@ const [product, setProduct] = useState([])
                                 <TextDescription>
                                     {product.descricao}
                                 </TextDescription>
+                                <TextDescription>
+                                    Ingredientes:
+                                </TextDescription>
+                                <TextDescription>
+                                    {product.ingredientes}
+                                </TextDescription>
                             </ContainerTitulo>
                         </ContainerDescription>
                     </ContainerColumn>
                 </ContainerCard>
                 <ContainerComents>
                     <Text>Comentários</Text>
-                    <ButtonsType tipo='Comentar Produto'/>
+                    <ButtonsType tipo='Comentar Produto' onClick={handleOpenModal}/>
+                    {/* <button onClick={toggleModal}>Open modal</button> */}
+                    <Modal 
+                    isOpen={modalIsOpen}
+                    onRequestClose={handleCloseModal}
+                    >
+                      <h2>teste</h2>
+                      <ButtonsType tipo='Comentar Produto' onClick={handleCloseModal}/>
+                      
+                    </Modal>
+
                 </ContainerComents>
                 <CardComents>
                     <Usuario>Fulaninho</Usuario>
@@ -92,14 +151,22 @@ const [product, setProduct] = useState([])
                     <Comentario>Cuscuz com leite faz muito bem pra barriga "Confia"</Comentario>
                 </CardComents>
                 <CardComents>
-                    <Usuario>Fulaninho</Usuario>
-                    <Data>22/22/2022</Data>
-                    <Comentario>Cuscuz com leite faz muito bem pra barriga "Confia"</Comentario>
+                {coments.map((coments)=>{
+                        return(
+                          <>
+                          <h2 id={coments.id}>{coments.createdAt}</h2>
+                          <h2 id={coments.id}>{coments.texto_comentario}</h2>
+                          </>
+                        )
+                    })}
                 </CardComents>
             </Container>
+
       </section>
     )
   }
+
+ 
   
   export default CardProductDetails;
 
