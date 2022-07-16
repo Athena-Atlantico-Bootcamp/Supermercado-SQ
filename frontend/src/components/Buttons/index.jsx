@@ -206,6 +206,23 @@ function ButtonsType({tipo, isModal = false, tipoModal, data}) {
         }
     }
 
+    function registerComment() {
+        try {
+            api.post(`/comentarios`, {
+                texto_comentario: comment,
+                usuarioId: JSON.parse(localStorage.getItem('@usuario')),
+                produtoId: data.id_produto
+            },
+            {headers: {"Authorization": `Bearer ${tokenUser}`}}
+            ).then((res) => {
+                closeModal()
+                window.location.reload()
+            })
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
     function Acao(e) {
         try {
             e.preventDefault()
@@ -229,6 +246,13 @@ function ButtonsType({tipo, isModal = false, tipoModal, data}) {
             if (tipoModal == 'Cadastrar Produtos Modal') {
                 if (typeAction == 'Cadastrar') {
                     signUpProduct()
+                }
+            }
+
+            if (tipoModal == 'Comentar Produto') {
+                console.log("Entrou")
+                if (typeAction == 'Comentar') {
+                    registerComment()
                 }
             }
 
@@ -318,7 +342,7 @@ function ButtonsType({tipo, isModal = false, tipoModal, data}) {
             );
         }
 
-        else {
+        if(tipoModal == 'Comentar Produto') {
             return (
                 <>
                   <ExitCircle size={30} onClick={closeModal}/>
@@ -327,7 +351,7 @@ function ButtonsType({tipo, isModal = false, tipoModal, data}) {
                             <LabelModal>Comentário: </LabelModal><br/>
                             <TextAreaModalComment onChange={(e) => setComment(e.target.value)} value={comment}/> <br/><br/>
                             <AlignAreaModal>
-                                <Button type='submit' onClick={()=>setTypeAction('Cadastrar')}> {type_button('Comentar Produto Modal')} </Button>
+                                <Button type='submit' onClick={()=>setTypeAction('Comentar')}> {type_button('Comentar Produto Modal')} </Button>
                             </AlignAreaModal>
                         </FormModal>
                         

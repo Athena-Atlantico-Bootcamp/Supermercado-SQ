@@ -40,7 +40,7 @@ import {
       }
     }
 
-    const [modalIsOpen] = useState(false);
+    /*const [modalIsOpen] = useState(false);
 
     function handleOpenModal(){
       setIsOpen(true);
@@ -49,7 +49,7 @@ import {
     function handleCloseModal(){
       setIsOpen(false);
       }
-
+      */
     const [coments, setComents] = useState([])
     const [product, setProduct] = useState([])
     const [user, setUser] = useState([])
@@ -126,16 +126,16 @@ import {
                 </ContainerCard>
                 <ContainerComents>
                     <Text>Comentários</Text>
-                    <ButtonsType tipo='Comentar Produto' onClick={handleOpenModal}/>
+                    <ButtonsType tipo='Comentar Produto' tipoModal = 'Comentar Produto' data={product}/>
                     {/* <button onClick={toggleModal}>Open modal</button> */}
-                    <Modal 
+                    {/*<Modal 
                     isOpen={modalIsOpen}
                     onRequestClose={handleCloseModal}
                     >
                       <h2>teste</h2>
-                      <ButtonsType tipo='Comentar Produto' onClick={handleCloseModal}/>
+                      <ButtonsType tipo='Comentar Produto'/>
                       
-                    </Modal>
+                    </Modal>*/}
 
                 </ContainerComents>
                 <CardComents>
@@ -145,8 +145,8 @@ import {
                           return(
                           <>
                             {/* <Usuario>{coments.us}</Usuario> */}
-                            <Data id={coments.id}>{dataFormatada}</Data>
-                            <Comentario id={coments.id}>{coments.texto_comentario}</Comentario>
+                            <Data key={coments.id}>{dataFormatada}</Data>
+                            <Comentario key={coments.id}>{coments.texto_comentario}</Comentario>
                           </>
                         )
                     })}
