@@ -1,11 +1,9 @@
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer";
 import ButtonsType from "../../components/Buttons";
-import { ButtonCadastrar, ButtonDiv, Container, ContainerProduto, ContainerUser, Title, Line, Info, PlusCircleIcon, InfoName } from "./styles";
+import { ButtonCadastrar, ButtonDiv, Container, ContainerProduto, ContainerProdutoDetalhe, ContainerUser, Title, Line, Info, PlusCircleIcon, InfoName } from "./styles";
 import { useState, useEffect } from "react";
 import api from '../../service/api';
-
-
 
 
 function LoginUser() {
@@ -68,21 +66,22 @@ function LoginUser() {
             <ContainerProduto>
               <Title>Produtos Cadastrados</Title>
               <ButtonsType tipo='Cadastrar Novo Produto' tipoModal='Cadastrar Produtos Modal' />
-
-              {product ? product.map((p) => {
-              return(
-                <div key={p.id_produto}>
-                <Info><InfoName>Nome:</InfoName> {p.nome}</Info>
-                <Info><InfoName>Descrição:</InfoName> {p.descricao}</Info>
-                <Info><InfoName>Ingredientes:</InfoName> {p.ingredientes}</Info>
-                <ButtonDiv>
-                  <ButtonsType tipo='Editar' tipoModal='Editar Produtos Modal' data={p}/>
-                  <ButtonsType tipo='Deletar' data={p}/>
-                </ButtonDiv>    
-              </div>
-              )
-              }): null }
-
+              
+              <ContainerProdutoDetalhe>
+                {product ? product.map((p) => {
+                return(
+                  <div key={p.id_produto}>
+                  <Info><InfoName>Nome:</InfoName> {p.nome}</Info>
+                  <Info><InfoName>Descrição:</InfoName> {p.descricao}</Info>
+                  <Info><InfoName>Ingredientes:</InfoName> {p.ingredientes}</Info>
+                  <ButtonDiv>
+                    <ButtonsType tipo='Editar' tipoModal='Editar Produtos Modal' data={p}/>
+                    <ButtonsType tipo='Deletar' data={p}/>
+                  </ButtonDiv>    
+                </div>
+                )
+                }): null }
+              </ContainerProdutoDetalhe>
             </ContainerProduto>
           </Container>
         <Footer />

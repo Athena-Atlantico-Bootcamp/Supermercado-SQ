@@ -4,17 +4,18 @@ import { PlusCircle } from "phosphor-react";
 export const Container = styled.div `
   display: flex;
   justify-content: center;
+  margin-bottom: 5rem;
   
   @media only screen and (max-width: 800px) {
     flex-direction: column;
     align-items: center;
-    height: 1400px;
+    height: 1100px;
 }
 `
 
 export const ContainerFornecedor = styled.div `
-  height: 500px;
-  padding: 50px;
+  height: auto;
+  padding: 0 50px 25px;
   width: 50%;
 
   @media only screen and (max-width: 800px){
@@ -23,13 +24,12 @@ export const ContainerFornecedor = styled.div `
 `
 
 export const ContainerProduto = styled.div `
-  height: 500px;
-  padding: 50px;
+  max-height: 500px;
+  padding: 0 50px 25px;
   width: 50%;
   
   @media only screen and (max-width: 800px){
     width: 80%;
-    margin-bottom: 5rem;
 }
 `
 
@@ -42,11 +42,11 @@ export const Line = styled.div`
     border-left: 3px solid #FBA94C;
     height: 400px;
     margin-top: 50px;
+    margin: auto;
     
     @media only screen and (max-width: 800px) {
       align-items: center;
       transform: rotate(90deg);
-      margin:
   }
 ` 
 
@@ -81,4 +81,15 @@ export const ButtonDiv = styled.div `
 
 export const InfoName = styled.span `
   font-weight: bold;
+`
+
+export const TitlePrincipal = styled.h1 `
+  text-align: center;
+  color: #015F43;
+`
+
+export const ContainerProdutoDetalhe = styled.div`
+  margin-top: 10px;
+  overflow-y: scroll;
+  max-height: 450px;
 `
