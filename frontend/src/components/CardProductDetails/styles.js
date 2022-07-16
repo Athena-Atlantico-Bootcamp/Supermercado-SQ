@@ -69,6 +69,12 @@ export const ContainerImg = styled.div`
     display: block;
     margin: auto;
     width: 50%;
+    @media only screen and (max-width: 1024px) {
+        width: 100%;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 0;
+    }
     
 `
 
@@ -78,6 +84,8 @@ export const Img = styled.img`
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     object-fit: contain;
+    display: block;
+    margin: auto;
 `;
 
 export const ContainerDescription = styled.div`
@@ -89,6 +97,8 @@ export const ContainerDescription = styled.div`
     border-bottom-right-radius: 15px;
     @media only screen and (max-width: 1024px) {
         width: 100%;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 15px;
     }
 `
 
