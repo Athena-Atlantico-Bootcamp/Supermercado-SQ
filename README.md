@@ -13,6 +13,7 @@ Para consultar as rotas disponíveis, consulte a documentação: https://superme
 ## :open_book: Índice
 * [Sobre o Projeto](#speech_balloon-sobre-o-projeto)
 * [Instalação do backend](#hammer_and_wrench-instalação-do-backend)
+* [Instalação do frontend](#hammer_and_wrench-instalação-do-frontend)
 * [Elicitação dos Requisitos](#memo-elicitação-de-requisitos)
 * [Atores do Sistema](#busts_in_silhouette-atores-do-sistema)
 * [Modelagem da Visão Gerão](#world_map-modelagem-da-visão-geral)
@@ -43,6 +44,36 @@ npm i
 ```
 
 Crie um arquivo ``.env`` e preencha conforme o arquivo exemplo ``.env.exemplo``. Em DATABASE_URL, digite a string de conexão com o banco de dados. Em SECRET, escolha uma palavra para encriptar o JWT.
+
+Para rodar no seu localhost utilize no terminal:
+
+```
+npm run dev
+```
+
+O projeto ficará disponível na porta ``http://localhost:3001/``
+
+⬆️ [Voltar ao índice](https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ#open_book-%C3%ADndice)
+
+## :hammer_and_wrench: Instalação do frontend
+
+Clone este repositório usando o comando:
+
+```
+git clone https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ.git
+```
+
+Entrar na pasta backend utilizando o comando:
+
+```
+cd frontend
+```
+
+Instale as dependências com o comando:
+
+```
+npm i
+```
 
 Para rodar no seu localhost utilize no terminal:
 
