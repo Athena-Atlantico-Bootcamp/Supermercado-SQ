@@ -152,10 +152,12 @@ import {
                 </CardComents>
                 <CardComents>
                 {coments.map((coments)=>{
+                        let dataFormatada = new Intl.DateTimeFormat('pt-BR').format(new Date(coments.createdAt));
                         return(
                           <>
-                          <h2 id={coments.id}>{coments.createdAt}</h2>
-                          <h2 id={coments.id}>{coments.texto_comentario}</h2>
+                            <Usuario>{coments.usuario}</Usuario>
+                            <Data id={coments.id}>{dataFormatada}</Data>
+                            <Comentario id={coments.id}>{coments.texto_comentario}</Comentario>
                           </>
                         )
                     })}
