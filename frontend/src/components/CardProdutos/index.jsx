@@ -1,8 +1,17 @@
 import { Card, LinkProduct, CardElements, ImageDiv, Image, Text } from './styles';
+import { useNavigate } from 'react-router-dom'
+
 
 function CardProdutos(props) {
+
+    const navigate = useNavigate()
+    function Redirecionar() {
+        console.log('teste');
+        navigate(`/produto/${props.data.id_produto}`);
+      }
+
   return (
-        <Card>
+        <Card onClick={Redirecionar}>
             <LinkProduct to='/produto'>
             <CardElements>
                 <ImageDiv>  
