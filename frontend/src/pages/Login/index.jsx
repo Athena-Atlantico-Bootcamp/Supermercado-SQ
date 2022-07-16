@@ -19,6 +19,7 @@ function Login() {
 
     const [emailLogin, setEmailLogin] = useState('')
     const [passwordLogin, setPasswordLogin] = useState('')
+    const [showPasswordLogin, setShowPasswordLogin] = useState(false)
     
     const formRef = useRef(null)
 
@@ -90,45 +91,17 @@ function Login() {
             });
     };
 
-    const notifyPhone = () => {
-        toast.warn('Por favor preencher o campo telefone somente com números', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            });
-    };
-
-    const notifyError = () => {
-        toast.warn('Por favor preencher todos os compos corretamente', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            });
-    };
-
     function CheckDadosCadastrar(){
+        console.log(typeof(phone))
         if (name == '' || phone =='' || constraint =='' || email == '' || password == ''){
             notify();
-        } else if (typeof(phone)!='number'){
-            notifyPhone();
-        } else if (!email.includes('@')){
-            notifyError();
         }
     }
 
     function CheckDadosLogin(){
         if (emailLogin == '' || passwordLogin == ''){
             notify();
-        } else if (!emailLogin.includes('@')){
-            notifyError();
+            return
         }
     }
    
@@ -145,11 +118,11 @@ function Login() {
                     </AlignArea>
                     <Form onSubmit={Logar} ref={formRef}>
                         <Label>Email: </Label><br/>
-                        <Input type='text' onChange={(e) => setEmailLogin(e.target.value)} value={emailLogin}/><br/><br/>
+                        <Input type='email' onChange={(e) => setEmailLogin(e.target.value)} value={emailLogin}/><br/><br/>
                         <Label>Senha: </Label><br/>
                         <PasswordArea>
-                        <Input type='password' onChange={(e) => setPasswordLogin(e.target.value)} value={passwordLogin}/><br/><br/>
-                        <IconEye size={20} />
+                        <Input type={showPasswordLogin ? 'text' : 'password'} onChange={(e) => setPasswordLogin(e.target.value)} value={passwordLogin}/><br/><br/>
+                        <IconEye size={20} onClick={() => setShowPasswordLogin(!showPasswordLogin)}/>
                         </PasswordArea>
                         <AlignArea>
                         <ButtonsType tipo='Login'/>
@@ -171,7 +144,7 @@ function Login() {
                         <Label>Restrições: </Label><br/>
                         <Input type='text' onChange={(e) => setConstraint(e.target.value)} value={constraint}/><br/><br/>
                         <Label>Email: </Label><br/>
-                        <Input type='text' onChange={(e) => setEmail(e.target.value)} value={email}/><br/><br/>
+                        <Input type='email' onChange={(e) => setEmail(e.target.value)} value={email}/><br/><br/>
                         <Label>Senha: </Label><br/>
                         <Input type='password' onChange={(e) => setPassword(e.target.value)} value={password}/><br/><br/>
                         <AlignArea>
