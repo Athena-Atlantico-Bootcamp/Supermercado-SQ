@@ -139,4 +139,13 @@ color: black;
 export const CardComents = styled.div`
 width: 100%;
 box-sizing: border-box;
+
+`
+
+
+export const Modal = styled.div`
+    with: 200px;
+    height: 100%;
+    background-color: black;
+
 `
