@@ -55,18 +55,27 @@ export const ContainerColumn = styled.div`
     border-radius: 25px;
     @media only screen and (max-width: 1024px) {
     flex-direction: column;
+    
     }
 `
 
 
 export const ContainerImg = styled.div` 
     width: 400px;
-    height: auto;
-    background-color: transparent;
-    border-top-right-radius: 25px;
+    height: 400px;
+    background-color: white;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
     display: block;
     margin: auto;
     width: 50%;
+    @media only screen and (max-width: 1024px) {
+        width: 100%;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 0;
+    }
+    
 `
 
 export const Img = styled.img`
@@ -75,17 +84,21 @@ export const Img = styled.img`
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     object-fit: contain;
+    display: block;
+    margin: auto;
 `;
 
 export const ContainerDescription = styled.div`
     width: calc(100vw - 400px);
-    min-height: 400px;
+    height: 400px;
     background-color: white;
     overflow-y: scroll;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     @media only screen and (max-width: 1024px) {
         width: 100%;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 15px;
     }
 `
 
