@@ -15,10 +15,13 @@ AlignAreaModal,
 ExitCircle,
 TextAreaModal,
 InputImage,
-TextAreaModalComment
+TextAreaModalComment,
+PlusCircleIcon,
+ButtonCadastrar
 } from './styles.js'
 import Modal from 'react-modal'
 import { useNavigate } from 'react-router-dom' 
+import api from "../../service/api.js";
 
 Modal.setAppElement('#root')
 
@@ -42,8 +45,8 @@ const styleModal = {
 }
 
 
-function ButtonsType({tipo, isModal = false, tipoModal}) {
-
+function ButtonsType({tipo, isModal = false, tipoModal, data}) {
+    console.log(data)
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const formRef = useRef(null)
     const [name, setName] = useState('')
@@ -58,9 +61,19 @@ function ButtonsType({tipo, isModal = false, tipoModal}) {
     const [ingredient, setIngredient] = useState('')
     const [comment, setComment] = useState('')
     const navigate = useNavigate()
-
+    const tokenUser = JSON.parse(localStorage.getItem('@token'));
     function openModal() {
         setIsOpen(true);
+        if (data) {
+            setName(data.nome)
+            setEmail(data.email)
+            setConstraint(data.restricoes)
+            setPhone(data.telefone)
+            setNameProd(data.nome)
+            setIngredient(data.ingredientes)
+            setDescription(data.descricao)
+            setImage(data.imagem)
+        }
     }
 
     function closeModal() {
@@ -103,18 +116,86 @@ function ButtonsType({tipo, isModal = false, tipoModal}) {
         }
     }
 
-    function Acao(e) {
-        e.preventDefault()
+    function editUser() {
         try {
+            api.patch(`/usuarios/${data.id_usuario}`, {
+                email: email,
+                nome: name,
+                telefone: parseInt(phone),
+                restricoes: constraint                
+            }, {headers: {
+                "Authorization": `Bearer ${tokenUser}`}}).then((res) => {
+                alert('Dados do usuário atualizados')
+                closeModal()
+                window.location.reload()
+            })
+            
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    function editProd() {
+        try {
+            api.patch(`/produtos/${data.id_produto}`, {
+                nome: nameProd,
+                descricao: description,
+                imagem: image,
+                ingredientes: ingredient
+            }, {headers: {
+                "Authorization": `Bearer ${tokenUser}`}}).then((res) => {
+                alert('Dados do usuário atualizados')
+                closeModal()
+                window.location.reload()
+            })
+            
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    function signUpProduct() {
+        try {
+            api.post('/produtos', {
+                nome: nameProd,
+                descricao: description,
+                imagem: image,
+                ingredientes: ingredient,
+                usuarioId: JSON.parse(localStorage.getItem('@usuario'))
+            }, {headers: {"Authorization": `Bearer ${tokenUser}`}})
+            .then((res) => {
+                closeModal()
+                window.location.reload()
+            })
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    function Acao(e) {
+        try {
+            e.preventDefault()
             if (tipoModal == 'Fornecedor') {
-                console.log(name, phone, email, constraint, password, typeAction)
+                if (typeAction == 'Editar Modal') {
+                    editUser()
+                } else {
+
+                }
             }
             if (tipoModal == 'Cadastrar Fornecedor') {
 
             } 
 
             if (tipoModal == 'Editar Produtos Modal') {
+                if (typeAction == 'Editar') {
+                    editProd()
+                }
+            }
 
+            if (tipoModal == 'Cadastrar Produtos Modal') {
+                if (typeAction == 'Cadastrar') {
+                    signUpProduct()
+                }
             }
 
         } catch (error) {
@@ -132,15 +213,13 @@ function ButtonsType({tipo, isModal = false, tipoModal}) {
                     <ContainerModal>
                         <FormModal onSubmit={Acao} ref = {formRef}>
                             <LabelModal>Nome: </LabelModal><br/>
-                            <InputModal type='text' onChange={(e) => setName(e.target.value)} value={name}/><br/><br/>
+                            <InputModal type='text' onChange={(e) => setName(e.target.value)} value={name} /><br/><br/>
                             <LabelModal>Telefone: </LabelModal><br/>
                             <InputModal type='text' onChange={(e) => setPhone(e.target.value)} value={phone}/><br/><br/>
                             <LabelModal>Restrições: </LabelModal><br/>
                             <InputModal type='text' onChange={(e) => setConstraint(e.target.value)} value={constraint}/><br/><br/>
                             <LabelModal>Email: </LabelModal><br/>
                             <InputModal type='email' onChange={(e) => setEmail(e.target.value)} value={email}/><br/><br/>
-                            <LabelModal>Senha: </LabelModal><br/>
-                            <InputModal type='password' onChange={(e) => setPassword(e.target.value)} value={password}/><br/><br/>
                             <AlignAreaModal>
                                 <Button type='submit' onClick={()=>setTypeAction('Editar Modal')}> {type_button('Editar Modal')} </Button>
                                 <Button type='submit' onClick={()=>setTypeAction('Deletar')}> {type_button('Deletar')} </Button>
@@ -193,7 +272,11 @@ function ButtonsType({tipo, isModal = false, tipoModal}) {
                             <LabelModal>Imagem: </LabelModal><br/>
                             <InputImage onChange={(e) => setImage(e.target.value)} value={image}/> <br/><br/>
                             <AlignAreaModal>
-                                <Button type='submit' onClick={()=>setTypeAction('Cadastrar')}> {type_button('Editar Modal')} </Button>
+                                {tipoModal == 'Cadastrar Produtos Modal' ? 
+                                <Button type='submit' onClick={()=>setTypeAction('Cadastrar')}> {type_button('Cadastrar')} </Button> : 
+                                <Button type='submit' onClick={()=>setTypeAction('Editar')}> {type_button('Editar Modal')} </Button>
+                                }
+                                
                                 {tipoModal != 'Cadastrar Produtos Modal' ?
                                     <Button type='submit' onClick={()=>setTypeAction('Deletar')}> {type_button('Deletar')} </Button> : null}
                             </AlignAreaModal>
@@ -227,10 +310,14 @@ function ButtonsType({tipo, isModal = false, tipoModal}) {
         if (tipo == 'Deletar' || tipo == 'Cadastrar' || tipo == 'Login' || tipo == 'Logout' || isModal == true) {
             if (tipo == 'Logout') {
              return <Button type='submit' onClick={logout}> {type_button(tipo)} </Button>    
-            } else {
+            } 
+            else {
                 return <Button type='submit' > {type_button(tipo)} </Button>
             }
         } else {
+            if (tipo == 'Cadastrar Novo Produto') {
+                return <ButtonCadastrar type='submit' onClick={openModal}><PlusCircleIcon /> Cadastrar novo produto</ButtonCadastrar>
+            }
             return <Button type='submit' onClick={openModal} > {type_button(tipo)} </Button>
         }
     }
