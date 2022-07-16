@@ -8,7 +8,7 @@ export const Container = styled.div `
   @media only screen and (max-width: 800px) {
     flex-direction: column;
     align-items: center;
-    height: 1000px;
+    height: 1200px;
 }
 `
 
@@ -16,6 +16,7 @@ export const ContainerFornecedor = styled.div `
   height: 500px;
   padding: 50px;
   width: 50%;
+
   @media only screen and (max-width: 800px){
     width: 80%;
 }
@@ -42,7 +43,6 @@ export const Line = styled.div`
     margin-top: 50px;
     
     @media only screen and (max-width: 800px) {
-      flex-direction: column;
       align-items: center;
       transform: rotate(90deg);
       margin: 0;
