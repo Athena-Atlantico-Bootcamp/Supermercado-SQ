@@ -63,6 +63,7 @@ import {
     function getProduct() {
       try {
         api.get(`/produtos/${idProduto}`)
+        
         .then( (res) => {
           setProduct(res.data)
           console.log(res.data)
@@ -71,35 +72,27 @@ import {
         console.log(err.message)
       }
     }
+
     
-    useEffect(() => {getUser(); getProduct(); getComents()}, []);
+    useEffect(() => { getProduct(); getComents()}, []);
     
     
-    function getComents() {
+     function getComents() {
         try {
           api.get(`/comentarios/${idProduto}`)
-          .then( (res) => {
+          .then( (res) => { 
             setComents(res.data)
-            console.log(res.data)
+            
           })
-        } catch (err) {
-          console.log(err.message)
+
+
+        } catch(err) {
+          
+          console.error(err.message)
         }
       }
-  
-      function getUser() {
-        try {
-          api.get(`/usuarios/`)
-          .then( (res) => {
-            setUser(res.data)
-            console.log(res.data)
-          })
-        } catch (err) {
-          console.log(err.message)
-        }
-      }
-    
-  
+
+ 
 
     return(
       <section>
@@ -148,9 +141,10 @@ import {
                 <CardComents>
                 {coments.map((coments)=>{
                         let dataFormatada = new Intl.DateTimeFormat('pt-BR').format(new Date(coments.createdAt));
-                        return(
+                        
+                          return(
                           <>
-                            <Usuario>{coments.usuario}</Usuario>
+                            {/* <Usuario>{coments.us}</Usuario> */}
                             <Data id={coments.id}>{dataFormatada}</Data>
                             <Comentario id={coments.id}>{coments.texto_comentario}</Comentario>
                           </>
