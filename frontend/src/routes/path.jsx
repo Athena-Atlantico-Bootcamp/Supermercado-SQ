@@ -4,7 +4,7 @@ import AboutUs from "../pages/AboutUs"
 import App from "../pages/App"
 import Login from "../pages/Login/index"
 import LoginAdm from "../pages/LoginAdm"
-import LoginUser from "../pages/LoginUser/LoginUser"
+import LoginUser from "../pages/LoginUser"
 import ProductDetails from "../pages/ProductDetails"
 import SearchScreen from "../pages/SearchScreen"
 
