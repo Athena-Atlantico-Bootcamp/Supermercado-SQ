@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 import {
 Button, 
 Container, 
@@ -6,11 +6,66 @@ GreenButton,
 YellowButton,
 RedButton,
 EditIcon,
-DeleteIcon
+DeleteIcon,
+ContainerModal,
+FormModal,
+LabelModal,
+InputModal,
+AlignAreaModal,
+ExitCircle,
+TextAreaModal,
+InputImage,
+TextAreaModalComment
 } from './styles.js'
+import Modal from 'react-modal'
+
+Modal.setAppElement('#root')
+
+const styleModal = {
+    content: {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%,-50%)',
+        border: '1px solid #ccc',
+        background: '#f5f5f5',
+        overflow: 'auto',
+        WebkitOverflowScrolling: 'touch',
+        borderRadius: '16px',
+        outline: 'none',
+        padding: '20px'
+    }
+}
 
 
-function ButtonsType({tipo}) {
+function ButtonsType({tipo, isModal = false, tipoModal}) {
+
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+    const formRef = useRef(null)
+    const [name, setName] = useState('')
+    const [phone, setPhone] = useState('')
+    const [constraint, setConstraint] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [typeAction, setTypeAction] = useState('')
+    const [nameProd,setNameProd] = useState('')
+    const [description, setDescription] = useState('')
+    const [image, setImage] = useState('')
+    const [ingredient, setIngredient] = useState('')
+    const [comment, setComment] = useState('')
+
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
+
+
     function type_icons(tipo){
         if (tipo == 'Editar'){
             return <EditIcon size={20}/>
@@ -40,10 +95,145 @@ function ButtonsType({tipo}) {
         }
     }
 
+    function Acao(e) {
+        e.preventDefault()
+        try {
+            if (tipoModal == 'Fornecedor') {
+                console.log(name, phone, email, constraint, password, typeAction)
+            }
+            if (tipoModal == 'Cadastrar Fornecedor') {
+
+            } 
+
+            if (tipoModal == 'Editar Produtos Modal') {
+
+            }
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    function modalForm() {
+        //console.log(tipoModal)
+
+        if (tipoModal == 'Fornecedor') {
+            return (
+                <>  
+                    <ExitCircle size={30} onClick={closeModal}/>
+                    <ContainerModal>
+                        <FormModal onSubmit={Acao} ref = {formRef}>
+                            <LabelModal>Nome: </LabelModal><br/>
+                            <InputModal type='text' onChange={(e) => setName(e.target.value)} value={name}/><br/><br/>
+                            <LabelModal>Telefone: </LabelModal><br/>
+                            <InputModal type='text' onChange={(e) => setPhone(e.target.value)} value={phone}/><br/><br/>
+                            <LabelModal>Restrições: </LabelModal><br/>
+                            <InputModal type='text' onChange={(e) => setConstraint(e.target.value)} value={constraint}/><br/><br/>
+                            <LabelModal>Email: </LabelModal><br/>
+                            <InputModal type='email' onChange={(e) => setEmail(e.target.value)} value={email}/><br/><br/>
+                            <LabelModal>Senha: </LabelModal><br/>
+                            <InputModal type='password' onChange={(e) => setPassword(e.target.value)} value={password}/><br/><br/>
+                            <AlignAreaModal>
+                                <Button type='submit' onClick={()=>setTypeAction('Editar Modal')}> {type_button('Editar Modal')} </Button>
+                                <Button type='submit' onClick={()=>setTypeAction('Deletar')}> {type_button('Deletar')} </Button>
+                            </AlignAreaModal>
+                        </FormModal>
+                        {/*<ButtonsType tipo='Voltar' isModal={true} />
+                        <ButtonsType tipo='Deletar' isModal={true} />
+                        <ButtonsType tipo='Editar Modal' isModal={true} />*/}
+                    </ContainerModal>
+                </>
+            );
+        }
+
+        if (tipoModal == 'Cadastrar Fornecedor') {
+            return (
+                <>
+                    <ExitCircle size={30} onClick={closeModal}/>
+                    <ContainerModal>
+                        <FormModal onSubmit={Acao} ref = {formRef}>
+                            <LabelModal>Nome: </LabelModal><br/>
+                            <InputModal type='text' onChange={(e) => setName(e.target.value)} value={name}/><br/><br/>
+                            <LabelModal>Telefone: </LabelModal><br/>
+                            <InputModal type='text' onChange={(e) => setPhone(e.target.value)} value={phone}/><br/><br/>
+                            <LabelModal>Email: </LabelModal><br/>
+                            <InputModal type='email' onChange={(e) => setEmail(e.target.value)} value={email}/><br/><br/>
+                            <LabelModal>Senha: </LabelModal><br/>
+                            <InputModal type='password' onChange={(e) => setPassword(e.target.value)} value={password}/><br/><br/>
+                            <AlignAreaModal>
+                                <Button type='submit' onClick={()=>setTypeAction('Cadastrar')}> {type_button('Cadastrar')} </Button>
+                            </AlignAreaModal>
+                        </FormModal>
+                        
+                    </ContainerModal>
+                </>
+            );
+        }
+
+        if (tipoModal == 'Editar Produtos Modal' || tipoModal == 'Cadastrar Produtos Modal') {
+            return (
+                <>
+                    <ExitCircle size={30} onClick={closeModal}/>
+                    <ContainerModal>
+                        <FormModal onSubmit={Acao} ref = {formRef}>
+                            <LabelModal>Nome do Produto: </LabelModal><br/>
+                            <InputModal type='text' onChange={(e) => setNameProd(e.target.value)} value={nameProd}/><br/><br/>
+                            <LabelModal>Descrição: </LabelModal><br/>
+                            <TextAreaModal onChange={(e) => setDescription(e.target.value)} value={description}/> <br/><br/>
+                            <LabelModal>Ingredientes: </LabelModal><br/>
+                            <TextAreaModal onChange={(e) => setIngredient(e.target.value)} value={ingredient}/> <br/><br/>
+                            <LabelModal>Imagem: </LabelModal><br/>
+                            <InputImage onChange={(e) => setImage(e.target.value)} value={image}/> <br/><br/>
+                            <AlignAreaModal>
+                                <Button type='submit' onClick={()=>setTypeAction('Cadastrar')}> {type_button('Editar Modal')} </Button>
+                                {tipoModal != 'Cadastrar Produtos Modal' ?
+                                    <Button type='submit' onClick={()=>setTypeAction('Deletar')}> {type_button('Deletar')} </Button> : null}
+                            </AlignAreaModal>
+                        </FormModal>
+                        
+                    </ContainerModal>
+                </>
+            );
+        }
+
+        else {
+            return (
+                <>
+                  <ExitCircle size={30} onClick={closeModal}/>
+                    <ContainerModal>
+                        <FormModal onSubmit={Acao} ref = {formRef}>
+                            <LabelModal>Comentário: </LabelModal><br/>
+                            <TextAreaModalComment onChange={(e) => setComment(e.target.value)} value={comment}/> <br/><br/>
+                            <AlignAreaModal>
+                                <Button type='submit' onClick={()=>setTypeAction('Cadastrar')}> {type_button('Comentar Produto Modal')} </Button>
+                            </AlignAreaModal>
+                        </FormModal>
+                        
+                    </ContainerModal>  
+                </>
+            );
+        }
+    }
+
+    function typeButtonModal(tipo) {
+        if (tipo == 'Deletar' || tipo == 'Cadastrar' || tipo == 'Login' || isModal == true) {
+            return <Button type='submit' > {type_button(tipo)} </Button>
+        } else {
+            return <Button type='submit' onClick={openModal} > {type_button(tipo)} </Button>
+        }
+    }
+
     return(
         <Container>
-
-            <Button type='submit'>{type_button(tipo)}</Button>        
+            {typeButtonModal(tipo)}
+                 
+            <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                style={styleModal}
+            >
+                {modalForm()}
+            </Modal>      
         </Container>
             );
 }
