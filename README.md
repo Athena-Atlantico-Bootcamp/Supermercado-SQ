@@ -152,6 +152,7 @@ O usuário poderá cadastrar produtos industrializados fornecendo quais ingredie
 </details>
 <details>
   <summary><b>Telas Finais</b></summary>
+
   * Projeto Figma disponível [[neste link.]](https://www.figma.com/proto/ZuS1mbadHOKmXhdriiilsB/Athena?node-id=105%3A10654&scaling=scale-down-width&page-id=105%3A10456&starting-point-node-id=105%3A10457)
 </details>
 
