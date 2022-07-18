@@ -347,6 +347,215 @@ O usuário poderá cadastrar produtos industrializados fornecendo quais ingredie
 
 <details>
   <summary><b>Entrega 3 - Frontend</b></summary>
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>Stories</th>
+      <th>Tasks</th>
+      <th>Responsáveis</th>
+      <th>Prazo</th>
+    </tr>
+    <tr>
+      <td rowspan="22" align="center"><b>Frontend</b></td>
+      <td rowspan="2">Escolher um template</td>
+      <td>Pesquisar sites de mercados e/ou lojas de produtos sem glúten, sem lactose...</td>
+      <td align="center">Beatriz</td>
+      <td align="center">15/05/2022</td>
+    </tr>
+    <tr>
+      <td>Votar no template a ser seguido</td>
+      <td align="center">Todos</td>
+      <td align="center">15/05/2022</td>
+    </tr>
+    <tr>
+      <td>Prototipagem</td>
+      <td>Prototipagem no Figma</td>
+      <td align="center">Luiza</td>
+      <td align="center">24/05/2022</td>
+    </tr>
+    <tr>
+      <td>Escolher a tecnologia frontend</td>
+      <td>Discutir e decidir em grupo</td>
+      <td align="center">Todos</td>
+      <td align="center">24/06/2022</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Rotas </td>
+      <td>Organizar as pastas das páginas</td>
+      <td align="center">Luiza</td>
+      <td align="center">24/06/2022</td>
+    </tr>
+    <tr>
+      <td>Crias as rotas do React com react-rouder-dom</td>
+      <td align="center">Lucas*</td>
+      <td align="center">24/06/2022</td>
+    </tr>
+    <tr>
+      <td>AXIOS </td>
+      <td>Implementar o AXIOS e testas rotas</td>
+      <td align="center">Beatriz*</td>
+      <td align="center">24/06/2022</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Preparação backend</td>
+      <td>Melhorias do backend</td>
+      <td align="center">Ada*</td>
+      <td align="center">05/07/2022</td>
+    </tr>
+    <tr>
+      <td>Subir as mudanças no heroku</td>
+      <td align="center">João</td>
+      <td align="center">05/07/2022</td>
+    </tr>
+    <tr>
+      <td rowspan="5">Componentes Principais</td>
+      <td>Footer</td>
+      <td align="center">Luiza</td>
+      <td align="center">05/07/2022</td>
+    </tr>
+    <tr>
+      <td>Botões</td>
+      <td align="center">João</td>
+      <td align="center">05/07/2022</td>
+    </tr>
+    <tr>
+      <td>Card Produto</td>
+      <td align="center">Ada/Leonardo</td>
+      <td align="center">05/07/2022</td>
+    </tr>
+    <tr>
+      <td>Header</td>
+      <td align="center">Beatriz/Paulo</td>
+      <td align="center">11/07/2022</td>
+    </tr>
+    <tr>
+      <td>Modais</td>
+      <td align="center">João/Lucas</td>
+      <td align="center">13/07/2022</td>
+    </tr>
+    <tr>
+      <td rowspan="8">Páginas Responsivas</td>
+      <td>Home</td>
+      <td align="center">Luiza</td>
+      <td align="center">11/07/2022</td>
+    </tr>
+    <tr>
+      <td>Login</td>
+      <td align="center">Lucas</td>
+      <td align="center">11/07/2022</td>
+    </tr>
+    <tr>
+      <td>Sobre Nós</td>
+      <td align="center">Luiza</td>
+      <td align="center">11/07/2022</td>
+    </tr>
+    <tr>
+      <td>Alergias Alimentares</td>
+      <td align="center">Luiza</td>
+      <td align="center">13/07/2022</td>
+    </tr>
+    <tr>
+    <td>Buscar</td>
+      <td align="center">Luiza</td>
+      <td align="center">13/07/2022</td>
+    </tr>
+    <tr>
+    <td>Página Produto</td>
+      <td align="center">Beatriz/Paulo</td>
+      <td align="center">13/07/2022</td>
+    </tr>
+    <tr>
+    <td>Perfil Administrador</td>
+      <td align="center">Ada/Leonardo</td>
+      <td align="center">13/07/2022</td>
+    </tr>
+    <td>Perfil Usuário</td>
+      <td align="center">Ada/Leonardo</td>
+      <td align="center">13/07/2022</td>
+    </tr>
+    <tr>
+      <td rowspan="11" align="center"><b>Integração Front + Back</b></td>
+      <td>Integrar Pág. Home</td>
+      <td>GET Produtos</td>
+      <td align="center">Luiza</td>
+      <td align="center">11/07/2022</td>
+    </tr>
+    <tr>
+      <td>Integrar Pág. Buscar</td>
+      <td>GET Produtos com e sem ingredientes</td>
+      <td align="center">Luiza</td>
+      <td align="center">13/07/2022</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Integrar Pág. Produto</td>
+      <td>GET Produto</td>
+      <td align="center">Paulo</td>
+      <td align="center">13/07/2022</td>
+    </tr>
+    <tr>
+      <td>CRUD Comentários</td>
+      <td align="center">Paulo</td>
+      <td align="center">13/07/2022</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Integrar Pág. Login</td>
+      <td>POST Usuários</td>
+      <td align="center">João/Luiza</td>
+      <td align="center">11/07/2022</td>
+    </tr>
+    <tr>
+      <td>LOGIN Usuários</td>
+      <td align="center">João/Luiza</td>
+      <td align="center">11/07/2022</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Integrar Pág. Perfil Usuários</td>
+      <td>CRUD Usuários</td>
+      <td align="center">Ada/João</td>
+      <td align="center">16/07/2022</td>
+    </tr>
+    <tr>
+      <td>CRUD Produtos</td>
+      <td align="center">Ada/João</td>
+      <td align="center">16/07/2022</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Integrar Pág. Perfil Administrador</td>
+      <td>CRUD Usuários</td>
+      <td align="center">João</td>
+      <td align="center">16/07/2022</td>
+    </tr>
+    <tr>
+      <td>CRUD Produtos</td>
+      <td align="center">João</td>
+      <td align="center">16/07/2022</td>
+    </tr>
+    <tr>
+      <td>Deploy</td>
+      <td>Deploy através da Vercel</td>
+      <td align="center"> - </td>
+      <td align="center">20/07/2022</td>
+    </tr>
+    <tr>
+      <td align="center"><b>Entrega 03</b></td>
+      <td>Realizar entrega 03 - Módulo avançado</td>
+      <td>Entregar sistema completo, integrado aos módulos backend e camada de dados, implementado, funcional e testado</td>
+      <td align="center">Luiza*</td>
+      <td align="center">16/07/2022</td>
+    </tr>
+    <tr>
+      <td rowspan="2" align="center"><b>Entrega Final</b></td>
+      <td rowspan="2">Demoday</td>
+      <td>Preparar apresentação</td>
+      <td align="center"> - </td>
+      <td align="center">23/07/2022</td>
+    </tr>
+    <tr>
+      <td>Apresentar o projeto</td>
+      <td align="center"> - </td>
+      <td align="center">23/07/2022</td>
+    </tr>
+  </table>
 </details>
 
 Obs.: Nomes marcados com * indicam que a atividade foi realizada em grupo e a pessoa estava compartilhando a tela.
