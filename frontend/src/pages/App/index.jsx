@@ -8,12 +8,14 @@ import { useNavigate } from 'react-router-dom'
 
 function App() {
   const [products, setProducts] = useState([])
+  const [produto, setProduto] = useState([]);
 
   function getProducts() {
     try {
       api.get("/produtos")
       .then( (res) => {
         setProducts(res.data)
+        setProduto(products.reverse())
       })
     } catch (err) {
       console.error(err)
@@ -36,7 +38,7 @@ function App() {
           <Titulo> Adicionados Recentemente</Titulo>
         </ContainerTitulo>
         <ContainerProdutos>
-          { products ? products.map((p) => {
+          { produto ? produto.map((p) => {
             return (
                 <CardProdutos data={p} key={p.id_produto}/>
               )
