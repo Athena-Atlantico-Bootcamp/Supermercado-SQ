@@ -58,6 +58,7 @@ export const ContainerModal = styled.div`
 `
 
 export const FormModal = styled.form`
+    width: 100%;
 `
 export const LabelModal = styled.label`
     font-size: 15px;
@@ -66,7 +67,7 @@ export const LabelModal = styled.label`
 
 export const InputModal = styled.input`
     background-color: #FFF;
-    width: 28rem;
+    width: 100%;
     height: 25px;
     border: none;
     border-radius: 5px;
@@ -82,7 +83,7 @@ export const AlignAreaModal = styled.div`
 
 export const TextAreaModal = styled.textarea`
     background-color: #FFF;
-    width: 28rem;
+    width: 100%;
     height: 80px;
     border: none;
     border-radius: 5px;
@@ -90,7 +91,7 @@ export const TextAreaModal = styled.textarea`
 
 export const InputImage = styled.input`
     background-color: #FFF;
-    width: 28rem;
+    width: 100%;
     height: 35px;
     border: none;
     border-radius: 5px;
@@ -98,7 +99,7 @@ export const InputImage = styled.input`
 
 export const TextAreaModalComment = styled.textarea`
     background-color: #FFF;
-    width: 28rem;
+    width: 100%;
     height: 150px;
     border: none;
     border-radius: 5px;
