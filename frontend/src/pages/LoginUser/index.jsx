@@ -1,7 +1,7 @@
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer";
 import ButtonsType from "../../components/Buttons";
-import { ButtonCadastrar, ButtonDiv, Container, ContainerProduto, ContainerProdutoDetalhe, ContainerUser, Title, Line, Info, PlusCircleIcon, InfoName } from "./styles";
+import { ButtonCadastrar, ButtonDiv, Container, ContainerProduto, ContainerProdutoDetalhe, ContainerUser, Title, Line, Info, PlusCircleIcon, InfoName , TitlePrincipal} from "./styles";
 import { useState, useEffect } from "react";
 import api from '../../service/api';
 
@@ -10,6 +10,7 @@ function LoginUser() {
 
   const tokenUser = JSON.parse(localStorage.getItem('@token'));
   const userId = JSON.parse(localStorage.getItem('@usuario'));
+  const tipoUser = JSON.parse(localStorage.getItem('@tipo_usuario'));
   const [product, setProduct] = useState([]);
   const [user, setUser] = useState([]);
   
@@ -45,6 +46,9 @@ function LoginUser() {
   return (
     <div>
       <Header />
+      {tipoUser == 'fornecedor' ? 
+        <TitlePrincipal>Fornecedor</TitlePrincipal>
+      : null}
           <Container>
             <ContainerUser>
               <Title>Meus dados</Title>
