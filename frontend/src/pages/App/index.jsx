@@ -4,26 +4,21 @@ import Footer from '../../components/Footer'
 import CardProdutos from '../../components/CardProdutos'
 import api from '../../service/api'
 import { Container, ContainerTitulo, Titulo, ContainerProdutos } from './styles'
-import { useNavigate } from 'react-router-dom'
 
 function App() {
   const [products, setProducts] = useState([])
-  const [produto, setProduto] = useState([]);
 
   function getProducts() {
     try {
       api.get("/produtos")
       .then( (res) => {
-        setProducts(res.data)
-        setProduto(products.reverse())
+        setProducts(res.data.reverse())
       })
     } catch (err) {
       console.error(err)
     }
   }
   useEffect(() => {getProducts()}, [])
-  
-  const navigate = useNavigate()
 
   return (
     <div>
@@ -33,7 +28,7 @@ function App() {
           <Titulo> Adicionados Recentemente</Titulo>
         </ContainerTitulo>
         <ContainerProdutos>
-          { produto ? produto.map((p) => {
+          { products ? products.map((p) => {
             return (
                 <CardProdutos data={p} key={p.id_produto}/>
               )
