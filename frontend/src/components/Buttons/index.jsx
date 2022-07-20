@@ -134,7 +134,6 @@ function ButtonsType({tipo, isModal = false, tipoModal, data}) {
         }
     }
     function deletar(){
-        console.log('teste ', data.id_usuario)
         let rotaDeletar = '';
         let mensagem = '';
         let isUser=false;
@@ -151,7 +150,6 @@ function ButtonsType({tipo, isModal = false, tipoModal, data}) {
                 isUser = true
             }
             try{
-                console.log('eeeeeeentrou ', rotaDeletar)
                 api.delete(`${rotaDeletar}`, {
                     headers: {
                         "Authorization": `Bearer ${tokenUser}`}
@@ -250,7 +248,6 @@ function ButtonsType({tipo, isModal = false, tipoModal, data}) {
             }
 
             if (tipoModal == 'Comentar Produto') {
-                console.log("Entrou")
                 if (typeAction == 'Comentar') {
                     registerComment()
                 }

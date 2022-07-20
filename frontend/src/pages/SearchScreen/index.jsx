@@ -3,6 +3,8 @@ import api from '../../service/api'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer'
 import CardProdutos from '../../components/CardProdutos'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Container, 
          ContainerGeral,
          TextoProcura, 
@@ -35,6 +37,7 @@ function SearchScreen() {
 
   function ProcurarSemProduto(e){
     e.preventDefault();
+    checkPesquise(procuraSem);
     setTextoProcura(`Buscar produtos sem: ${procuraSem}`);
     setProcuraSem('');
     getProducts(`/semingrediente/${procuraSem}`)
@@ -42,16 +45,36 @@ function SearchScreen() {
 
   function ProcurarComProduto(e){
     e.preventDefault();
+    checkPesquise(procuraCom);
     setTextoProcura(`Buscar produtos com: ${procuraCom}`);
     setProcuraCom('');
     getProducts(`/ingrediente/${procuraCom}`)
   }
+
+  function checkPesquise(procura){
+    if (procura == ''){
+      notify()
+    }
+  }
+
+  const notify = () => {
+    toast.error('Por favor, digitar o que deseja pesquisar', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+};
 
   return (
     <Container>
       <Header />
       <TextoProcura>{textoProcura}</TextoProcura>
       <ContainerGeral>
+      <ToastContainer />
         <ContainerBusca>
           <form onSubmit={ProcurarSemProduto} ref={formRef}>
             <Texto>Buscar produtos sem:</Texto>

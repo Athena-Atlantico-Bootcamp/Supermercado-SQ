@@ -78,7 +78,7 @@ function Login() {
     }
 
     const notify = () => {
-        toast.warn('Por favor preencher todos os campos obrigatórios', {
+        toast.error('Por favor, preencher todos os campos obrigatórios', {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -90,7 +90,7 @@ function Login() {
     };
 
     function CheckDadosCadastrar(){
-        if (name == '' || phone =='' || constraint =='' || email == '' || password == ''){
+        if (name == '' || phone =='' || email == '' || password == ''){
             notify();
         }
     }

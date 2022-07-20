@@ -4,7 +4,6 @@ import Footer from '../../components/Footer'
 import CardProdutos from '../../components/CardProdutos'
 import api from '../../service/api'
 import { Container, ContainerTitulo, Titulo, ContainerProdutos } from './styles'
-import { useNavigate } from 'react-router-dom'
 
 function App() {
   const [products, setProducts] = useState([])
@@ -13,20 +12,13 @@ function App() {
     try {
       api.get("/produtos")
       .then( (res) => {
-        setProducts(res.data)
+        setProducts(res.data.reverse())
       })
     } catch (err) {
       console.error(err)
     }
   }
   useEffect(() => {getProducts()}, [])
-  
-  const navigate = useNavigate()
-
-  function Redirecionar(id_produto) {
-    console.log('teste');
-    navigate(`/produto/${id_produto}`);
-  }
 
   return (
     <div>
