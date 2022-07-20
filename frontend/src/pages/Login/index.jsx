@@ -1,4 +1,4 @@
-import { Form, AlignArea, Container, PasswordArea, Input, Label, ContainerLogin, Title, Line, ContainerSignUp, IconEye } from "./styles";
+import { Form, AlignArea, Container, PasswordArea, Input, Label, ContainerLogin, Title, Line, ContainerSignUp, IconEye , IconEyeOpen} from "./styles";
 import ButtonsType from '../../components/Buttons/index'
 import Header from "../../components/Header/Header";
 import { useState, useRef } from "react";
@@ -132,7 +132,11 @@ function Login() {
                         <Label>Senha: </Label><br/>
                         <PasswordArea>
                         <Input type={showPasswordLogin ? 'text' : 'password'} onChange={(e) => setPasswordLogin(e.target.value)} value={passwordLogin}/><br/><br/>
-                        <IconEye size={20} onClick={() => setShowPasswordLogin(!showPasswordLogin)}/>
+                        {showPasswordLogin 
+                        ? 
+                            <IconEye size={20} onClick={() => setShowPasswordLogin(!showPasswordLogin)}/>
+                        : 
+                            <IconEyeOpen size={20} onClick={() => setShowPasswordLogin(!showPasswordLogin)}/>}
                         </PasswordArea>
                         <AlignArea>
                         <ButtonsType tipo='Login'/>
