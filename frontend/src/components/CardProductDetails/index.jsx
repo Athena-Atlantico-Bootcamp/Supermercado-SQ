@@ -53,7 +53,7 @@ import {
     const [coments, setComents] = useState([])
     const [product, setProduct] = useState([])
     const [user, setUser] = useState([])
-  
+    const tokenUser = JSON.parse(localStorage.getItem('@token'));
     const navigate = useNavigate()
     function Redirecionar() {
         console.log('teste');
@@ -73,8 +73,20 @@ import {
       }
     }
 
+    function getUser() {
+      try {
+        api.get(`/usuarios/`, 
+            {headers: {"Authorization": `Bearer ${tokenUser}`}})
+            .then((res) => {
+              setUser(res.data)
+            })
+          
+      } catch (error) {
+        console.error(error)
+      }
+    }
     
-    useEffect(() => { getProduct(); getComents()}, []);
+    useEffect(() => {getUser(); getProduct(); getComents()}, []);
     
     
      function getComents() {
@@ -92,7 +104,18 @@ import {
         }
       }
 
- 
+      function getUserById(id) {
+        let nome = ''
+        user.map((u) => {
+          if (u.id_usuario == id) {
+            nome = u.nome
+          }
+        })
+        return nome
+      }
+
+      //console.log("Usuarios",user)
+      getUserById(93)
 
     return(
       <section>
@@ -141,10 +164,10 @@ import {
                 <CardComents>
                 {coments.map((coments)=>{
                         let dataFormatada = new Intl.DateTimeFormat('pt-BR').format(new Date(coments.createdAt));
-                        
                           return(
                           <>
                             {/* <Usuario>{coments.us}</Usuario> */}
+                            <Usuario key={coments.usuarioId}>{getUserById(coments.usuarioId)}</Usuario>
                             <Data key={coments.id}>{dataFormatada}</Data>
                             <Comentario key={coments.id}>{coments.texto_comentario}</Comentario>
                           </>
