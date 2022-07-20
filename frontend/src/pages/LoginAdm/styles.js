@@ -86,7 +86,8 @@ export const InfoName = styled.span`
 export const TitlePrincipal = styled.h1`
   text-align: center;
   color: #015f43;
-  margin: 2rem 0 2rem 0;
+  font-size: 1.7rem;
+  margin: 2rem 0 1rem 0;
 `
 
 export const ContainerProdutoDetalhe = styled.div`
