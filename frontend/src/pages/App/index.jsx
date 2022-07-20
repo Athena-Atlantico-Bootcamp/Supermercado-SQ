@@ -25,11 +25,6 @@ function App() {
   
   const navigate = useNavigate()
 
-  function Redirecionar(id_produto) {
-    console.log('teste');
-    navigate(`/produto/${id_produto}`);
-  }
-
   return (
     <div>
       <Header/>
