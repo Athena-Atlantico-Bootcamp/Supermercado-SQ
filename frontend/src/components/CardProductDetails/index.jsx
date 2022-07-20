@@ -75,8 +75,7 @@ import {
 
     function getUser() {
       try {
-        api.get(`/usuarios/`, 
-            {headers: {"Authorization": `Bearer ${tokenUser}`}})
+        api.get(`/usuarios/`)
             .then((res) => {
               setUser(res.data)
             })
