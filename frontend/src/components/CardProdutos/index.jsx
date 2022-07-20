@@ -6,7 +6,6 @@ function CardProdutos(props) {
 
     const navigate = useNavigate()
     function Redirecionar() {
-        console.log('teste');
         navigate(`/produto/${props.data.id_produto}`);
       }
 
