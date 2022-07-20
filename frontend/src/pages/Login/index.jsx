@@ -48,6 +48,7 @@ function Login() {
                 setPassword('')
                 setConstraint('')
                 setPhone('')
+                notifyCadastro()
             })
         } catch (error) {
             console.error(error)
@@ -79,6 +80,18 @@ function Login() {
 
     const notify = () => {
         toast.error('Por favor, preencher todos os campos obrigatórios', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
+    };
+
+    const notifyCadastro = () => {
+        toast.success('Usuário cadastrado com sucesso', {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
