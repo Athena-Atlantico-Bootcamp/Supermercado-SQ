@@ -20,7 +20,8 @@ import {
   Usuario,
   Data,
   Comentario,
-  CardComents
+  CardComents,
+  AlignComments
   } from './styles.js'
 
 
@@ -75,8 +76,7 @@ import {
 
     function getUser() {
       try {
-        api.get(`/usuarios/`, 
-            {headers: {"Authorization": `Bearer ${tokenUser}`}})
+        api.get(`/usuarios/`)
             .then((res) => {
               setUser(res.data)
             })
@@ -167,8 +167,10 @@ import {
                           return(
                           <>
                             {/* <Usuario>{coments.us}</Usuario> */}
-                            <Usuario key={coments.usuarioId}>{getUserById(coments.usuarioId)}</Usuario>
-                            <Data key={coments.id}>{dataFormatada}</Data>
+                            <AlignComments>
+                              <Usuario key={coments.usuarioId}>{getUserById(coments.usuarioId)}</Usuario>
+                              <Data key={coments.id}>{dataFormatada}</Data>
+                            </AlignComments>
                             <Comentario key={coments.id}>{coments.texto_comentario}</Comentario>
                           </>
                         )
