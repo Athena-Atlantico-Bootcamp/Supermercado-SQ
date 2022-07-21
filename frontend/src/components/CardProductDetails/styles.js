@@ -126,38 +126,47 @@ export const ContainerComents = styled.div`
     padding-top: 3rem;
 `
 
+export const AlignComments = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+`
+
 export const Usuario = styled.h2`
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #015F43;
-
+    margin: 0;
     @media only screen and (max-width: 1024px) {
         font-size: 1.5rem;
     }
 `
 
 export const Data = styled.p`
+    font-size: 1rem;
     font-weight: bold;
 `
 
 export const Comentario = styled.p`
-font-size: 1.5rem;
-color: black;
-
-@media only screen and (max-width: 1024px) {
-    font-size: 1.5rem;
-}
+    font-size: 1.3rem;
+    color: black;
+    margin: 0;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    @media only screen and (max-width: 1024px) {
+        font-size: 1.5rem;
+    }
 `
 
 export const CardComents = styled.div`
-width: 100%;
-box-sizing: border-box;
-
+    width: 100%;
+    box-sizing: border-box;
 `
 
 
 export const Modal = styled.div`
-    with: 200px;
+    width: 200px;
     height: 100%;
     background-color: black;
 
