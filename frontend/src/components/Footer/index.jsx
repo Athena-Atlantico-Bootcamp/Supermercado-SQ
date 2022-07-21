@@ -1,64 +1,37 @@
 import { useNavigate } from 'react-router-dom';
 import { Container, NomeSupermercado, Texto, Link, ContainerTexto } from './styles'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import LinkWrapper from '../Header/LinkWrapper';
 
 function Footer() {
   const navigate = useNavigate();
 
-  function paginaHome() {
-    navigate("/");
-  }
-
-  function paginaQuemSomos() {
-    navigate("/sobre-nos");
-  }
-
-  function paginaCriarConta() {
-    navigate("/login");
-  }
-
-  function paginaLogin() {
-    const tipoUsuario = JSON.parse(localStorage.getItem('@tipo_usuario'))
-    console.log('tipo ',tipoUsuario)
-    console.log(tipoUsuario == 'usuario')
-    if(tipoUsuario == 'usuario' || tipoUsuario == 'fornecedor'){
-      navigate("/perfil");
-    } else if (tipoUsuario){
-      navigate("/perfil-adm");
-    } else {
-      navigate("/login");
-    }
-  }
-
   return (
     <Container>
-      <ToastContainer />
-      <NomeSupermercado><Link href="" onClick={paginaQuemSomos}>Supermercado SQ</Link></NomeSupermercado>
+      <NomeSupermercado><LinkWrapper to="/" >Supermercado SQ</LinkWrapper></NomeSupermercado>
       <ContainerTexto>
         <Texto>INSTITUCIONAL</Texto>
-        <Texto><Link href="" onClick={paginaQuemSomos}>Quem somos</Link></Texto>
+        <Texto><LinkWrapper to="/sobre-nos">Quem somos</LinkWrapper></Texto>
       </ContainerTexto>
       <ContainerTexto>
         <Texto>CONTA</Texto>
-        <Texto><Link href="" onClick={paginaCriarConta}>Criar uma conta</Link></Texto>
-        <Texto><Link href="" onClick={paginaLogin}>Minha conta</Link></Texto>
+        <Texto><LinkWrapper to="/login">Criar uma conta</LinkWrapper></Texto>
+        <Texto><LinkWrapper to="/perfil">Minha conta</LinkWrapper></Texto>
       </ContainerTexto>
       <div>
-        <Link href="" onClick={paginaQuemSomos}>
+        <LinkWrapper to="/sobre-nos">
           <Texto>DESENVOLVIDO POR</Texto>
           <Texto>Ada Diniz</Texto>
           <Texto>Beatriz Makowski</Texto>
           <Texto>João Victor Almeida</Texto>
-        </Link>
+        </LinkWrapper>
       </div>
       <div>
-        <Link href="" onClick={paginaQuemSomos}>
+        <LinkWrapper to="/sobre-nos">
           <Texto>Leonardo Felipe</Texto>
           <Texto>Lucas Cesar</Texto>
           <Texto>Luiza Gadelha</Texto>
           <Texto>Paulo Anderson</Texto>
-        </Link>
+        </LinkWrapper>
       </div>
     </Container>
   )
