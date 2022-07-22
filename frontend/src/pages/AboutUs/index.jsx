@@ -23,8 +23,7 @@ function AboutUs() {
                 name="Ada Diniz" 
                 github="https://github.com/adaDiniz"
                 linkedin="https://www.linkedin.com/in/adadiniz/"
-                text="Lörem ipsum mör europlal, gil. Dekasm euskapet proll astroporydade. Termopol vis: munar, geonöck om langen jåmönas inklusive oregt, ans. Dehyde nyv, bröllopsklänning. Kakrons ultranade, blinga, än wikiläcka fast mikroged och jåmulig töst. 
-                Monas heterobel ågona migon, sperad så past. Mohure kykyras rament, homorade i reara. Makrohötöligt megas pretos, lurat. Denas hös i köttberg lareligt vivahet inte etnofili. Nyng vudokåktig nilingar om rymoling i ektiga. "
+                text="Advogada e, principalmente, Desenvolvedora Front-End em busca da primeira oportunidade profissional. Atualmente, cursa o 2º semestre do curso de Análise e Desenvolvimento de Sistemas e está cada vez mais se aprofundando nas tecnologias do desenvolvimento web."
               />
               <CardSobreNos 
                 name="Beatriz Makowski" 
