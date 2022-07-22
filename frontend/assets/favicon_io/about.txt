@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Alex Brush
+- Font Author: Copyright 2011 The Alex Brush Project Authors (https://github.com/googlefonts/alex-brush)
+- Font Source: http://fonts.gstatic.com/s/alexbrush/v20/SZc83FzrJKuqFbwMKk6EtUL57DtOmCc.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
