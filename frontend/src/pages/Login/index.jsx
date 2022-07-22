@@ -152,15 +152,15 @@ function Login() {
                         <Title>Cadastro</Title><br/><br/><br/>
                     </AlignArea>
                     <Form onSubmit={Cadastrar} ref={formRef}>
-                        <Label>Nome: </Label><br/>
+                        <Label>Nome: * </Label><br/>
                         <Input type='text' onChange={(e) => setName(e.target.value)} value={name}/><br/><br/>
-                        <Label>Telefone: </Label><br/>
+                        <Label>Telefone: * </Label><br/>
                         <Input type='text' onChange={(e) => setPhone(e.target.value)} value={phone}/><br/><br/>
                         <Label>Restrições: </Label><br/>
                         <Input type='text' onChange={(e) => setConstraint(e.target.value)} value={constraint}/><br/><br/>
-                        <Label>Email: </Label><br/>
+                        <Label>Email: * </Label><br/>
                         <Input type='email' onChange={(e) => setEmail(e.target.value)} value={email}/><br/><br/>
-                        <Label>Senha: </Label><br/>
+                        <Label>Senha: * </Label><br/>
                         <Input type='password' onChange={(e) => setPassword(e.target.value)} value={password}/><br/><br/>
                         <AlignArea>
                             <ButtonsType tipo='Cadastrar'/>
