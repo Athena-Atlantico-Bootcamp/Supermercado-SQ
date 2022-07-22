@@ -174,10 +174,7 @@ import {
                             <AlignComments>
                               <Usuario key={coments.usuarioId}>{getUserById(coments.usuarioId)}</Usuario>
                               {idUser == coments.usuarioId ? 
-                                <AlignIcons>
-                                  <EditCommentIcon size={20}/>
-                                  <DeleteCommentIcon size={20}/>
-                                </AlignIcons>
+                                <ButtonsType tipo='Editar Deletar Comentario' tipoModal = 'Comentar Produto' data={coments}/>
                               : null}
                               <Data key={coments.id}>{dataFormatada}</Data>
                             </AlignComments>

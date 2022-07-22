@@ -1,12 +1,20 @@
 import styled from "styled-components";
 
-import {PencilSimple, TrashSimple} from 'phosphor-react'
+import {PencilSimple, TrashSimple, XCircle} from 'phosphor-react'
 
 export const EditCommentIcon = styled(PencilSimple)`
     padding-left: 1rem;
 `
 export const DeleteCommentIcon = styled(TrashSimple)`
     padding-left: 1rem;
+`
+
+export const ExitCircle = styled(XCircle)`
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 10px;
+    cursor: pointer;
 `
 
 export const Container = styled.div` 

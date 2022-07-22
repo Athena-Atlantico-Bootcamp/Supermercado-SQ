@@ -9,11 +9,15 @@ import { useState, useEffect } from "react";
 
 
 function LoginAdm() {
-
+  
   const tokenUser = JSON.parse(localStorage.getItem('@token'));
   const userId = JSON.parse(localStorage.getItem('@usuario'));
   const [product, setProduct] = useState([]);
   const [user, setUser] = useState([]);
+  const [allUser, setAllUser] = useState([]);
+  //const [userProvider, setUserProvider] = useState([]);
+  const aux_provider = []
+
 
   async function getProductByUserId() {
     try {
@@ -38,22 +42,60 @@ function LoginAdm() {
           console.error(err);
       }
     }
-    useEffect(() => {getProductByUserId(), getUserById()}, []);
+
+    function getUsers() {
+      try {
+        api.get('/usuarios/')
+        .then((res) => {
+          setAllUser(res.data)
+        })
+      } catch (err) {
+        console.error(err)
+      }
+    }
+
+    function getAllProviders() {
+      
+      try {
+        allUser.map((user) => {
+          if (user.tipo_usuario == 'fornecedor') {
+            aux_provider.push(user)
+          }
+        })
+        
+        //console.log(aux_provider)
+      } catch(err) {
+        console.error(err)
+      }
+    }
+
+    useEffect(() => {getProductByUserId(), getUserById(), getUsers()}, []);
+    getAllProviders()
+    //console.log(allUser)
+    
   return (
       <div>
         <Header />
           <TitlePrincipal>Administrador</TitlePrincipal>
           <Container>
             <ContainerFornecedor>
-              <Title>Meus Dados</Title>              
+              <Title>Fornecedores</Title>              
+              <ButtonsType tipo='Cadastrar Novo Fornecedor' tipoModal='Cadastrar Fornecedor' />  
                   <div >
-                    <Info><InfoName>Nome:</InfoName> {user.nome}</Info>
-                    <Info><InfoName>Telefone:</InfoName> {user.telefone}</Info>
-                    <Info><InfoName>Email:</InfoName> {user.email}</Info>
-                    <ButtonDiv>
-                      <ButtonsType tipo='Editar' tipoModal='Fornecedor' data={user}/>
-                      <ButtonsType tipo='Deletar' data={user}/>
-                    </ButtonDiv>    
+                    {user ? aux_provider.map((p) => {
+                      return (
+                        <div key={p.id_usuario}>
+                          <Info><InfoName>Nome:</InfoName> {p.nome}</Info>
+                          <Info><InfoName>Telefone:</InfoName> {p.telefone}</Info>
+                          <Info><InfoName>Email:</InfoName> {p.email}</Info>
+                          <ButtonDiv>
+                            <ButtonsType tipo='Editar' tipoModal='Fornecedor' data={p}/>
+                            <ButtonsType tipo='Deletar' data={user}/>
+                          </ButtonDiv>
+                        </div>
+                      );
+                    }) : null}
+                        
                   </div>
               
             </ContainerFornecedor>
