@@ -17,8 +17,7 @@ function AboutUs() {
               <CardSobreNos 
                 name="Projeto - Equipe Athena" 
                 github="https://github.com/Athena-Atlantico-Bootcamp/Supermercado-SQ"
-                text="Lörem ipsum mör europlal, gil. Dekasm euskapet proll astroporydade. Termopol vis: munar, geonöck om langen jåmönas inklusive oregt, ans. Dehyde nyv, bröllopsklänning. Kakrons ultranade, blinga, än wikiläcka fast mikroged och jåmulig töst. 
-                Monas heterobel ågona migon, sperad så past. Mohure kykyras rament, homorade i reara. Makrohötöligt megas pretos, lurat. Denas hös i köttberg lareligt vivahet inte etnofili. Nyng vudokåktig nilingar om rymoling i ektiga. "
+                text="Equipe multidisciplinar formada no curso de Desenvolvimento Fullstack do programa de capacitação Atlântico Academy Bootcamp, ofertado pelo Instituto Atlântico. A equipe Athena é composta por: Ada Diniz, Beatriz Makowski, João Victor, Leonardo Felipe, Lucas Cesar, Paulo Anderson e tendo como líder Luiza Gadelha. "
               />
               <CardSobreNos 
                 name="Ada Diniz" 
@@ -59,8 +58,7 @@ function AboutUs() {
                 name="Luiza Gadelha" 
                 github="https://github.com/LuizaGA"
                 linkedin="https://www.linkedin.com/in/luiza-gadelha/"
-                text="Lörem ipsum mör europlal, gil. Dekasm euskapet proll astroporydade. Termopol vis: munar, geonöck om langen jåmönas inklusive oregt, ans. Dehyde nyv, bröllopsklänning. Kakrons ultranade, blinga, än wikiläcka fast mikroged och jåmulig töst. 
-                Monas heterobel ågona migon, sperad så past. Mohure kykyras rament, homorade i reara. Makrohötöligt megas pretos, lurat. Denas hös i köttberg lareligt vivahet inte etnofili. Nyng vudokåktig nilingar om rymoling i ektiga. "
+                text="Desenvolvedora Fullstack com experiência em react e react native. Pós graduada em Arquitetura e atualmente cursando o 3º semestre de Análise e Desenvolvimento de Sistemas, sempre estudando novas tecnologias para se atualizar e melhorar profissionalmente. Estagiária de desenvolvimento web e mobile desde dezembro de 2021 no VORTEX, Laboratório de Formação e Inovação Tecnológica da Universidade de Fortaleza (Unifor). "
               />
               <CardSobreNos 
                 name="Paulo Anderson" 
