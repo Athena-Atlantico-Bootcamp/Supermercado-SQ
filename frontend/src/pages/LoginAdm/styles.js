@@ -95,3 +95,8 @@ export const ContainerProdutoDetalhe = styled.div`
   overflow-y: scroll;
   max-height: 450px;
 `
+export const ContainerFornecedorDetalhe = styled.div`
+  margin-top: 10px;
+  overflow-y: scroll;
+  max-height: 450px;
+`

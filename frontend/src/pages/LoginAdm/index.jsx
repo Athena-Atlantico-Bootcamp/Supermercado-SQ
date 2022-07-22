@@ -2,7 +2,7 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer";
 import ButtonsType from "../../components/Buttons";
 
-import { ButtonCadastrar, ButtonDiv, Container, ContainerProduto, ContainerFornecedor, ContainerProdutoDetalhe, Title, Line, Info, PlusCircleIcon, InfoName, TitlePrincipal } from "./styles";
+import { ButtonCadastrar, ButtonDiv, Container, ContainerProduto, ContainerFornecedor, ContainerProdutoDetalhe, Title, Line, Info, PlusCircleIcon, InfoName, TitlePrincipal, ContainerFornecedorDetalhe } from "./styles";
 
 import api from "../../service/api";
 import { useState, useEffect } from "react";
@@ -62,7 +62,6 @@ function LoginAdm() {
             aux_provider.push(user)
           }
         })
-        
         //console.log(aux_provider)
       } catch(err) {
         console.error(err)
@@ -81,7 +80,7 @@ function LoginAdm() {
             <ContainerFornecedor>
               <Title>Fornecedores</Title>              
               <ButtonsType tipo='Cadastrar Novo Fornecedor' tipoModal='Cadastrar Fornecedor' />  
-                  <div >
+                  <ContainerFornecedorDetalhe >
                     {user ? aux_provider.map((p) => {
                       return (
                         <div key={p.id_usuario}>
@@ -95,9 +94,7 @@ function LoginAdm() {
                         </div>
                       );
                     }) : null}
-                        
-                  </div>
-              
+                  </ContainerFornecedorDetalhe>
             </ContainerFornecedor>
 
             <Line />
