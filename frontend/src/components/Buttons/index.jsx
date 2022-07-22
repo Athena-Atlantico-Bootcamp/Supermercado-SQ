@@ -17,7 +17,10 @@ TextAreaModal,
 InputImage,
 TextAreaModalComment,
 PlusCircleIcon,
-ButtonCadastrar
+ButtonCadastrar,
+AlignIcons,
+EditCommentIcon,
+DeleteCommentIcon
 } from './styles.js'
 import Modal from 'react-modal'
 import { useNavigate } from 'react-router-dom' 
@@ -74,6 +77,7 @@ function openModal() {
             setIngredient(data.ingredientes)
             setDescription(data.descricao)
             setImage(data.imagem)
+            setComment(data.texto_comentario)
         }
     }
 
@@ -188,6 +192,21 @@ function openModal() {
         }
     }
 
+    function editComments() {
+        try {
+            api.patch(`/comentarios/${data.id_comentario}`, {
+                texto_comentario: comment
+            }, {headers: {"Authorization": `Bearer ${tokenUser}`}})
+            .then((res) => {
+                alert('Dados atualizados')
+                closeModal()
+                window.location.reload()
+            })
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
     function signUpProduct() {
         try {
             api.post('/produtos', {
@@ -223,6 +242,14 @@ function openModal() {
         }
     }
 
+    function deleteComments(){
+        try {
+            api.delete(`/comentarios/${data.id_comentario}`)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
     function Acao(e) {
         try {
             e.preventDefault()
@@ -252,6 +279,9 @@ function openModal() {
             if (tipoModal == 'Comentar Produto') {
                 if (typeAction == 'Comentar') {
                     registerComment()
+                }
+                if (typeAction == 'Editar') {
+                    editComments()
                 }
             }
 
@@ -327,8 +357,8 @@ function openModal() {
                             <InputImage onChange={(e) => setImage(e.target.value)} value={image}/> <br/><br/>
                             <AlignAreaModal>
                                 {tipoModal == 'Cadastrar Produtos Modal' ? 
-                                <Button type='submit' onClick={()=>setTypeAction('Cadastrar')}> {type_button('Cadastrar')} </Button> : 
-                                <Button type='submit' onClick={()=>setTypeAction('Editar')}> {type_button('Editar Modal')} </Button>
+                                    <Button type='submit' onClick={()=>setTypeAction('Cadastrar')}> {type_button('Cadastrar')} </Button> : 
+                                    <Button type='submit' onClick={()=>setTypeAction('Editar')}> {type_button('Editar Modal')} </Button>
                                 }
                                 
                                 {tipoModal != 'Cadastrar Produtos Modal' ?
@@ -350,7 +380,7 @@ function openModal() {
                             <LabelModal>Comentário: </LabelModal><br/>
                             <TextAreaModalComment onChange={(e) => setComment(e.target.value)} value={comment}/> <br/><br/>
                             <AlignAreaModal>
-                                <Button type='submit' onClick={()=>setTypeAction('Comentar')}> {type_button('Comentar Produto Modal')} </Button>
+                                <Button type='submit' onClick={()=> {tipo=='Comentar Produto' ? setTypeAction('Comentar'): setTypeAction('Editar')}}> {type_button('Comentar Produto Modal')} </Button>
                             </AlignAreaModal>
                         </FormModal>
                         
@@ -372,8 +402,18 @@ function openModal() {
                 return <Button type='submit' > {type_button(tipo)} </Button>
             }
         } else {
-            if (tipo == 'Cadastrar Novo Produto') {
-                return <ButtonCadastrar type='submit' onClick={openModal}><PlusCircleIcon /> Cadastrar novo produto</ButtonCadastrar>
+            if (tipo == 'Cadastrar Novo Produto' || tipo == 'Cadastrar Novo Fornecedor') {
+                return <ButtonCadastrar type='submit' onClick={openModal}><PlusCircleIcon />{tipo}</ButtonCadastrar>
+            }
+
+            else if (tipo == 'Editar Deletar Comentario') {
+                
+                return (
+                    <AlignIcons>
+                        <EditCommentIcon size={20} onClick={openModal}/>
+                        <DeleteCommentIcon size={20} onClick={deletar}/>
+                    </AlignIcons>
+                );
             }
             return <Button type='submit' onClick={openModal} > {type_button(tipo)} </Button>
         }

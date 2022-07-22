@@ -1,5 +1,6 @@
 import styled, {css} from "styled-components";
-import {PencilSimpleLine, TrashSimple, XCircle, PlusCircle } from 'phosphor-react';
+import {PencilSimpleLine, TrashSimple, XCircle, PlusCircle, PencilSimple, Trash, } from 'phosphor-react';
+
 export const Container = styled.div`
     
 `
@@ -9,6 +10,13 @@ export const ExitCircle = styled(XCircle)`
     right: 0px;
     padding: 10px;
     cursor: pointer;
+`
+
+export const EditCommentIcon = styled(PencilSimple)`
+    padding-left: 1rem;
+`
+export const DeleteCommentIcon = styled(Trash)`
+    padding-left: 1rem;
 `
 
 export const EditIcon = styled(PencilSimpleLine)`
@@ -122,6 +130,13 @@ export const PlusCircleIcon = styled(PlusCircle) `
     margin: 5px;
     font-size: 25px;
     color: #ffffff;
+`
+export const AlignIcons = styled.div`
+    display: flex;
+    justify-content: space-around;
+    bottom: -1px;
+    margin-right: 55rem;
+    cursor: pointer;
 `
 
 /*export const EditButton = styled(Button)`
