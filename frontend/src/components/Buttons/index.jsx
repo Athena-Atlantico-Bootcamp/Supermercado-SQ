@@ -32,6 +32,7 @@ const styleModal = {
         left: '50%',
         right: 'auto',
         bottom: 'auto',
+        width: '60%',
         marginRight: '-50%',
         transform: 'translate(-50%,-50%)',
         border: '1px solid #ccc',
@@ -61,7 +62,8 @@ function ButtonsType({tipo, isModal = false, tipoModal, data}) {
     const [comment, setComment] = useState('')
     const navigate = useNavigate()
     const tokenUser = JSON.parse(localStorage.getItem('@token'));
-    function openModal() {
+    
+function openModal() {
         setIsOpen(true);
         if (data) {
             setName(data.nome)

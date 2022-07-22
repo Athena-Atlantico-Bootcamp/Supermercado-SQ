@@ -1,6 +1,7 @@
 import { Form, AlignArea, Container, PasswordArea, Input, Label, ContainerLogin, Title, Line, ContainerSignUp, IconEye , IconEyeOpen} from "./styles";
 import ButtonsType from '../../components/Buttons/index'
 import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer";
 import { useState, useRef } from "react";
 import api from "../../service/api";
 import { useNavigate } from "react-router-dom";
@@ -168,6 +169,7 @@ function Login() {
                 </ContainerSignUp>
 
             </Container>
+            <Footer />
         </>
     );
 }

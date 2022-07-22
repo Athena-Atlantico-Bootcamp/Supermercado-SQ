@@ -21,7 +21,10 @@ import {
   Data,
   Comentario,
   CardComents,
-  AlignComments
+  AlignComments,
+  EditCommentIcon,
+  DeleteCommentIcon,
+  AlignIcons
   } from './styles.js'
 
 
@@ -55,6 +58,7 @@ import {
     const [product, setProduct] = useState([])
     const [user, setUser] = useState([])
     const tokenUser = JSON.parse(localStorage.getItem('@token'));
+    const idUser = JSON.parse(localStorage.getItem('@usuario'))
     const navigate = useNavigate()
     function Redirecionar() {
         console.log('teste');
@@ -115,7 +119,7 @@ import {
       }
 
       //console.log("Usuarios",user)
-      getUserById(93)
+      //getUserById(93)
 
     return(
       <section>
@@ -169,6 +173,12 @@ import {
                             {/* <Usuario>{coments.us}</Usuario> */}
                             <AlignComments>
                               <Usuario key={coments.usuarioId}>{getUserById(coments.usuarioId)}</Usuario>
+                              {idUser == coments.usuarioId ? 
+                                <AlignIcons>
+                                  <EditCommentIcon size={20}/>
+                                  <DeleteCommentIcon size={20}/>
+                                </AlignIcons>
+                              : null}
                               <Data key={coments.id}>{dataFormatada}</Data>
                             </AlignComments>
                             <Comentario key={coments.id}>{coments.texto_comentario}</Comentario>

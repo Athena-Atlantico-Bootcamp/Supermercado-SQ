@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+import {PencilSimple, TrashSimple} from 'phosphor-react'
+
+export const EditCommentIcon = styled(PencilSimple)`
+    padding-left: 1rem;
+`
+export const DeleteCommentIcon = styled(TrashSimple)`
+    padding-left: 1rem;
+`
+
 export const Container = styled.div` 
 width: 100%;
 box-sizing: border-box;
@@ -157,6 +166,14 @@ export const Comentario = styled.p`
     @media only screen and (max-width: 1024px) {
         font-size: 1.5rem;
     }
+`
+
+export const AlignIcons = styled.div`
+    display: flex;
+    justify-content: space-around;
+    bottom: -1px;
+    margin-right: 55rem;
+    cursor: pointer;
 `
 
 export const CardComents = styled.div`
