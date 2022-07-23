@@ -60,7 +60,7 @@ function AboutUs() {
                 name="Paulo Anderson" 
                 github="https://github.com/PauloAndersonN"
                 linkedin="https://www.linkedin.com/in/paulo-anderson-3a374622b/"
-                text="Lörem ipsum mör europlal, gil. Dekasm euskapet proll astroporydade. Termopol vis: munar, geonöck om langen jåmönas inklusive oregt, ans. "
+                text="Sou formado em analise e desenvolvimento de sistemas atualmente faço minha segunda graduação em sistemas e mídias digitais(UFC), atualmente trabalho como desenvolvedor para o governo do estado do ceara minhas principais stacks são java e react."
               />
             </div>
             <Logo src={logoAthena}/>
